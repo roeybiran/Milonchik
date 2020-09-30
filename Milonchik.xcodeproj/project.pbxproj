@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC088BB324BB757200C900F3 /* MilonchikError.swift */; };
+		CC088BD224BBAA3000C900F3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC088BD124BBAA3000C900F3 /* ListViewController.swift */; };
+		CC09788B24EFC46D00DF1ED3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC09788A24EFC46D00DF1ED3 /* Constants.swift */; };
+		CC0A284A24BD0D6C00F00BFB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */; };
+		CC0C02C624B85A3A005E55B2 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C02C524B85A3A005E55B2 /* ModelController.swift */; };
+		CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C02CD24B85CF2005E55B2 /* Definition.swift */; };
+		CC0C02D024B85CF7005E55B2 /* Inflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C02CF24B85CF7005E55B2 /* Inflection.swift */; };
+		CC0C02D224B88288005E55B2 /* milon.db in Resources */ = {isa = PBXBuildFile; fileRef = CC0C02D124B85E60005E55B2 /* milon.db */; };
+		CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */; };
+		CC22F5002524A4B30043D6B1 /* MilonchikUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */; };
+		CC4251FC25148DFD00DC7686 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4251FB25148DFD00DC7686 /* NetworkController.swift */; };
+		CC489EDA24C2F0C90035BCD8 /* DefinitionDetail.html in Resources */ = {isa = PBXBuildFile; fileRef = CC489ED924C2F0C90035BCD8 /* DefinitionDetail.html */; };
+		CC489EDC24C3493A0035BCD8 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC489EDB24C3493A0035BCD8 /* SideBar.swift */; };
+		CC489EE324C38C6C0035BCD8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC489EE224C38C6C0035BCD8 /* WebKit.framework */; };
+		CC50519224B9C16C0075AF85 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CC50519124B9C16C0075AF85 /* SQLite */; };
+		CC5E6DEE24C4F71900A7BB7B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6DED24C4F71900A7BB7B /* Credits.rtf */; };
+		CC75A813251017C80013E479 /* Array+Merged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A812251017C80013E479 /* Array+Merged.swift */; };
+		CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159C824B7C7E80091D89E /* AppDelegate.swift */; };
+		CC8159CD24B7C7EB0091D89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CC24B7C7EB0091D89E /* Assets.xcassets */; };
+		CC8159D024B7C7EB0091D89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CE24B7C7EB0091D89E /* Main.storyboard */; };
+		CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159E624B7CBCD0091D89E /* ViewController.swift */; };
+		CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159EA24B7CDBF0091D89E /* WindowController.swift */; };
+		CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */; };
+		CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* InputLanguage.swift */; };
+		CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D324C17A17007489FD /* Array+Uniqified.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC22F4DB2524A3F60043D6B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC8159BD24B7C7E80091D89E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC8159C424B7C7E80091D89E;
+			remoteInfo = Milonchik;
+		};
+		CC22F5022524A4B30043D6B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC8159BD24B7C7E80091D89E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC8159C424B7C7E80091D89E;
+			remoteInfo = Milonchik;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC088BB324BB757200C900F3 /* MilonchikError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilonchikError.swift; sourceTree = "<group>"; };
+		CC088BD124BBAA3000C900F3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		CC09788A24EFC46D00DF1ED3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CC0C02C524B85A3A005E55B2 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		CC0C02CD24B85CF2005E55B2 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		CC0C02CF24B85CF7005E55B2 /* Inflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inflection.swift; sourceTree = "<group>"; };
+		CC0C02D124B85E60005E55B2 /* milon.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = milon.db; sourceTree = "<group>"; };
+		CC22F4D62524A3F60043D6B1 /* MilonchikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
+		CC22F4DA2524A3F60043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC22F4FD2524A4B30043D6B1 /* MilonchikUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilonchikUITests.swift; sourceTree = "<group>"; };
+		CC22F5012524A4B30043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC4251FB25148DFD00DC7686 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		CC489ED924C2F0C90035BCD8 /* DefinitionDetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DefinitionDetail.html; sourceTree = "<group>"; };
+		CC489EDB24C3493A0035BCD8 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CC5E6DED24C4F71900A7BB7B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		CC75A812251017C80013E479 /* Array+Merged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Merged.swift"; sourceTree = "<group>"; };
+		CC8159C524B7C7E80091D89E /* Milonchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milonchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8159C824B7C7E80091D89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC8159CC24B7C7EB0091D89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC8159CF24B7C7EB0091D89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC8159D124B7C7EB0091D89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Milonchik.entitlements; sourceTree = "<group>"; };
+		CC8159E624B7CBCD0091D89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC8159EA24B7CDBF0091D89E /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRaw.swift; sourceTree = "<group>"; };
+		CCBA86D124C17985007489FD /* InputLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLanguage.swift; sourceTree = "<group>"; };
+		CCBA86D324C17A17007489FD /* Array+Uniqified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqified.swift"; sourceTree = "<group>"; };
+		CCF3656124DA864000701311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC22F4D32524A3F60043D6B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC22F4FA2524A4B30043D6B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC8159C224B7C7E80091D89E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC489EE324C38C6C0035BCD8 /* WebKit.framework in Frameworks */,
+				CC50519224B9C16C0075AF85 /* SQLite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC22F4D72524A3F60043D6B1 /* MilonchikTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */,
+				CC22F4DA2524A3F60043D6B1 /* Info.plist */,
+			);
+			path = MilonchikTests;
+			sourceTree = "<group>";
+		};
+		CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */,
+				CC22F5012524A4B30043D6B1 /* Info.plist */,
+			);
+			path = MilonchikUITests;
+			sourceTree = "<group>";
+		};
+		CC489EE124C38C6C0035BCD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC489EE224C38C6C0035BCD8 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC5E6DE624C4F3B400A7BB7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E6DED24C4F71900A7BB7B /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC8159BC24B7C7E80091D89E = {
+			isa = PBXGroup;
+			children = (
+				CCF3656124DA864000701311 /* README.md */,
+				CC8159C724B7C7E80091D89E /* Milonchik */,
+				CC22F4D72524A3F60043D6B1 /* MilonchikTests */,
+				CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */,
+				CC8159C624B7C7E80091D89E /* Products */,
+				CC489EE124C38C6C0035BCD8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CC8159C624B7C7E80091D89E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC8159C524B7C7E80091D89E /* Milonchik.app */,
+				CC22F4D62524A3F60043D6B1 /* MilonchikTests.xctest */,
+				CC22F4FD2524A4B30043D6B1 /* MilonchikUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC8159C724B7C7E80091D89E /* Milonchik */ = {
+			isa = PBXGroup;
+			children = (
+				CC8159C824B7C7E80091D89E /* AppDelegate.swift */,
+				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
+				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
+				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
+				CC4251FB25148DFD00DC7686 /* NetworkController.swift */,
+				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
+				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
+				CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */,
+				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
+				CCF3656424DA8DD400701311 /* View */,
+				CCF3656224DA8CA600701311 /* Model */,
+				CCF3656324DA8DC800701311 /* Extensions */,
+				CC8159CC24B7C7EB0091D89E /* Assets.xcassets */,
+				CC8159D124B7C7EB0091D89E /* Info.plist */,
+				CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */,
+				CC5E6DE624C4F3B400A7BB7B /* Resources */,
+			);
+			path = Milonchik;
+			sourceTree = "<group>";
+		};
+		CCF3656224DA8CA600701311 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C02CD24B85CF2005E55B2 /* Definition.swift */,
+				CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */,
+				CC0C02CF24B85CF7005E55B2 /* Inflection.swift */,
+				CCBA86D124C17985007489FD /* InputLanguage.swift */,
+				CC0C02D124B85E60005E55B2 /* milon.db */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCF3656324DA8DC800701311 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCBA86D324C17A17007489FD /* Array+Uniqified.swift */,
+				CC75A812251017C80013E479 /* Array+Merged.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCF3656424DA8DD400701311 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC489EDB24C3493A0035BCD8 /* SideBar.swift */,
+				CC489ED924C2F0C90035BCD8 /* DefinitionDetail.html */,
+				CC8159CE24B7C7EB0091D89E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC22F4D52524A3F60043D6B1 /* MilonchikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC22F4DF2524A3F60043D6B1 /* Build configuration list for PBXNativeTarget "MilonchikTests" */;
+			buildPhases = (
+				CC22F4D22524A3F60043D6B1 /* Sources */,
+				CC22F4D32524A3F60043D6B1 /* Frameworks */,
+				CC22F4D42524A3F60043D6B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC22F4DC2524A3F60043D6B1 /* PBXTargetDependency */,
+			);
+			name = MilonchikTests;
+			productName = MilonchikTests;
+			productReference = CC22F4D62524A3F60043D6B1 /* MilonchikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC22F4FC2524A4B30043D6B1 /* MilonchikUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC22F5062524A4B30043D6B1 /* Build configuration list for PBXNativeTarget "MilonchikUITests" */;
+			buildPhases = (
+				CC22F4F92524A4B30043D6B1 /* Sources */,
+				CC22F4FA2524A4B30043D6B1 /* Frameworks */,
+				CC22F4FB2524A4B30043D6B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC22F5032524A4B30043D6B1 /* PBXTargetDependency */,
+			);
+			name = MilonchikUITests;
+			productName = MilonchikUITests;
+			productReference = CC22F4FD2524A4B30043D6B1 /* MilonchikUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CC8159C424B7C7E80091D89E /* Milonchik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC8159E024B7C7EB0091D89E /* Build configuration list for PBXNativeTarget "Milonchik" */;
+			buildPhases = (
+				CC8159C124B7C7E80091D89E /* Sources */,
+				CC8159C224B7C7E80091D89E /* Frameworks */,
+				CC8159C324B7C7E80091D89E /* Resources */,
+				CC50519324BA637C0075AF85 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Milonchik;
+			packageProductDependencies = (
+				CC50519124B9C16C0075AF85 /* SQLite */,
+			);
+			productName = Milonchik;
+			productReference = CC8159C524B7C7E80091D89E /* Milonchik.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC8159BD24B7C7E80091D89E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Roey Biran";
+				TargetAttributes = {
+					CC22F4D52524A3F60043D6B1 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = CC8159C424B7C7E80091D89E;
+					};
+					CC22F4FC2524A4B30043D6B1 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = CC8159C424B7C7E80091D89E;
+					};
+					CC8159C424B7C7E80091D89E = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = CC8159C024B7C7E80091D89E /* Build configuration list for PBXProject "Milonchik" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC8159BC24B7C7E80091D89E;
+			packageReferences = (
+				CC50519024B9C16C0075AF85 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
+			productRefGroup = CC8159C624B7C7E80091D89E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC8159C424B7C7E80091D89E /* Milonchik */,
+				CC22F4D52524A3F60043D6B1 /* MilonchikTests */,
+				CC22F4FC2524A4B30043D6B1 /* MilonchikUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC22F4D42524A3F60043D6B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC22F4FB2524A4B30043D6B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC8159C324B7C7E80091D89E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC5E6DEE24C4F71900A7BB7B /* Credits.rtf in Resources */,
+				CC8159CD24B7C7EB0091D89E /* Assets.xcassets in Resources */,
+				CC489EDA24C2F0C90035BCD8 /* DefinitionDetail.html in Resources */,
+				CC0C02D224B88288005E55B2 /* milon.db in Resources */,
+				CC8159D024B7C7EB0091D89E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC50519324BA637C0075AF85 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC22F4D22524A3F60043D6B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC22F4F92524A4B30043D6B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC22F5002524A4B30043D6B1 /* MilonchikUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC8159C124B7C7E80091D89E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC4251FC25148DFD00DC7686 /* NetworkController.swift in Sources */,
+				CC0A284A24BD0D6C00F00BFB /* DetailViewController.swift in Sources */,
+				CC489EDC24C3493A0035BCD8 /* SideBar.swift in Sources */,
+				CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */,
+				CC0C02C624B85A3A005E55B2 /* ModelController.swift in Sources */,
+				CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */,
+				CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */,
+				CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */,
+				CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */,
+				CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */,
+				CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */,
+				CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */,
+				CC75A813251017C80013E479 /* Array+Merged.swift in Sources */,
+				CC09788B24EFC46D00DF1ED3 /* Constants.swift in Sources */,
+				CC088BD224BBAA3000C900F3 /* ListViewController.swift in Sources */,
+				CC0C02D024B85CF7005E55B2 /* Inflection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC22F4DC2524A3F60043D6B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC8159C424B7C7E80091D89E /* Milonchik */;
+			targetProxy = CC22F4DB2524A3F60043D6B1 /* PBXContainerItemProxy */;
+		};
+		CC22F5032524A4B30043D6B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC8159C424B7C7E80091D89E /* Milonchik */;
+			targetProxy = CC22F5022524A4B30043D6B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC8159CE24B7C7EB0091D89E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC8159CF24B7C7EB0091D89E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC22F4DD2524A3F60043D6B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MilonchikTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.MilonchikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Milonchik.app/Contents/MacOS/Milonchik";
+			};
+			name = Debug;
+		};
+		CC22F4DE2524A3F60043D6B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MilonchikTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.MilonchikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Milonchik.app/Contents/MacOS/Milonchik";
+			};
+			name = Release;
+		};
+		CC22F5042524A4B30043D6B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MilonchikUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.MilonchikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Milonchik;
+			};
+			name = Debug;
+		};
+		CC22F5052524A4B30043D6B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MilonchikUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.MilonchikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Milonchik;
+			};
+			name = Release;
+		};
+		CC8159DE24B7C7EB0091D89E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC8159DF24B7C7EB0091D89E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CC8159E124B7C7EB0091D89E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YVAVUS4X5W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Milonchik/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CC8159E224B7C7EB0091D89E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YVAVUS4X5W;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Milonchik/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC22F4DF2524A3F60043D6B1 /* Build configuration list for PBXNativeTarget "MilonchikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC22F4DD2524A3F60043D6B1 /* Debug */,
+				CC22F4DE2524A3F60043D6B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC22F5062524A4B30043D6B1 /* Build configuration list for PBXNativeTarget "MilonchikUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC22F5042524A4B30043D6B1 /* Debug */,
+				CC22F5052524A4B30043D6B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC8159C024B7C7E80091D89E /* Build configuration list for PBXProject "Milonchik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC8159DE24B7C7EB0091D89E /* Debug */,
+				CC8159DF24B7C7EB0091D89E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC8159E024B7C7EB0091D89E /* Build configuration list for PBXNativeTarget "Milonchik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC8159E124B7C7EB0091D89E /* Debug */,
+				CC8159E224B7C7EB0091D89E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC50519024B9C16C0075AF85 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC50519124B9C16C0075AF85 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC50519024B9C16C0075AF85 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CC8159BD24B7C7E80091D89E /* Project object */;
+}
