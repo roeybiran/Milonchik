@@ -172,11 +172,11 @@
 		CC8159C724B7C7E80091D89E /* Milonchik */ = {
 			isa = PBXGroup;
 			children = (
+				CC4251FB25148DFD00DC7686 /* NetworkController.swift */,
 				CC8159C824B7C7E80091D89E /* AppDelegate.swift */,
 				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
 				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
 				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
-				CC4251FB25148DFD00DC7686 /* NetworkController.swift */,
 				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
 				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
 				CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */,
