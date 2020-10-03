@@ -12,7 +12,7 @@ import WebKit
 final class DetailViewController: NSViewController, StateResponding {
 
     @IBOutlet var placeHolderLabel: NSTextField!
-    @IBOutlet var webView: WKWebView!
+    @IBOutlet var webView: MLNWebView!
     // FIXME: bug - white flash
     @IBOutlet var customView: NSView!
 
@@ -59,7 +59,7 @@ final class DetailViewController: NSViewController, StateResponding {
             webView.isHidden = false
             let partOfSpeech = definition.partOfSpeech ?? ""
             let translations = (definition.translations.count > 1 ?
-                                    definition.translations.map({"<li>\($0)</li>"}) : definition.translations).joined()
+                                definition.translations.map({"<li>\($0)</li>"}) : definition.translations).joined()
             let inflections = definition.inflections.map({ inflection in
                 let listItem = "\(inflection.contents) | <span class=\"inf-kind\">\(inflection.kind)</span>"
                 return definition.inflections.count > 1 ? "<li>\(listItem)</li>" : listItem

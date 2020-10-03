@@ -427,7 +427,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-5D-NND">
@@ -450,9 +450,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="customView" destination="eoN-5D-NND" id="YSq-Y8-shd"/>
+                        <outlet property="customView" destination="eoN-5D-NND" id="Z5m-qn-EXP"/>
                         <outlet property="placeHolderLabel" destination="65r-lR-Mkm" id="PjO-F2-MhV"/>
-                        <outlet property="webView" destination="NsD-XG-2ob" id="XXi-79-ERH"/>
+                        <outlet property="webView" destination="NsD-XG-2ob" id="ZL8-x2-MVO"/>
                     </connections>
                 </viewController>
                 <customObject id="Nab-Pv-Y28" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
