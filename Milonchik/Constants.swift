@@ -23,3 +23,7 @@ extension NSStoryboard.SceneIdentifier {
 extension String {
     static let appName = "Milonchik"
 }
+
+extension NSWindow.FrameAutosaveName {
+    static let mainWindow = NSWindow.FrameAutosaveName("MainWindow")
+}

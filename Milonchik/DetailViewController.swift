@@ -13,7 +13,7 @@ final class DetailViewController: NSViewController, StateResponding {
 
     @IBOutlet var placeHolderLabel: NSTextField!
     @IBOutlet var webView: WKWebView!
-    // white flash issue
+    // FIXME: bug - white flash
     @IBOutlet var customView: NSView!
 
     var htmlTemplate: String!
@@ -35,12 +35,13 @@ final class DetailViewController: NSViewController, StateResponding {
         self.htmlTemplate = htmlTemplate
         view.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
 
-        // @available(macOS 10.15, deprecated: 11.0)
+        // FIXME: bug - white flash
         customView.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
         loadHTML(arguments: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.customView.removeFromSuperview()
         }
+
     }
 
     func update(with state: ViewController.State) {

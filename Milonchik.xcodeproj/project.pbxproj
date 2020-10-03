@@ -23,6 +23,7 @@
 		CC50519224B9C16C0075AF85 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CC50519124B9C16C0075AF85 /* SQLite */; };
 		CC5E6DEE24C4F71900A7BB7B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6DED24C4F71900A7BB7B /* Credits.rtf */; };
 		CC75A813251017C80013E479 /* Array+Merged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A812251017C80013E479 /* Array+Merged.swift */; };
+		CC8126CF2525DBAD003987C8 /* MLNWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8126CE2525DBAD003987C8 /* MLNWebView.swift */; };
 		CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159C824B7C7E80091D89E /* AppDelegate.swift */; };
 		CC8159CD24B7C7EB0091D89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CC24B7C7EB0091D89E /* Assets.xcassets */; };
 		CC8159D024B7C7EB0091D89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CE24B7C7EB0091D89E /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */; };
 		CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* InputLanguage.swift */; };
 		CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D324C17A17007489FD /* Array+Uniqified.swift */; };
+		CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA615F2525CE040025D825 /* NetworkModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC5E6DED24C4F71900A7BB7B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CC75A812251017C80013E479 /* Array+Merged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Merged.swift"; sourceTree = "<group>"; };
+		CC8126CA2525D1AD003987C8 /* ROADMAP.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ROADMAP.md; sourceTree = "<group>"; };
+		CC8126CE2525DBAD003987C8 /* MLNWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNWebView.swift; sourceTree = "<group>"; };
 		CC8159C524B7C7E80091D89E /* Milonchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milonchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8159C824B7C7E80091D89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC8159CC24B7C7EB0091D89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRaw.swift; sourceTree = "<group>"; };
 		CCBA86D124C17985007489FD /* InputLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLanguage.swift; sourceTree = "<group>"; };
 		CCBA86D324C17A17007489FD /* Array+Uniqified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqified.swift"; sourceTree = "<group>"; };
+		CCDA615F2525CE040025D825 /* NetworkModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelController.swift; sourceTree = "<group>"; };
 		CCF3656124DA864000701311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF3656124DA864000701311 /* README.md */,
+				CC8126CA2525D1AD003987C8 /* ROADMAP.md */,
 				CC8159C724B7C7E80091D89E /* Milonchik */,
 				CC22F4D72524A3F60043D6B1 /* MilonchikTests */,
 				CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */,
@@ -184,9 +190,18 @@
 				CC8159CC24B7C7EB0091D89E /* Assets.xcassets */,
 				CC8159D124B7C7EB0091D89E /* Info.plist */,
 				CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */,
+				CCDA61642525CE220025D825 /* Temp */,
 				CC5E6DE624C4F3B400A7BB7B /* Resources */,
 			);
 			path = Milonchik;
+			sourceTree = "<group>";
+		};
+		CCDA61642525CE220025D825 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				CCDA615F2525CE040025D825 /* NetworkModelController.swift */,
+			);
+			path = Temp;
 			sourceTree = "<group>";
 		};
 		CCF3656224DA8CA600701311 /* Model */ = {
@@ -213,6 +228,7 @@
 		CCF3656424DA8DD400701311 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC8126CE2525DBAD003987C8 /* MLNWebView.swift */,
 				CC489EDB24C3493A0035BCD8 /* SideBar.swift */,
 				CC489ED924C2F0C90035BCD8 /* DefinitionDetail.html */,
 				CC8159CE24B7C7EB0091D89E /* Main.storyboard */,
@@ -402,9 +418,11 @@
 				CC0C02C624B85A3A005E55B2 /* ModelController.swift in Sources */,
 				CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */,
 				CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */,
+				CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */,
 				CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */,
 				CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */,
 				CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */,
+				CC8126CF2525DBAD003987C8 /* MLNWebView.swift in Sources */,
 				CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */,
 				CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */,
 				CC75A813251017C80013E479 /* Array+Merged.swift in Sources */,
@@ -653,6 +671,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -674,6 +693,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

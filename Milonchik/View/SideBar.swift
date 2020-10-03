@@ -9,7 +9,7 @@
 import Cocoa
 
 class SideBar: NSSplitViewItem {
-    // had to be subclassed because canCollapse = false is not respected when set from IB?
+    // FIXME: bug - not respected when set from IB
     override func awakeFromNib() {
         canCollapse = false
     }

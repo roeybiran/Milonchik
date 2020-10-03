@@ -29,17 +29,21 @@ class WindowController: NSWindowController {
         searchField.delegate = self
 
         (contentViewController as! ViewController).delegate = self
+
+        // FIXME: bug - not respected when set in IB
+        window?.setFrameAutosaveName(.mainWindow)
     }
 
-    @IBAction func focusSearchField(_ sender: Any) {
-        searchField.becomeFirstResponder()
+    @IBAction func focusSearchField(_ sender: Any?) {
+        searchField.window?.makeFirstResponder(searchField)
         searchField.selectText(nil)
     }
+
 }
 
 extension WindowController: NSWindowDelegate {
     func windowDidBecomeKey(_ notification: Notification) {
-        searchField.window?.makeFirstResponder(searchField)
+        focusSearchField(nil)
     }
 
     func windowShouldClose(_ sender: NSWindow) -> Bool {

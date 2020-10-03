@@ -243,7 +243,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" customClass="WindowController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="MainWindow" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
+                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -422,15 +422,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <wkWebView hidden="YES" wantsLayer="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-XG-2ob">
+                            <wkWebView hidden="YES" wantsLayer="YES" fixedFrame="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-XG-2ob" customClass="MLNWebView" customModule="Milonchik" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-5D-NND">
+                            <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-5D-NND">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="65r-lR-Mkm">
                                 <rect key="frame" x="18" y="142" width="414" height="16"/>
@@ -442,16 +444,8 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="NsD-XG-2ob" firstAttribute="top" secondItem="qFp-FW-al5" secondAttribute="top" id="0ZB-Cm-Mxh"/>
-                            <constraint firstItem="NsD-XG-2ob" firstAttribute="leading" secondItem="qFp-FW-al5" secondAttribute="leading" id="81X-Ta-pxX"/>
-                            <constraint firstItem="eoN-5D-NND" firstAttribute="top" secondItem="qFp-FW-al5" secondAttribute="top" id="8GZ-DX-hqA"/>
-                            <constraint firstAttribute="bottom" secondItem="NsD-XG-2ob" secondAttribute="bottom" id="D9u-Nw-BRa"/>
-                            <constraint firstAttribute="trailing" secondItem="NsD-XG-2ob" secondAttribute="trailing" id="DCc-Wc-cjK"/>
-                            <constraint firstAttribute="trailing" secondItem="eoN-5D-NND" secondAttribute="trailing" id="JNk-dk-94P"/>
                             <constraint firstItem="65r-lR-Mkm" firstAttribute="centerY" secondItem="qFp-FW-al5" secondAttribute="centerY" id="WFm-6G-Sr7"/>
-                            <constraint firstAttribute="bottom" secondItem="eoN-5D-NND" secondAttribute="bottom" id="hHm-0f-oDk"/>
                             <constraint firstAttribute="trailing" secondItem="65r-lR-Mkm" secondAttribute="trailing" constant="20" id="iae-Sr-50w"/>
-                            <constraint firstItem="eoN-5D-NND" firstAttribute="leading" secondItem="qFp-FW-al5" secondAttribute="leading" id="nNl-bu-phu"/>
                             <constraint firstItem="65r-lR-Mkm" firstAttribute="leading" secondItem="qFp-FW-al5" secondAttribute="leading" constant="20" id="s4Q-ty-yCm"/>
                         </constraints>
                     </view>
