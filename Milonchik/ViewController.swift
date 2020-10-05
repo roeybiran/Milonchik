@@ -97,8 +97,7 @@ final class ViewController: NSSplitViewController {
         })
     }
 
-    // first responder
     @IBAction private func searchFieldContentsChanged(_ sender: NSTextField) {
-        state = .queryChanged(to: sender.stringValue)
+        state = .queryChanged(to: sender.stringValue.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 }
