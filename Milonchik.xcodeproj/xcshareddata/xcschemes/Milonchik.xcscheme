@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC8159D624B7C7EB0091D89E"
+               BlueprintIdentifier = "CC22F4D52524A3F60043D6B1"
                BuildableName = "MilonchikTests.xctest"
                BlueprintName = "MilonchikTests"
                ReferencedContainer = "container:Milonchik.xcodeproj">
@@ -54,7 +54,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCABF24E24C9976B009CB452"
+               BlueprintIdentifier = "CC22F4FC2524A4B30043D6B1"
                BuildableName = "MilonchikUITests.xctest"
                BlueprintName = "MilonchikUITests"
                ReferencedContainer = "container:Milonchik.xcodeproj">
