@@ -29,6 +29,9 @@
 		CC8159D024B7C7EB0091D89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CE24B7C7EB0091D89E /* Main.storyboard */; };
 		CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159E624B7CBCD0091D89E /* ViewController.swift */; };
 		CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159EA24B7CDBF0091D89E /* WindowController.swift */; };
+		CCB4FB33252B605500C64083 /* CustomPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4FB32252B605500C64083 /* CustomPlaceholderTextField.swift */; };
+		CCB4FB3B252B671000C64083 /* ArgumentsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4FB3A252B671000C64083 /* ArgumentsManager.swift */; };
+		CCB4FB40252B7FB400C64083 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4FB3F252B7FB400C64083 /* DetailView.swift */; };
 		CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */; };
 		CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* InputLanguage.swift */; };
 		CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D324C17A17007489FD /* Array+Uniqified.swift */; };
@@ -82,6 +85,9 @@
 		CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Milonchik.entitlements; sourceTree = "<group>"; };
 		CC8159E624B7CBCD0091D89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC8159EA24B7CDBF0091D89E /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		CCB4FB32252B605500C64083 /* CustomPlaceholderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaceholderTextField.swift; sourceTree = "<group>"; };
+		CCB4FB3A252B671000C64083 /* ArgumentsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentsManager.swift; sourceTree = "<group>"; };
+		CCB4FB3F252B7FB400C64083 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRaw.swift; sourceTree = "<group>"; };
 		CCBA86D124C17985007489FD /* InputLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLanguage.swift; sourceTree = "<group>"; };
 		CCBA86D324C17A17007489FD /* Array+Uniqified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqified.swift"; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 		CCDA61642525CE220025D825 /* Temp */ = {
 			isa = PBXGroup;
 			children = (
+				CCB4FB32252B605500C64083 /* CustomPlaceholderTextField.swift */,
+				CCB4FB3A252B671000C64083 /* ArgumentsManager.swift */,
 				CCDA615F2525CE040025D825 /* NetworkModelController.swift */,
 			);
 			path = Temp;
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8126CE2525DBAD003987C8 /* MLNWebView.swift */,
+				CCB4FB3F252B7FB400C64083 /* DetailView.swift */,
 				CC489EDB24C3493A0035BCD8 /* SideBar.swift */,
 				CC489ED924C2F0C90035BCD8 /* DefinitionDetail.html */,
 				CC8159CE24B7C7EB0091D89E /* Main.storyboard */,
@@ -416,6 +425,7 @@
 				CC489EDC24C3493A0035BCD8 /* SideBar.swift in Sources */,
 				CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */,
 				CC0C02C624B85A3A005E55B2 /* ModelController.swift in Sources */,
+				CCB4FB33252B605500C64083 /* CustomPlaceholderTextField.swift in Sources */,
 				CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */,
 				CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */,
 				CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */,
@@ -424,6 +434,8 @@
 				CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */,
 				CC8126CF2525DBAD003987C8 /* MLNWebView.swift in Sources */,
 				CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */,
+				CCB4FB40252B7FB400C64083 /* DetailView.swift in Sources */,
+				CCB4FB3B252B671000C64083 /* ArgumentsManager.swift in Sources */,
 				CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */,
 				CC75A813251017C80013E479 /* Array+Merged.swift in Sources */,
 				CC09788B24EFC46D00DF1ED3 /* Constants.swift in Sources */,

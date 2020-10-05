@@ -33,7 +33,6 @@ final class DetailViewController: NSViewController, StateResponding {
         }
 
         self.htmlTemplate = htmlTemplate
-        view.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
 
         // FIXME: bug - white flash
         customView.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
@@ -49,11 +48,11 @@ final class DetailViewController: NSViewController, StateResponding {
         case .noQuery:
             placeHolderLabel.isHidden = false
             webView.isHidden = true
-            placeHolderLabel.stringValue = "Look up a word by typing in search field above."
+            placeHolderLabel.placeholderString = "Look up a word by typing in search field above."
         case .noResults(let query):
             placeHolderLabel.isHidden = false
             webView.isHidden = true
-            placeHolderLabel.stringValue = "No definitions found for ”\(query)”."
+            placeHolderLabel.placeholderString = "No definitions found for ”\(query)”."
         case .definitionSelectionChanged(let definition):
             placeHolderLabel.isHidden = true
             webView.isHidden = false

@@ -316,7 +316,7 @@
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="kkZ-fU-bg8">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <connections>
                             <outlet property="delegate" destination="kne-Dz-q4K" id="psz-0p-a6K"/>
                         </connections>
@@ -338,7 +338,7 @@
                 <viewController storyboardIdentifier="ListViewController" id="Bw4-73-gAe" customClass="ListViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ZNu-Vo-YF9">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="ZwB-y7-sVj">
                                 <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
@@ -418,9 +418,9 @@
         <scene sceneID="iw2-Uf-0GB">
             <objects>
                 <viewController id="xvo-a7-yBP" customClass="DetailViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="qFp-FW-al5">
+                    <view key="view" wantsLayer="YES" id="qFp-FW-al5" customClass="DetailView" customModule="Milonchik" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView hidden="YES" wantsLayer="YES" fixedFrame="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-XG-2ob" customClass="MLNWebView" customModule="Milonchik" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -434,19 +434,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="65r-lR-Mkm">
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65r-lR-Mkm">
                                 <rect key="frame" x="18" y="142" width="414" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="PLACEHOLDER" id="NXK-4f-sNi">
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" alignment="center" placeholderString="PLACEHOLDER" usesSingleLineMode="YES" id="NXK-4f-sNi">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="65r-lR-Mkm" firstAttribute="centerY" secondItem="qFp-FW-al5" secondAttribute="centerY" id="WFm-6G-Sr7"/>
-                            <constraint firstAttribute="trailing" secondItem="65r-lR-Mkm" secondAttribute="trailing" constant="20" id="iae-Sr-50w"/>
-                            <constraint firstItem="65r-lR-Mkm" firstAttribute="leading" secondItem="qFp-FW-al5" secondAttribute="leading" constant="20" id="s4Q-ty-yCm"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="65r-lR-Mkm" secondAttribute="trailing" constant="20" id="g0P-NP-Sn6"/>
+                            <constraint firstItem="65r-lR-Mkm" firstAttribute="leading" relation="lessThanOrEqual" secondItem="qFp-FW-al5" secondAttribute="leading" constant="20" id="voe-xG-S0K"/>
                         </constraints>
                     </view>
                     <connections>
