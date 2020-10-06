@@ -15,16 +15,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 // MARK: - tabbing
 extension AppDelegate: TabbingDelegate {
-    @IBAction func newWindowForTab(_ sender: Any?) {
+
+    private func makeNewWindow(tabbed: Bool) {
         let storyboard = NSStoryboard.main!
         let newWindowController = storyboard.instantiateInitialController() as! WindowController
         newWindowController.tabbingDelegate = self
         let newWindow = newWindowController.window!
+        NSWindow.allowsAutomaticWindowTabbing = tabbed
         managedControllers.append(newWindowController)
-        if let existingWindow = NSApp.mainWindow {
+        if let existingWindow = NSApp.mainWindow, tabbed {
             existingWindow.addTabbedWindow(newWindow, ordered: .above)
         }
         newWindow.makeKeyAndOrderFront(self)
+    }
+
+    @IBAction func newWindowForTab(_ sender: Any?) {
+        makeNewWindow(tabbed: true)
+    }
+
+    @IBAction func newWindow(_ sender: Any?) {
+        makeNewWindow(tabbed: false)
     }
 
     func tabDidAppear(_ tab: NSWindow) {

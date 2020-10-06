@@ -66,6 +66,11 @@
                                                 <action selector="newWindowForTab:" target="Ady-hI-5gd" id="3nB-TY-hpd"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="New Window" enabled="NO" keyEquivalent="n" id="xqr-8P-l3d" userLabel="New Tab">
+                                            <connections>
+                                                <action selector="newWindow:" target="Ady-hI-5gd" id="VLt-iW-xvW"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Close" keyEquivalent="w" id="hgv-Ki-dCe">
                                             <connections>
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="YNu-BU-JeL"/>
@@ -118,31 +123,6 @@
                                                         <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                                         <connections>
                                                             <action selector="focusSearchField:" target="Ady-hI-5gd" id="MEa-aL-tfn"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Find…" tag="1" keyEquivalent="f" id="Xz5-n4-O0W">
-                                                        <connections>
-                                                            <action selector="performFindPanelAction:" target="Ady-hI-5gd" id="cD7-Qs-BN4"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Find Next" tag="2" keyEquivalent="g" id="q09-fT-Sye">
-                                                        <connections>
-                                                            <action selector="performFindPanelAction:" target="Ady-hI-5gd" id="NDo-RZ-v9R"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="OwM-mh-QMV">
-                                                        <connections>
-                                                            <action selector="performFindPanelAction:" target="Ady-hI-5gd" id="HOh-sY-3ay"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="buJ-ug-pKt">
-                                                        <connections>
-                                                            <action selector="performFindPanelAction:" target="Ady-hI-5gd" id="U76-nv-p5D"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Jump to Selection" keyEquivalent="j" id="S0p-oC-mLd">
-                                                        <connections>
-                                                            <action selector="centerSelectionInVisibleArea:" target="Ady-hI-5gd" id="IOG-6D-g5B"/>
                                                         </connections>
                                                     </menuItem>
                                                 </items>

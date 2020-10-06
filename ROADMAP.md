@@ -2,6 +2,7 @@
 
 - Morfix as a definitions source.
 - Navigable lookup history per session.
+- Agent mode (hide in Dock).
 - Basic drag (e.g. text clippings -> app) and drop (e.g. definition -> text file) support.
 - State restoration
     - https://www.bignerdranch.com/blog/cocoa-ui-preservation-yall/
