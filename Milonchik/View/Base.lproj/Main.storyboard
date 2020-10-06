@@ -66,7 +66,7 @@
                                                 <action selector="newWindowForTab:" target="Ady-hI-5gd" id="3nB-TY-hpd"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="New Window" enabled="NO" keyEquivalent="n" id="xqr-8P-l3d" userLabel="New Tab">
+                                        <menuItem title="New Window" enabled="NO" keyEquivalent="n" id="xqr-8P-l3d">
                                             <connections>
                                                 <action selector="newWindow:" target="Ady-hI-5gd" id="VLt-iW-xvW"/>
                                             </connections>
@@ -317,18 +317,18 @@
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="Bw4-73-gAe" customClass="ListViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ZNu-Vo-YF9">
-                        <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="ZwB-y7-sVj">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="hFw-Gx-93H">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" id="LHg-HB-0bG">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="300"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" id="LHg-HB-0bG">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>

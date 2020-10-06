@@ -11,9 +11,14 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var managedControllers = [NSWindowController]()
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag { makeNewWindow(tabbed: false) }
+        return true
+    }
 }
 
-// MARK: - tabbing
+// MARK: - window management
 extension AppDelegate: TabbingDelegate {
 
     private func makeNewWindow(tabbed: Bool) {
@@ -26,7 +31,7 @@ extension AppDelegate: TabbingDelegate {
         if let existingWindow = NSApp.mainWindow, tabbed {
             existingWindow.addTabbedWindow(newWindow, ordered: .above)
         }
-        newWindow.makeKeyAndOrderFront(self)
+        newWindowController.showWindow(self)
     }
 
     @IBAction func newWindowForTab(_ sender: Any?) {

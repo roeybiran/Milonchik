@@ -69,6 +69,8 @@ extension ListViewController: NSTableViewDelegate {
 extension ListViewController {
     @objc func searchFieldKeydown() {
         let keycodes: [UInt16] = [125, 126]
+        // FIXME: find a better solution that this
+        // perhaps using action messages directly?
         guard let event = NSApp.currentEvent else { return }
         if keycodes.contains(event.keyCode) {
             tableView.keyDown(with: event)

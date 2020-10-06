@@ -64,6 +64,8 @@
 		CC0C02CD24B85CF2005E55B2 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		CC0C02CF24B85CF7005E55B2 /* Inflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inflection.swift; sourceTree = "<group>"; };
 		CC0C02D124B85E60005E55B2 /* milon.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = milon.db; sourceTree = "<group>"; };
+		CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
+		CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		CC22F4D62524A3F60043D6B1 /* MilonchikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
 		CC22F4DA2524A3F60043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,9 @@
 		CC5E6DE624C4F3B400A7BB7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC8159CC24B7C7EB0091D89E /* Assets.xcassets */,
+				CC8159D124B7C7EB0091D89E /* Info.plist */,
+				CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */,
 				CC5E6DED24C4F71900A7BB7B /* Credits.rtf */,
 			);
 			path = Resources;
@@ -159,9 +164,11 @@
 		CC8159BC24B7C7E80091D89E = {
 			isa = PBXGroup;
 			children = (
-				CCF3656124DA864000701311 /* README.md */,
-				CC8126CA2525D1AD003987C8 /* ROADMAP.md */,
 				CC8159C724B7C7E80091D89E /* Milonchik */,
+				CCF3656124DA864000701311 /* README.md */,
+				CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */,
+				CC8126CA2525D1AD003987C8 /* ROADMAP.md */,
+				CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */,
 				CC22F4D72524A3F60043D6B1 /* MilonchikTests */,
 				CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */,
 				CC8159C624B7C7E80091D89E /* Products */,
@@ -193,9 +200,6 @@
 				CCF3656424DA8DD400701311 /* View */,
 				CCF3656224DA8CA600701311 /* Model */,
 				CCF3656324DA8DC800701311 /* Extensions */,
-				CC8159CC24B7C7EB0091D89E /* Assets.xcassets */,
-				CC8159D124B7C7EB0091D89E /* Info.plist */,
-				CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */,
 				CCDA61642525CE220025D825 /* Temp */,
 				CC5E6DE624C4F3B400A7BB7B /* Resources */,
 			);
@@ -672,18 +676,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Resources/Milonchik.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YVAVUS4X5W;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Milonchik/Info.plist;
+				INFOPLIST_FILE = Milonchik/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -694,18 +700,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Resources/Milonchik.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = YVAVUS4X5W;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Milonchik/Info.plist;
+				INFOPLIST_FILE = Milonchik/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
