@@ -193,7 +193,6 @@
 				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
 				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
 				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
-				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
 				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
 				CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */,
 				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
@@ -219,6 +218,7 @@
 		CCF3656224DA8CA600701311 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
 				CC0C02CD24B85CF2005E55B2 /* Definition.swift */,
 				CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */,
 				CC0C02CF24B85CF7005E55B2 /* Inflection.swift */,
@@ -689,7 +689,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -713,7 +713,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -32,6 +32,7 @@ class MilonchikUITests: XCTestCase {
         // window title reflects search results
         XCTAssertTrue(window.title != "Milonchik")
         // navigation the table from the text field
+        sut.typeKey("f", modifierFlags: [.command, .alternate])
         sut.typeKey(.downArrow, modifierFlags: .function)
         XCTAssertTrue(window.webViews.staticTexts["גון ירוק תפוח"].exists)
     }

@@ -75,8 +75,15 @@ extension WindowController: ViewControllerDelegate {
 
 extension WindowController: NSSearchFieldDelegate {
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        let selectors: Set<Selector> = [
+            #selector(moveForward),
+            #selector(moveBackward),
+            #selector(moveDown),
+            #selector(moveUp),
+            #selector(moveToBeginningOfParagraph),
+            #selector(moveToEndOfParagraph)
+        ]
         print(commandSelector)
-        let selectors = [#selector(moveDown(_:)), #selector(moveUp(_:))]
         if selectors.contains(commandSelector) {
             NotificationCenter.default.post(name: .searchFieldKeyDown, object: nil)
             return true
