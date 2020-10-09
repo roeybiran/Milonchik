@@ -46,8 +46,8 @@
             filePath = "Milonchik/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "makeNewWindow(tabbed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Milonchik/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "tabDidClose(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,9 +78,150 @@
             filePath = "Milonchik/WindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "windowShouldClose(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D - 24bced45e1b06197"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.AppDelegate.managedControllers.getter : Swift.Array&lt;__C.NSWindowController&gt;"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D - d923c620d9da659b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.AppDelegate.managedControllers.setter : Swift.Array&lt;__C.NSWindowController&gt;"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D - c3d460ddcceaec5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.AppDelegate.managedControllers.modify : Swift.Array&lt;__C.NSWindowController&gt;"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D - da82d7c91100a2c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.AppDelegate.managedControllers.modify : Swift.Array&lt;__C.NSWindowController&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "CD6DE2B8-2592-45CB-94E1-A543CD72AD6D - e6d058331bbf15f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.AppDelegate.init() -&gt; Milonchik.AppDelegate"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BC10CE3-3A48-4903-A3B7-1C0B708F3F7C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "makeNewWindow(tabbed:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C14E3B4-F50C-4465-995C-9FD203DF71B5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "handleStateChange(newState:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5707F607-EB93-4684-8ABF-EA9EB300942E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/WindowController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "setSearchFieldContents(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -66,19 +66,18 @@ extension ListViewController: NSTableViewDelegate {
     }
 }
 
+/*
+    FIXME: find a better solution that this
+    perhaps using action messages directly?
+    - testing shows NSTableView responds to:
+    - scrollToBeginningOfDocument:
+    - scrollToEndOfDocument:
+    - selectAll:
+    - cancelOperation:
+ */
 extension ListViewController {
     @objc func searchFieldKeydown() {
-        // FIXME: find a better solution that this
-        // perhaps using action messages directly?
-        // testing shows NSTableView responds to:
-        // scrollToBeginningOfDocument:
-        // scrollToEndOfDocument:
-        // selectAll:
-        // cancelOperation:
         guard let event = NSApp.currentEvent else { return }
         tableView.keyDown(with: event)
-        // let keycodes: [UInt16] = [125, 126]
-        // if keycodes.contains(event.keyCode) {
-        // }
     }
 }

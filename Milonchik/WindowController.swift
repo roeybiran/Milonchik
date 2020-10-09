@@ -22,6 +22,7 @@ class WindowController: NSWindowController {
     weak var tabbingDelegate: TabbingDelegate?
 
     override func windowDidLoad() {
+
         super.windowDidLoad()
         shouldCascadeWindows = true
 
@@ -55,6 +56,8 @@ extension WindowController: NSWindowDelegate {
 extension WindowController: ViewControllerDelegate {
     func didChangeState(to state: ViewController.State) {
         switch state {
+        case .noQuery:
+            window?.title = .appName
         case .fetchShouldStart:
             progressIndicator.startAnimation(nil)
         case .fetchDidEnd:
@@ -64,11 +67,8 @@ extension WindowController: ViewControllerDelegate {
             window?.title = "“\(query)” (\(count) \(count > 1 ? "results" : "result"))"
         case .noResults(let query):
             window?.title = "”\(query)” (0 results)"
-        case .noQuery:
-            window?.title = .appName
         default:
             break
-
         }
     }
 }
@@ -89,5 +89,12 @@ extension WindowController: NSSearchFieldDelegate {
             return true
         }
         return false
+    }
+}
+
+extension WindowController {
+    func setSearchFieldContents(to text: String) {
+        searchField.stringValue = text
+        searchField.sendAction(#selector(ViewController.searchFieldContentsChanged(_:)), to: nil)
     }
 }

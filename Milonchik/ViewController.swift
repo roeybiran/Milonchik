@@ -5,6 +5,7 @@
 //  Created by Roey Biran on 10/07/2020.
 //  Copyright © 2020 Roey Biran. All rights reserved.
 //
+import Cocoa
 
 protocol StateResponding {
     func update(with state: ViewController.State)
@@ -14,30 +15,20 @@ protocol ViewControllerDelegate: AnyObject {
     func didChangeState(to state: ViewController.State)
 }
 
-import Cocoa
-
 final class ViewController: NSSplitViewController {
-
-    enum State {
-        case noQuery
-        case queryChanged(to: String)
-        case fetchShouldStart(withQuery: String)
-        case fetchDidEnd(with: Result<[Definition], MilonchikError>, forQuery: String)
-        case definitionSelectionChanged(to: Definition)
-        case results(definitions: [Definition], forQuery: String)
-        case noResults(forQuery: String)
-        case error(Error)
-    }
 
     @IBOutlet private var sidebar: SideBar!
 
-    weak var delegate: ViewControllerDelegate?
-
     fileprivate(set) var state: State! {
         didSet {
-            handleStateChange(newState: state)
+            if oldValue != state {
+                handleStateChange(newState: state)
+            }
         }
     }
+
+    weak var delegate: ViewControllerDelegate?
+
     private var wordModelController = ModelController()
     private var listViewController: ListViewController!
     private var detailViewController: DetailViewController!
@@ -97,7 +88,45 @@ final class ViewController: NSSplitViewController {
         })
     }
 
-    @IBAction private func searchFieldContentsChanged(_ sender: NSTextField) {
+    @IBAction func searchFieldContentsChanged(_ sender: NSTextField) {
         state = .queryChanged(to: sender.stringValue.trimmingCharacters(in: .whitespacesAndNewlines))
+    }
+}
+
+extension ViewController {
+    enum State: Equatable, RawRepresentable {
+
+        case noQuery
+        case queryChanged(to: String)
+        case fetchShouldStart(withQuery: String)
+        case fetchDidEnd(with: Result<[Definition], MilonchikError>, forQuery: String)
+        case definitionSelectionChanged(to: Definition)
+        case results(definitions: [Definition], forQuery: String)
+        case noResults(forQuery: String)
+        case error(Error)
+
+        typealias RawValue = String
+
+        init?(rawValue: String) {
+            fatalError("State is not supposed to be initialized from a raw value")
+        }
+
+        var rawValue: RawValue {
+            switch self {
+            case .noQuery: return "noQuery"
+            case .queryChanged: return "queryChanged"
+            case .fetchShouldStart: return "fetchShouldStart"
+            case .fetchDidEnd: return "fetchDidEnd"
+            case .definitionSelectionChanged: return "definitionSelectionChanged"
+            case .results: return "results"
+            case .noResults: return "noResults"
+            case .error: return "error"
+            }
+        }
+
+        static func == (lhs: ViewController.State, rhs: ViewController.State) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
+
     }
 }

@@ -36,5 +36,25 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSSendTypes</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>NSPortName</key>
+			<string>${PRODUCT_NAME}</string>
+			<key>NSRequiredContext</key>
+			<dict/>
+			<key>NSMessage</key>
+			<string>defineServiceHandler</string>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Define in ${PRODUCT_NAME}</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>
