@@ -21,9 +21,7 @@ final class ViewController: NSSplitViewController {
 
     fileprivate(set) var state: State! {
         didSet {
-            if oldValue != state {
-                handleStateChange(newState: state)
-            }
+            handleStateChange(newState: state)
         }
     }
 
@@ -94,8 +92,7 @@ final class ViewController: NSSplitViewController {
 }
 
 extension ViewController {
-    enum State: Equatable, RawRepresentable {
-
+    enum State {
         case noQuery
         case queryChanged(to: String)
         case fetchShouldStart(withQuery: String)
@@ -104,29 +101,5 @@ extension ViewController {
         case results(definitions: [Definition], forQuery: String)
         case noResults(forQuery: String)
         case error(Error)
-
-        typealias RawValue = String
-
-        init?(rawValue: String) {
-            fatalError("State is not supposed to be initialized from a raw value")
-        }
-
-        var rawValue: RawValue {
-            switch self {
-            case .noQuery: return "noQuery"
-            case .queryChanged: return "queryChanged"
-            case .fetchShouldStart: return "fetchShouldStart"
-            case .fetchDidEnd: return "fetchDidEnd"
-            case .definitionSelectionChanged: return "definitionSelectionChanged"
-            case .results: return "results"
-            case .noResults: return "noResults"
-            case .error: return "error"
-            }
-        }
-
-        static func == (lhs: ViewController.State, rhs: ViewController.State) -> Bool {
-            return lhs.rawValue == rhs.rawValue
-        }
-
     }
 }
