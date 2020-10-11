@@ -16,6 +16,17 @@ Lightweight English-Hebrew dictionary for macOS.
 
 ### Keyboard Shortcuts
 
-- While the search field is focused:
-  - In the definitions list, press <kbd>↑</kbd> to select the definition above.
-  - In the definitions list, press <kbd>↓</kbd> to select the definition below.
+While the search field is focused:
+
+- Press <kbd>↑</kbd> to select the previous entry in the definitions list.
+- Press <kbd>↓</kbd> to select the next entry in the definitions list.
+- Press <kbd>⌥</kbd>+<kbd>↑</kbd> to select the first entry in the definitions list.
+- Press <kbd>⌥</kbd>+<kbd>↓</kbd> to select the last entry in the definitions list.
+
+##  Roadmap
+
+- Morfix as a definitions source.
+- Navigable lookup history per session.
+- Agent mode (hide in Dock).
+- Basic drag (e.g. text clippings -> app) and drop (e.g. definition -> text file) support.
+- State restoration

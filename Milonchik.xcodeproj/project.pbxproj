@@ -79,7 +79,6 @@
 		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC5E6DED24C4F71900A7BB7B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CC75A812251017C80013E479 /* Array+Merged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Merged.swift"; sourceTree = "<group>"; };
-		CC8126CA2525D1AD003987C8 /* ROADMAP.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ROADMAP.md; sourceTree = "<group>"; };
 		CC8126CE2525DBAD003987C8 /* MLNWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLNWebView.swift; sourceTree = "<group>"; };
 		CC8159C524B7C7E80091D89E /* Milonchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milonchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8159C824B7C7E80091D89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +175,6 @@
 				CC8159C724B7C7E80091D89E /* Milonchik */,
 				CCF3656124DA864000701311 /* README.md */,
 				CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */,
-				CC8126CA2525D1AD003987C8 /* ROADMAP.md */,
 				CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */,
 				CC22F4D72524A3F60043D6B1 /* MilonchikTests */,
 				CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */,
