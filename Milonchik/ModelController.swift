@@ -9,35 +9,6 @@
 import Foundation
 import SQLite
 
-final class ModelController {
-
-    private let queue = OperationQueue()
-    private let database: Connection
-
-    init() {
-        queue.qualityOfService = .userInteractive
-        let databasePath = Bundle.main.path(forResource: "milon", ofType: "db")!
-        guard let database = try? Connection(databasePath, readonly: true) else {
-            preconditionFailure("Database is missing or corrupt")
-        }
-        self.database = database
-    }
-
-    func cancel() {
-        queue.cancelAllOperations()
-    }
-
-    func fetch(query: String, completionHandler: @escaping (Swift.Result<[Definition], MilonchikError>) -> Void) {
-        let operation = DatabaseOperation(database: database, query: query)
-        operation.completionBlock = { [unowned operation] in
-            if !operation.isCancelled {
-                completionHandler(operation.result)
-            }
-        }
-        queue.addOperation(operation)
-    }
-}
-
 private enum Tables {
     static let definitions = Table("definitions")
     static let inflections = Table("inflections")
@@ -57,6 +28,35 @@ private enum Columns {
     static let inflectionValue = Expression<String?>("inflection_value")
     static let synonym = Expression<String?>("synonym")
     static let sample = Expression<String?>("sample")
+}
+
+final class ModelController {
+
+    private let queue = OperationQueue()
+    private let database: Connection
+
+    init() {
+        queue.qualityOfService = .userInteractive
+        let databasePath = Bundle.main.path(forResource: "milon", ofType: "db")!
+        guard let database = try? Connection(databasePath, readonly: true) else {
+            preconditionFailure("Database is missing or corrupt")
+        }
+        self.database = database
+    }
+
+    func cancelFetch() {
+        queue.cancelAllOperations()
+    }
+
+    func fetch(query: String, completionHandler: @escaping (Swift.Result<[Definition], MilonchikError>) -> Void) {
+        let operation = DatabaseOperation(database: database, query: query)
+        operation.completionBlock = { [unowned operation] in
+            if !operation.isCancelled {
+                completionHandler(operation.result)
+            }
+        }
+        queue.addOperation(operation)
+    }
 }
 
 private class DatabaseOperation: Operation {

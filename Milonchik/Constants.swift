@@ -27,3 +27,7 @@ extension String {
 extension NSWindow.FrameAutosaveName {
     static let mainWindow = NSWindow.FrameAutosaveName("MainWindow")
 }
+
+extension NSToolbarItem.Identifier {
+    static let searchField = NSToolbarItem.Identifier("SearchField")
+}

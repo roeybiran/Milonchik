@@ -30,9 +30,6 @@ class WindowController: NSWindowController {
         searchField.delegate = self
 
         (contentViewController as! ViewController).delegate = self
-
-        // FIXME: bug - not respected when set in IB
-        window?.setFrameAutosaveName(.mainWindow)
     }
 
     @IBAction func focusSearchField(_ sender: Any?) {

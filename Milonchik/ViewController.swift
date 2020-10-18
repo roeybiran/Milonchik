@@ -17,7 +17,7 @@ protocol ViewControllerDelegate: AnyObject {
 
 final class ViewController: NSSplitViewController {
 
-    @IBOutlet private var sidebar: SideBar!
+    @IBOutlet private var sidebar: SidebarView!
 
     fileprivate(set) var state: State! {
         didSet {
@@ -56,7 +56,7 @@ final class ViewController: NSSplitViewController {
                 state = .fetchShouldStart(withQuery: query)
             }
         case .fetchShouldStart(let query):
-            wordModelController.cancel()
+            wordModelController.cancelFetch()
             wordModelController.fetch(query: query) { result in
                 DispatchQueue.main.async {
                     self.state = .fetchDidEnd(with: result, forQuery: query)

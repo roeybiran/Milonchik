@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 // MARK: - window management
-extension AppDelegate: TabbingDelegate {
+extension AppDelegate {
 
     private func makeNewWindow(tabbed: Bool) {
         let storyboard = NSStoryboard.main!
@@ -47,10 +47,10 @@ extension AppDelegate: TabbingDelegate {
     @IBAction func newWindow(_ sender: Any?) {
         makeNewWindow(tabbed: false)
     }
+}
 
-    func tabDidAppear(_ tab: NSWindow) {
-        // managedControllers.append(window.windowController!)
-    }
+extension AppDelegate: TabbingDelegate {
+    func tabDidAppear(_ tab: NSWindow) {}
 
     func tabDidClose(_ tab: NSWindow) {
         managedControllers.removeAll(where: { $0 === tab.windowController! })

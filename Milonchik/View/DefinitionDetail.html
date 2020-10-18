@@ -1,65 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1"
-        />
-        <style type="text/css">
-            body {
-                font-size: 13px;
-                font-family: -apple-system;
-                margin: 20px;
-            }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #1E1E1E;
-                color: white;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --primary-label: white;
+        --secondary-label: grey;
+      }
+      body {
+        font-family: -apple-system, sans-serif;
+      }
+      .placeholder {
+        color: var(--secondary-label);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      @media (prefers-color-scheme: dark) {
+        root {
         }
-        ul {
-            list-style: inside;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        .input-word {
-            font-size: 17px;
-        }
-        .header {
-            font-size: 15px;
-        }
-        .part-of-speech,
-        .inf-kind {
-            opacity: 0.6;
-        }
-        .inf-kind {
-            font-size: 10px;
-        }
-        </style>
-    </head>
-    <body>
-        <!-- word -->
-        <div dir="auto">
-            <span class="input-word">%@</span>
-            <span class="part-of-speech">%@</span>
-        </div>
-        <!-- translations -->
-        <ul dir="auto">
-            %@
-        </ul>
-        <!-- inflections -->
-        <p class="header" dir="auto">%@</p>
-        <ul dir="auto">
-            %@
-        </ul>
-        <!-- synonyms -->
-        <p class="header" dir="auto">%@</p>
-        <p dir="auto">%@</p>
-        <!-- samples -->
-        <p class="header" dir="auto">%@</p>
-        <ul dir="auto">
-            %@
-        </ul>
-    </body>
+      }
+    </style>
+  </head>
+  <body>
+      $BODY
+  </body>
 </html>

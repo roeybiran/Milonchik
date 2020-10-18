@@ -8,8 +8,7 @@
 
 import Cocoa
 
-class SideBar: NSSplitViewItem {
-    // FIXME: bug - not respected when set from IB
+class SidebarView: NSSplitViewItem {
     override func awakeFromNib() {
         canCollapse = false
     }

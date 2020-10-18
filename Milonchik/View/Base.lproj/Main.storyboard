@@ -223,7 +223,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" customClass="WindowController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
+                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA" customClass="Window" customModule="Milonchik" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -246,7 +246,7 @@
                                         </subviews>
                                     </customView>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="EEE9DAF3-9092-446C-9891-DFF5D6F96999" label="Search" paletteLabel="Search" id="7Sd-fY-H6E" userLabel="Search Field">
+                                <toolbarItem implicitItemIdentifier="EEE9DAF3-9092-446C-9891-DFF5D6F96999" explicitItemIdentifier="SearchField" label="Search" paletteLabel="Search" id="7Sd-fY-H6E" userLabel="Search Field">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="96" height="22"/>
                                     <size key="maxSize" width="200" height="22"/>
@@ -291,7 +291,7 @@
             <objects>
                 <splitViewController id="kne-Dz-q4K" customClass="ViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem canCollapse="YES" collapsed="YES" holdingPriority="260" behavior="sidebar" id="yk8-bS-jkX" customClass="SideBar" customModule="Milonchik" customModuleProvider="target"/>
+                        <splitViewItem canCollapse="YES" collapsed="YES" holdingPriority="260" behavior="sidebar" id="yk8-bS-jkX" customClass="SidebarView" customModule="Milonchik" customModuleProvider="target"/>
                         <splitViewItem id="c08-bG-Boj" userLabel="Detail"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="kkZ-fU-bg8">
@@ -398,41 +398,16 @@
         <scene sceneID="iw2-Uf-0GB">
             <objects>
                 <viewController id="xvo-a7-yBP" customClass="DetailViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="qFp-FW-al5" customClass="DetailView" customModule="Milonchik" customModuleProvider="target">
+                    <wkWebView key="view" wantsLayer="YES" allowsLinkPreview="NO" id="NsD-XG-2ob" customClass="DetailView" customModule="Milonchik" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView hidden="YES" wantsLayer="YES" fixedFrame="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-XG-2ob" customClass="MLNWebView" customModule="Milonchik" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-5D-NND">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </customView>
-                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65r-lR-Mkm">
-                                <rect key="frame" x="18" y="142" width="414" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" alignment="center" placeholderString="PLACEHOLDER" usesSingleLineMode="YES" id="NXK-4f-sNi">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="65r-lR-Mkm" firstAttribute="centerY" secondItem="qFp-FW-al5" secondAttribute="centerY" id="WFm-6G-Sr7"/>
-                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="65r-lR-Mkm" secondAttribute="trailing" constant="20" id="g0P-NP-Sn6"/>
-                            <constraint firstItem="65r-lR-Mkm" firstAttribute="leading" relation="lessThanOrEqual" secondItem="qFp-FW-al5" secondAttribute="leading" constant="20" id="voe-xG-S0K"/>
-                        </constraints>
-                    </view>
+                        <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
                     <connections>
-                        <outlet property="customView" destination="eoN-5D-NND" id="Z5m-qn-EXP"/>
-                        <outlet property="placeHolderLabel" destination="65r-lR-Mkm" id="PjO-F2-MhV"/>
-                        <outlet property="webView" destination="NsD-XG-2ob" id="ZL8-x2-MVO"/>
+                        <outlet property="detailView" destination="NsD-XG-2ob" id="ZL8-x2-MVO"/>
                     </connections>
                 </viewController>
                 <customObject id="Nab-Pv-Y28" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

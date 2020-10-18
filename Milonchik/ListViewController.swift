@@ -6,7 +6,7 @@ final class ListViewController: NSViewController, StateResponding {
     @IBOutlet private var tableView: NSTableView!
 
     /// the `NSSplitViewItem` managed by this controller.
-    var sidebar: SideBar!
+    var sidebar: SidebarView!
 
     /// a handler to call when a new definition has been selected.
     var userSelectionChangedHandler: ((_ newDefinition: Definition) -> Void)?

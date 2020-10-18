@@ -30,3 +30,6 @@ While the search field is focused:
 - Agent mode (hide in Dock).
 - Basic drag (e.g. text clippings -> app) and drop (e.g. definition -> text file) support.
 - State restoration
+    - https://stackoverflow.com/questions/60439491/how-to-get-state-restoration-to-restore-all-windows-tabs-on-macos
+    - https://stackoverflow.com/questions/43790555/saving-and-restoration-of-state-on-macos
+
