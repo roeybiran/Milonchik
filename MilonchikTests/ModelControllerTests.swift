@@ -14,23 +14,35 @@ class ModelControllerTests: XCTestCase {
     var sut: ModelController!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = ModelController()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut = nil
     }
 
-    func testAsyncFetchedDefinitionMatchesExpected() throws {
-        let expectedID = 2914
+    func testFetchingDefinitions() throws {
         let expectation = XCTestExpectation(description: "database fetching")
-        sut.fetch(query: "apple%") { result in
+        sut.fetch(query: "apple") { result in
             switch result {
             case .success(let definitions):
-                let fetchedID = definitions.first!.id
-                XCTAssertTrue(fetchedID == expectedID, "expected \(expectedID), received \(fetchedID)")
+                let firstFetchedIDMatchesExpectedID = definitions.first!.id == 2914
+                XCTAssertTrue(firstFetchedIDMatchesExpectedID)
+                expectation.fulfill()
+            default:
+                XCTFail("fetch test failed")
+            }
+        }
+        wait(for: [expectation], timeout: 2)
+    }
+
+    func testFetchByInflectionsOrAlternateSpelling() throws {
+        let expectation = XCTestExpectation(description: "database fetching")
+        sut.fetch(query: "advocates") { result in
+            switch result {
+            case .success(let definitions):
+                let expectedID = 962
+                XCTAssertTrue(definitions.first!.id == expectedID, "first fetched ID should match \(expectedID)")
                 expectation.fulfill()
             default:
                 XCTFail("fetch test failed")

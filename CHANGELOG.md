@@ -1,8 +1,15 @@
-#  Changelog
+#  Release Notes
 
 ## 1.2
 
-- Added "Define in ”Milonchik”" service.
+### New
+
+- Added "Define in ”Milonchik”" system-wide service.
+
+### Miscellaneous
+
+- The search field is now centered.
+- Minor styling refinements.
 
 ## 1.1
 

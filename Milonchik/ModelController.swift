@@ -49,11 +49,11 @@ final class ModelController {
     }
 
     func fetch(query: String, completionHandler: @escaping (Swift.Result<[Definition], MilonchikError>) -> Void) {
-        let operation = DatabaseOperation(database: database, query: query)
+        let query = query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression)
+        let operation = DatabaseOperation(database: database, query: "\(query)%")
         operation.completionBlock = { [unowned operation] in
-            if !operation.isCancelled {
-                completionHandler(operation.result)
-            }
+            if operation.isCancelled { return }
+            completionHandler(operation.result)
         }
         queue.addOperation(operation)
     }
@@ -72,29 +72,32 @@ private class DatabaseOperation: Operation {
         super.init()
     }
 
+    //FIXME: upon cancellations, consider returning setting `result` to MilonchikError.cancelled
     override func main() {
         if isCancelled { return }
-        let statement = Tables.definitions
-            .select(Tables.definitions[Columns.id],
-                    Columns.inputLanguage,
-                    Columns.inputWord,
-                    Columns.partOfSpeech,
-                    Columns.inflectionKind,
-                    Columns.inflectionValue,
-                    Columns.synonym,
-                    Columns.translation,
-                    Columns.sample)
-            .filter(Columns.sanitizedWord.like("\(query)%"))
-            .limit(query.count * 10)
+        let statement = Tables.definitions.select(
+            Tables.definitions[Columns.id],
+            Columns.inputLanguage,
+            Columns.inputWord,
+            Columns.partOfSpeech,
+            Columns.inflectionKind,
+            Columns.inflectionValue,
+            Columns.synonym,
+            Columns.translation,
+            Columns.sample)
             .join(.leftOuter, Tables.inflections, on: Tables.definitions[Columns.id] == Tables.inflections[Columns.id])
-            .join(.leftOuter, Tables.translations,
-                  on: Tables.definitions[Columns.id] == Tables.translations[Columns.id])
+            .join(.leftOuter, Tables.translations, on: Tables.definitions[Columns.id] == Tables.translations[Columns.id])
             .join(.leftOuter, Tables.synonyms, on: Tables.definitions[Columns.id] == Tables.synonyms[Columns.id])
             .join(.leftOuter, Tables.samples, on: Tables.definitions[Columns.id] == Tables.samples[Columns.id])
+            .filter(
+                Tables.definitions[Columns.sanitizedWord].like(query, escape: "\\") ||
+                Tables.inflections[Columns.inflectionValue].like(query, escape: "\\")
+            )
+            .limit(query.count * 10)
             .order(Tables.definitions[Columns.id])
         if isCancelled { return }
         do {
-            let results = try self.database.prepare(statement)
+            let results = try database.prepare(statement)
             if isCancelled { return }
             let definitions = results.map({ makeRawDefinition(row: $0) }).merged()
             if definitions.isEmpty {
@@ -102,7 +105,7 @@ private class DatabaseOperation: Operation {
             } else {
                 result = .success(definitions)
             }
-        } catch let error {
+        } catch {
             result = .failure(.SQLError(error))
         }
      }

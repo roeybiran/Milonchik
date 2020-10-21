@@ -11,8 +11,7 @@ import Cocoa
 class Window: NSWindow {
     override func awakeFromNib() {
         setFrameAutosaveName(.mainWindow)
-        if #available(OSX 10.14, *) {
-            toolbar?.centeredItemIdentifier = .searchField
-        }
+        guard #available(OSX 10.14, *) else { return }
+        toolbar?.centeredItemIdentifier = .searchField
     }
 }

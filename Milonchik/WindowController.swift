@@ -80,7 +80,6 @@ extension WindowController: NSSearchFieldDelegate {
             #selector(moveToBeginningOfParagraph),
             #selector(moveToEndOfParagraph)
         ]
-        print(commandSelector)
         if selectors.contains(commandSelector) {
             NotificationCenter.default.post(name: .searchFieldKeyDown, object: nil)
             return true

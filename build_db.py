@@ -47,7 +47,8 @@ with connection:
                                       string=input_word,
                                       count=0,
                                       flags=re.IGNORECASE)
-        part_of_speech = None if (len(word["part_of_speech"]) == 0) else word["part_of_speech"]
+        part_of_speech = None if (
+            len(word["part_of_speech"]) == 0) else word["part_of_speech"]
         cursor.execute(
             'INSERT INTO definitions(id, input_lang, input_word, sanitized_input_word, part_of_speech) VALUES(?, ?, ?, ?, ?);',
             (id, input_lang, input_word, sanitized_input_word, part_of_speech))
@@ -69,6 +70,8 @@ with connection:
                 (id, inflection_kind, inflection_text))
 
 connection.close()
+
+# json definition looks like this:
 """
   {
     "part_of_speech": "noun",

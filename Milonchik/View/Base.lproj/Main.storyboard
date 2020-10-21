@@ -199,7 +199,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Milonchik Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Milonchik Help" enabled="NO" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -316,18 +316,18 @@
         <scene sceneID="f8f-su-X5o">
             <objects>
                 <viewController storyboardIdentifier="ListViewController" id="Bw4-73-gAe" customClass="ListViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="ZNu-Vo-YF9">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="ZNu-Vo-YF9">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="ZwB-y7-sVj">
+                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwB-y7-sVj">
                                 <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="hFw-Gx-93H">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" id="LHg-HB-0bG">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" viewBased="YES" id="LHg-HB-0bG">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="250"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -339,7 +339,7 @@
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="6tY-H6-Pd4">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" allowsUndo="NO" title="Text Cell" id="6tY-H6-Pd4">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -352,7 +352,7 @@
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Sg2-Xd-OQq">
                                                                     <rect key="frame" x="22" y="0.0" width="122" height="16"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Definition" id="cYh-dd-Zel">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Definition" id="cYh-dd-Zel">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -360,9 +360,9 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="Sg2-Xd-OQq" secondAttribute="trailing" id="17W-zi-Ki8"/>
-                                                                <constraint firstItem="Sg2-Xd-OQq" firstAttribute="leading" secondItem="GMA-RC-ms4" secondAttribute="leading" constant="24" id="Ttn-ys-UBH"/>
-                                                                <constraint firstItem="Sg2-Xd-OQq" firstAttribute="centerY" secondItem="GMA-RC-ms4" secondAttribute="centerY" id="q4V-K8-KSg"/>
+                                                                <constraint firstItem="Sg2-Xd-OQq" firstAttribute="centerY" secondItem="GMA-RC-ms4" secondAttribute="centerY" id="KYC-4u-AhP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Sg2-Xd-OQq" secondAttribute="trailing" id="WHw-ed-NCy"/>
+                                                                <constraint firstItem="Sg2-Xd-OQq" firstAttribute="leading" secondItem="GMA-RC-ms4" secondAttribute="leading" constant="24" id="lQ9-LS-CgQ"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="Sg2-Xd-OQq" id="Mgw-3p-KDQ"/>
@@ -398,9 +398,11 @@
         <scene sceneID="iw2-Uf-0GB">
             <objects>
                 <viewController id="xvo-a7-yBP" customClass="DetailViewController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <wkWebView key="view" wantsLayer="YES" allowsLinkPreview="NO" id="NsD-XG-2ob" customClass="DetailView" customModule="Milonchik" customModuleProvider="target">
+                    <wkWebView key="view" wantsLayer="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-XG-2ob" customClass="DetailView" customModule="Milonchik" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="gyl-Lr-twn"/>
+                        </constraints>
                         <wkWebViewConfiguration key="configuration" suppressesIncrementalRendering="YES">
                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                             <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO" javaScriptEnabled="NO"/>
