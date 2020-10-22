@@ -6,7 +6,7 @@
 //  Copyright © 2020 Roey Biran. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 import SQLite
 
 private enum Tables {
@@ -74,6 +74,15 @@ private class DatabaseOperation: Operation {
 
     //FIXME: upon cancellations, consider returning setting `result` to MilonchikError.cancelled
     override func main() {
+
+        // if isCancelled { return }
+        // let speller = NSSpellChecker.shared
+        // let range = NSRange(query.startIndex..<query.endIndex, in: query)
+        // let guesses = ["en", "he_IL"]
+        //     .compactMap({
+        //         speller.guesses(forWordRange: range, in: query, language: $0, inSpellDocumentWithTag: 0) ?? []
+        //     }).reduce([], +)
+
         if isCancelled { return }
         let statement = Tables.definitions.select(
             Tables.definitions[Columns.id],

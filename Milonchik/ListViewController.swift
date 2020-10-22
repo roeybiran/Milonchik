@@ -32,7 +32,7 @@ final class ListViewController: NSViewController, StateResponding {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsEmptySelection = false

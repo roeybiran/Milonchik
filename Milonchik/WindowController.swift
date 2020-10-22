@@ -91,6 +91,6 @@ extension WindowController: NSSearchFieldDelegate {
 extension WindowController {
     func setSearchFieldContents(to text: String) {
         searchField.stringValue = text
-        searchField.sendAction(#selector(ViewController.searchFieldContentsChanged(_:)), to: nil)
+        searchField.sendAction(#selector(ViewController.performSearch(_:)), to: nil)
     }
 }

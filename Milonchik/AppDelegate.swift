@@ -12,10 +12,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var managedControllers = [NSWindowController]()
+    //FIXME: is a strong reference needed?
     let serviceManager = ServicesManager()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.servicesProvider = serviceManager
+        try! HebrewSpellingInstaller().install()
+
+        // print(NSSpellChecker.shared.availableLanguages)
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

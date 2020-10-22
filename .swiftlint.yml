@@ -2,4 +2,5 @@ disabled_rules:
   - identifier_name
   - line_length
   - force_cast
-  # - force_try
+
+force_try: warning

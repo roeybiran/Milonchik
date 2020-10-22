@@ -35,12 +35,13 @@
       :root {
         color-scheme: light dark;
         --secondary-label: grey;
+        --body-offset: 20px;
       }
       body {
         font-family: -apple-system, sans-serif;
         max-width: 672px;
         margin: 0 auto;
-        padding: 20px;
+        padding: var(--body-offset);
         line-height: 1.5;
       }
       .placeholder {
@@ -82,13 +83,14 @@
         font-size: 1.4rem;
       }
 
-      ol li::before,
-      ul li::before {
-        content: "· ";
+      li {
+        list-style: disc;
+        margin-inline-start: var(--body-offset);
       }
 
-      .singular li::before {
-        content: none;
+      .singular li {
+        list-style: none;
+        margin-inline-start: 0;
       }
 
       h2::after {

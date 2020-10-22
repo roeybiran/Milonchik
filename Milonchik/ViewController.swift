@@ -47,14 +47,10 @@ final class ViewController: NSSplitViewController {
     // MARK: - state
     private func handleStateChange(newState: State) {
         switch newState {
-        case .noQuery, .results, .noResults, .definitionSelectionChanged:
+        case .noQuery:
             updateViews(with: newState)
         case .queryChanged(let query):
-            if query.isEmpty {
-                state = .noQuery
-            } else {
-                state = .fetchShouldStart(withQuery: query)
-            }
+            state = query.isEmpty ? .noQuery : .fetchShouldStart(withQuery: query)
         case .fetchShouldStart(let query):
             wordModelController.cancelFetch()
             wordModelController.fetch(query: query) { result in
@@ -71,6 +67,8 @@ final class ViewController: NSSplitViewController {
             case .failure(.SQLError(let error)):
                 state = .error(error)
             }
+        case .results, .noResults, .definitionSelectionChanged:
+            updateViews(with: newState)
         //FIXME: better error handling
         case .error(let error):
             presentError(error)
@@ -86,7 +84,7 @@ final class ViewController: NSSplitViewController {
         })
     }
 
-    @IBAction func searchFieldContentsChanged(_ sender: NSTextField) {
+    @IBAction func performSearch(_ sender: NSTextField) {
         state = .queryChanged(to: sender.stringValue.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 }

@@ -259,7 +259,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </searchFieldCell>
                                         <connections>
-                                            <action selector="searchFieldContentsChanged:" target="Oky-zY-oP4" id="PBD-wf-ZSP"/>
+                                            <action selector="performSearch:" target="Oky-zY-oP4" id="PBD-wf-ZSP"/>
                                         </connections>
                                     </searchField>
                                 </toolbarItem>

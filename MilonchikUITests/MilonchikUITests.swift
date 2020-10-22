@@ -36,19 +36,15 @@ class MilonchikUITests: XCTestCase {
 
     func testFocusSearchWithHotkey() throws {
         sut.typeKey("f", modifierFlags: [.command, .alternate])
-        XCTAssertTrue(sut.searchFields.firstMatch.isSelected)
+        sut.typeText("foo")
+        // can't simply check for focus because rdar://49950847
+        XCTAssertFalse((sut.searchFields.firstMatch.value as! String).isEmpty)
+
     }
 
     func testTabbing() throws {
         sut.typeKey("t", modifierFlags: .command)
         XCTAssertTrue(sut.tabs.count > 1)
-    }
-
-    func testNoReloadContextMenu() throws {
-        let webView = sut.webViews
-        let placeholder = webView.staticTexts.firstMatch
-        placeholder.coordinate(withNormalizedOffset: CGVector(dx: 5, dy: 5)).click()
-        XCTAssertTrue(webView.menuItems.count == 0)
     }
 
     // func testLaunchPerformance() throws {
