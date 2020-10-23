@@ -2,12 +2,8 @@
 
 ## 1.2
 
-### New
-
+- Search now looks in derivatives too.
 - Added "Define in ”Milonchik”" system-wide service.
-
-### Miscellaneous
-
 - The search field is now centered.
 - Minor styling refinements.
 

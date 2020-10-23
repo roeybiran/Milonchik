@@ -9,6 +9,7 @@ Lightweight English-Hebrew dictionary for macOS.
 - Fast, light and made for macOS.
 - Type a word in English and get a Hebrew translation, and vice versa.
 - For many words, includes inflections, synonyms and examples.
+- Inclues a service to define currently selected word, even if Milonchik isn't currently running.
 
 [![App Store badge](https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg)](https://apps.apple.com/il/app/milonchik/id1534607376?mt=12)
 
@@ -18,16 +19,16 @@ Lightweight English-Hebrew dictionary for macOS.
 
 While the search field is focused:
 
-- Press <kbd>↑</kbd> to select the previous entry in the definitions list.
-- Press <kbd>↓</kbd> to select the next entry in the definitions list.
-- Press <kbd>⌥</kbd>+<kbd>↑</kbd> to select the first entry in the definitions list.
-- Press <kbd>⌥</kbd>+<kbd>↓</kbd> to select the last entry in the definitions list.
+- Press **↑** to select the previous entry in the definitions list.
+- Press **↓** to select the next entry in the definitions list.
+- Press **⌥+↑** to select the first entry in the definitions list.
+- Press **⌥+↓** to select the last entry in the definitions list.
 
-##  Roadmap
+## Roadmap
 
+- More robust, lenient search.
 - Morfix as a definitions source.
-- Navigable lookup history per session.
+- Session history.
 - Agent mode (hide in Dock).
 - Basic drag (e.g. text clippings -> app) and drop (e.g. definition -> text file) support.
-- State restoration
-- More robust, lenient search
+- State restoration.
