@@ -11,22 +11,27 @@ final class ListViewController: NSViewController, StateResponding {
     /// a handler called when a new definition has been selected.
     var userSelectionChangedHandler: ((_ newDefinition: Definition) -> Void)?
 
-    private var definitions = [Definition]()
+    private var items = [Definition?]()
 
     func update(with state: ViewController.State) {
         switch state {
-        case .results(let definitions, _):
-            self.definitions = definitions
+        case .results(let result):
+            items.removeAll()
+            items.append(contentsOf: result.exactMatches)
+            if !result.partialMatches.isEmpty {
+                items.append(contentsOf: [nil] + result.partialMatches)
+            }
             sidebar.isCollapsed = false
         case .noQuery, .noResults:
-            definitions.removeAll()
+            items.removeAll()
             sidebar.animator().isCollapsed = true
         default:
             return
         }
         tableView.reloadData()
-        if definitions.count > 0 {
-            tableView.selectRowIndexes([0, 0], byExtendingSelection: false)
+        if items.count > 0 {
+            guard let firstValidRow = items.firstIndex(where: { $0 != nil }) else { return }
+            tableView.selectRowIndexes([firstValidRow], byExtendingSelection: false)
         }
     }
 
@@ -46,23 +51,33 @@ final class ListViewController: NSViewController, StateResponding {
 
 extension ListViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return definitions.count
+        return items.count
     }
 }
 
 extension ListViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let item = definitions[row]
-        let cellView = tableView.makeView(withIdentifier: .tableCellView, owner: nil)
+        guard let definition = items[row] else {
+            return tableView.makeView(withIdentifier: .suggestionCellView, owner: nil)
+        }
+        let cellView = tableView.makeView(withIdentifier: .primaryCellView, owner: nil)
         if let cell = cellView as? NSTableCellView {
-            cell.textField?.stringValue = item.inputWord
+            cell.textField?.stringValue = definition.inputWord
             return cell
         }
         return nil
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        userSelectionChangedHandler?(definitions[tableView.selectedRow])
+        guard let selectedDefinition = items[tableView.selectedRow] else { return }
+        userSelectionChangedHandler?(selectedDefinition)
+    }
+
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        if row > items.count - 1 || row < 0 || items[row] == nil {
+            return false
+        }
+        return true
     }
 }
 

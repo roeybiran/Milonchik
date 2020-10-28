@@ -25,9 +25,10 @@ class ModelControllerTests: XCTestCase {
         let expectation = XCTestExpectation(description: "database fetching")
         sut.fetch(query: "apple") { result in
             switch result {
-            case .success(let definitions):
-                let firstFetchedIDMatchesExpectedID = definitions.first!.id == 2914
-                XCTAssertTrue(firstFetchedIDMatchesExpectedID)
+            case .success(let result):
+                let expectedID = 2913
+                let obtainedID = result.exactMatches.first!.id
+                XCTAssertTrue(obtainedID == expectedID, "error: got id \(obtainedID), expected \(expectedID)")
                 expectation.fulfill()
             default:
                 XCTFail("fetch test failed")
@@ -40,9 +41,40 @@ class ModelControllerTests: XCTestCase {
         let expectation = XCTestExpectation(description: "database fetching")
         sut.fetch(query: "advocates") { result in
             switch result {
-            case .success(let definitions):
-                let expectedID = 962
-                XCTAssertTrue(definitions.first!.id == expectedID, "first fetched ID should match \(expectedID)")
+            case .success(let result):
+                let expectedID = 961
+                let resultID = result.exactMatches.first!.id
+                XCTAssertTrue(resultID == expectedID, "fail: got ID \(resultID), expected \(expectedID)")
+                expectation.fulfill()
+            default:
+                XCTFail("fetch test failed")
+            }
+        }
+        wait(for: [expectation], timeout: 3)
+    }
+
+    func testDefinitionsAreUnique() throws {
+        let expectation = XCTestExpectation(description: "database fetching")
+        sut.fetch(query: "advocates") { result in
+            switch result {
+            case .success(let result):
+                let allIDs = result.allMatches.map({ return $0.id })
+                let uniqueIDs = Set(allIDs)
+                XCTAssertTrue(allIDs.count == uniqueIDs.count)
+                expectation.fulfill()
+            default:
+                XCTFail("fetch test failed")
+            }
+        }
+        wait(for: [expectation], timeout: 3)
+    }
+
+    func testFetchingPartialMatches() throws {
+        let expectation = XCTestExpectation(description: "database fetching")
+        sut.fetch(query: "cap") { result in
+            switch result {
+            case .success(let result):
+                XCTAssertTrue(!result.exactMatches.isEmpty && !result.partialMatches.isEmpty)
                 expectation.fulfill()
             default:
                 XCTFail("fetch test failed")

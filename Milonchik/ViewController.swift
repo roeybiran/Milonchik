@@ -7,15 +7,17 @@
 //
 import Cocoa
 
-protocol StateResponding {
-    func update(with state: ViewController.State)
-}
-
-protocol ViewControllerDelegate: AnyObject {
-    func didChangeState(to state: ViewController.State)
-}
-
 final class ViewController: NSSplitViewController {
+
+    enum State {
+        case noQuery
+        case queryChanged(to: String)
+        case fetchShouldStart(withQuery: String)
+        case fetchDidEnd(with: Result<DBFetchResult, MilonchikError>)
+        case definitionSelectionChanged(to: Definition)
+        case results(DBFetchResult)
+        case noResults(forQuery: String)
+    }
 
     @IBOutlet private var sidebar: SidebarView!
 
@@ -44,34 +46,33 @@ final class ViewController: NSSplitViewController {
 
     }
 
-    // MARK: - state
     private func handleStateChange(newState: State) {
         switch newState {
         case .noQuery:
             updateViews(with: newState)
         case .queryChanged(let query):
+            wordModelController.cancelFetch()
             state = query.isEmpty ? .noQuery : .fetchShouldStart(withQuery: query)
         case .fetchShouldStart(let query):
-            wordModelController.cancelFetch()
             wordModelController.fetch(query: query) { result in
                 DispatchQueue.main.async {
-                    self.state = .fetchDidEnd(with: result, forQuery: query)
+                    self.state = .fetchDidEnd(with: result)
                 }
             }
-        case let .fetchDidEnd(result, query):
+        case let .fetchDidEnd(result):
             switch result {
-            case .success(let definitions):
-                state = .results(definitions: definitions, forQuery: query)
-            case .failure(.noDefinitions):
+            case .success(let result):
+                state = .results(result)
+            case .failure(.noDefinitions(let query)):
                 state = .noResults(forQuery: query)
+            case .failure(.userCancelled):
+                break
             case .failure(.SQLError(let error)):
-                state = .error(error)
+                //FIXME: better error handling
+                presentError(error)
             }
         case .results, .noResults, .definitionSelectionChanged:
             updateViews(with: newState)
-        //FIXME: better error handling
-        case .error(let error):
-            presentError(error)
         }
         delegate?.didChangeState(to: newState)
     }
@@ -89,15 +90,10 @@ final class ViewController: NSSplitViewController {
     }
 }
 
-extension ViewController {
-    enum State {
-        case noQuery
-        case queryChanged(to: String)
-        case fetchShouldStart(withQuery: String)
-        case fetchDidEnd(with: Result<[Definition], MilonchikError>, forQuery: String)
-        case definitionSelectionChanged(to: Definition)
-        case results(definitions: [Definition], forQuery: String)
-        case noResults(forQuery: String)
-        case error(Error)
-    }
+protocol StateResponding {
+    func update(with state: ViewController.State)
+}
+
+protocol ViewControllerDelegate: AnyObject {
+    func didChangeState(to state: ViewController.State)
 }

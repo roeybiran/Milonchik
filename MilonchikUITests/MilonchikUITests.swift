@@ -10,6 +10,8 @@ import XCTest
 
 class MilonchikUITests: XCTestCase {
 
+    // will fail if keyboard layout is not english!
+
     let sut = XCUIApplication()
 
     override func setUpWithError() throws {
@@ -26,12 +28,12 @@ class MilonchikUITests: XCTestCase {
         searchField.click()
         searchField.typeText("apple")
         sut.staticTexts["apple butter"].click()
-        XCTAssertTrue(sut.webViews.staticTexts["ממרח תפוחים"].exists)
+        XCTAssert(sut.webViews.staticTexts["ממרח תפוחים"].exists)
         // window title reflects search results
-        XCTAssertTrue(sut.windows.firstMatch.title != "Milonchik")
+        XCTAssert(sut.windows.firstMatch.title != "Milonchik")
         // navigation the table from the text field
         sut.typeKey(.downArrow, modifierFlags: .function)
-        XCTAssertTrue(sut.staticTexts["גון ירוק תפוח"].exists)
+        XCTAssert(sut.staticTexts["גון ירוק תפוח"].exists)
     }
 
     func testFocusSearchWithHotkey() throws {
@@ -44,7 +46,7 @@ class MilonchikUITests: XCTestCase {
 
     func testTabbing() throws {
         sut.typeKey("t", modifierFlags: .command)
-        XCTAssertTrue(sut.tabs.count > 1)
+        XCTAssert(sut.tabs.count > 1)
     }
 
     // func testLaunchPerformance() throws {

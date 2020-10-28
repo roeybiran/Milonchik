@@ -1,6 +1,6 @@
 # Milonchik
 
-Lightweight English-Hebrew dictionary for macOS.
+Lightweight English-Hebrew Dictionary
 
 ![Milonchik App Icon](images/readme-appicon.png)
 
@@ -26,7 +26,7 @@ While the search field is focused:
 
 ## Roadmap
 
-- More robust, lenient search.
+- More lenient search.
 - Morfix as a definitions source.
 - Session history.
 - Agent mode (hide in Dock).

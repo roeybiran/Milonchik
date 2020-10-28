@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <style>
+      /* resets */
+
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      body {
+        line-height: 1;
+      }
+
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      html {
+        font-size: 10px;
+      }
+
+      /* custom styles */
+
+      :root {
+        color-scheme: light dark;
+        --secondary-label: grey;
+        --body-offset: 20px;
+      }
+      body {
+        font-family: -apple-system, sans-serif;
+        max-width: 672px;
+        margin: 0 auto;
+        padding: var(--body-offset);
+        line-height: 1.5;
+      }
+      .placeholder {
+        color: var(--secondary-label);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        margin: 24px 0 16px 0;
+      }
+
+      h1 span {
+        color: var(--secondary-label);
+        font-size: 1.7rem;
+      }
+
+      h2,
+      li span {
+        color: var(--secondary-label);
+        font-size: 1.3rem;
+      }
+
+      p,
+      ul,
+      ol {
+        font-size: 1.4rem;
+      }
+
+      li {
+        list-style: disc;
+        margin-inline-start: var(--body-offset);
+      }
+
+      .singular li {
+        list-style: none;
+        margin-inline-start: 0;
+      }
+
+      h2::after {
+        display: block;
+        content: "";
+        border-bottom: 0.5px dotted var(--secondary-label);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      b {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    $BODY
+  </body>
+</html>

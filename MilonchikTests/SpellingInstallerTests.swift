@@ -12,5 +12,14 @@ import XCTest
 class SpellingInstallerTests: XCTestCase {
     func testSpellingInstaller() throws {
         XCTAssertNoThrow(try HebrewSpellingInstaller().install())
+
+        let fm = FileManager.default
+        let spellFolder = fm
+            .urls(for: .libraryDirectory, in: .userDomainMask).first!
+            .appendingPathComponent("Spelling", isDirectory: true)
+        [("he_IL", "aff"), ("he_IL", "dic")].forEach({
+            let path = spellFolder.appendingPathComponent($0.0).appendingPathExtension($0.1)
+            XCTAssertTrue(fm.fileExists(atPath: path.path))
+        })
     }
 }

@@ -54,13 +54,14 @@ extension WindowController: ViewControllerDelegate {
     func didChangeState(to state: ViewController.State) {
         switch state {
         case .noQuery:
-            window?.title = .appName
+            window?.title = Constants.appName
         case .fetchShouldStart:
             progressIndicator.startAnimation(nil)
         case .fetchDidEnd:
             progressIndicator.stopAnimation(nil)
-        case let .results(definitions, query):
-            let count = definitions.count
+        case .results(let result):
+            let count = result.count
+            let query = result.query
             window?.title = "“\(query)” (\(count) \(count > 1 ? "results" : "result"))"
         case .noResults(let query):
             window?.title = "”\(query)” (0 results)"

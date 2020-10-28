@@ -8,20 +8,21 @@
 
 import Cocoa
 
+enum Constants {
+    static let appName = "Milonchik"
+}
+
 extension NSNotification.Name {
     static let searchFieldKeyDown = NSNotification.Name("searchFieldKeyDown")
 }
 
 extension NSUserInterfaceItemIdentifier {
-    static let tableCellView = NSUserInterfaceItemIdentifier("TableCellView")
+    static let primaryCellView = NSUserInterfaceItemIdentifier("DefinitionCell")
+    static let suggestionCellView = NSUserInterfaceItemIdentifier("SuggestionCell")
 }
 
 extension NSStoryboard.SceneIdentifier {
     static let windowController = NSStoryboard.SceneIdentifier("WindowController")
-}
-
-extension String {
-    static let appName = "Milonchik"
 }
 
 extension NSWindow.FrameAutosaveName {
