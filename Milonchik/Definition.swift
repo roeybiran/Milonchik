@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Definition: Comparable {
+struct Definition: Comparable, Hashable {
     let id: Int
     let inputWord: String
     let translations: [String]

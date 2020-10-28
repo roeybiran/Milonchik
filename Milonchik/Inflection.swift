@@ -6,7 +6,7 @@
 //  Copyright © 2020 Roey Biran. All rights reserved.
 //
 
-struct Inflection: Equatable, Codable {
+struct Inflection: Equatable, Codable, Hashable {
     let contents: String
     let kind: String
 

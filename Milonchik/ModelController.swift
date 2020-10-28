@@ -49,66 +49,13 @@ private class DatabaseOperation: Operation {
         super.init()
     }
 
-    //FIXME: upon cancellations, consider returning setting `result` to MilonchikError.cancelled
+    //FIXME: database operation
+    // upon cancellations, consider returning setting `result` to MilonchikError.cancelled
+    // optimize (e.g. consolidate database requests, more elegant deduplication)
     override func main() {
         if isCancelled { return }
         let pattern = "\(query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression))%"
-        let baseStatement = makeBaseStatement()
-        let exactMatchesStatement = baseStatement.filter(
-            Tables.definitions[Columns.sanitizedWord].like(pattern, escape: "\\") ||
-            Tables.inflections[Columns.inflectionValue].like(pattern, escape: "\\") ||
-            Tables.alternateSpellings[Columns.alternateSpelling] == query
-        )
-
-        do {
-            let exactMatches = try execute(query: pattern, statement: exactMatchesStatement)
-
-            // partial matches/suggestions
-            var partialMatches = [Definition]()
-            if exactMatches.count < 5 {
-                let partialMatchesStatement = baseStatement.filter(
-                    guesses(for: pattern).contains(Tables.definitions[Columns.sanitizedWord]) &&
-                    /* deduplication! */
-                    !exactMatches.map({ Int64($0.id) }).contains(Tables.definitions[Columns.id])
-                )
-                partialMatches = try execute(query: pattern, statement: partialMatchesStatement)
-            }
-
-            let fetchResult = DBFetchResult(exactMatches: exactMatches, partialMatches: partialMatches, query: query)
-
-            if isCancelled { return }
-            if fetchResult.count == 0 {
-                result = .failure(.noDefinitions(for: query))
-            } else {
-                result = .success(fetchResult)
-            }
-        } catch {
-            result = .failure(.SQLError(error))
-        }
-    }
-
-    private func execute(query: String, statement: Table) throws -> [Definition] {
-        return try database
-            .prepare(statement
-                .limit(query.count * 10)
-                .order(Tables.definitions[Columns.id]))
-                .map({ makeRawDefinition(row: $0) })
-            .merged()
-    }
-
-    private func guesses(for query: String) -> [String] {
-        let range = NSRange(query.startIndex..<query.endIndex, in: query)
-        return ["en", "he_IL"]
-            .compactMap({
-                NSSpellChecker
-                .shared
-                .guesses(forWordRange: range, in: query, language: $0, inSpellDocumentWithTag: 0) ?? []
-            })
-            .reduce([], +)
-    }
-
-    private func makeBaseStatement() -> Table {
-        return Tables.definitions.select(
+        let baseStatement = Tables.definitions.select(
             Tables.definitions[Columns.id],
             Columns.inputLanguage,
             Columns.inputWord,
@@ -124,6 +71,56 @@ private class DatabaseOperation: Operation {
             .join(.leftOuter, Tables.synonyms, on: Tables.definitions[Columns.id] == Tables.synonyms[Columns.id])
             .join(.leftOuter, Tables.samples, on: Tables.definitions[Columns.id] == Tables.samples[Columns.id])
             .join(.leftOuter, Tables.alternateSpellings, on: Tables.definitions[Columns.id] == Tables.alternateSpellings[Columns.id])
+
+        let exactMatchesStatement = baseStatement.filter(
+            Tables.definitions[Columns.sanitizedWord].like(pattern, escape: "\\") ||
+            Tables.inflections[Columns.inflectionValue].like(pattern, escape: "\\") ||
+            Tables.alternateSpellings[Columns.alternateSpelling] == query
+        )
+
+        var exactMatches = [Definition]()
+        var partialMatches = [Definition]()
+        do {
+            exactMatches = try execute(query: pattern, statement: exactMatchesStatement)
+            if exactMatches.count < 5 {
+                let partialMatchesStatement = baseStatement.filter(
+                    guesses(for: pattern).contains(Tables.definitions[Columns.sanitizedWord]) &&
+                    !exactMatches.map({ Int64($0.id) }).contains(Tables.definitions[Columns.id]) // deduplication
+                )
+                partialMatches = try execute(query: pattern, statement: partialMatchesStatement)
+            }
+        } catch {
+            result = .failure(.SQLError(error))
+            return
+        }
+
+        let fetchResult = DBFetchResult(exactMatches: exactMatches, partialMatches: partialMatches, query: query)
+        if isCancelled { return }
+        if fetchResult.count == 0 {
+            result = .failure(.noDefinitions(for: query))
+        } else {
+            result = .success(fetchResult)
+        }
+    }
+
+    private func execute(query: String, statement: Table) throws -> [Definition] {
+        return try database
+            .prepare(statement
+                        .limit(query.count * 10)
+                        .order(Tables.definitions[Columns.id]))
+            .map({ makeRawDefinition(row: $0) })
+            .merged()
+    }
+
+    private func guesses(for query: String) -> [String] {
+        let range = NSRange(query.startIndex..<query.endIndex, in: query)
+        return ["en", "he_IL"]
+            .compactMap({
+                NSSpellChecker
+                    .shared
+                    .guesses(forWordRange: range, in: query, language: $0, inSpellDocumentWithTag: 0) ?? []
+            })
+            .reduce([], +)
     }
 
     private func makeRawDefinition(row: Row) -> DefinitionRaw {

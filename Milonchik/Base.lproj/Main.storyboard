@@ -223,7 +223,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="WindowController" id="B8D-0N-5wS" customClass="WindowController" customModule="Milonchik" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA" customClass="Window" customModule="Milonchik" customModuleProvider="target">
+                    <window key="window" title="Milonchik" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -346,7 +346,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="TableCellView" id="GMA-RC-ms4">
+                                                        <tableCellView identifier="DefinitionCell" id="GMA-RC-ms4" userLabel="DefinitionCell">
                                                             <rect key="frame" x="1" y="1" width="142" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -366,6 +366,28 @@
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="Sg2-Xd-OQq" id="Mgw-3p-KDQ"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <tableCellView identifier="SuggestionCell" id="CT2-M2-cPw" userLabel="SuggestionCell">
+                                                            <rect key="frame" x="1" y="19" width="142" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ueh-L5-gfr">
+                                                                    <rect key="frame" x="6" y="0.0" width="138" height="16"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Suggestions" id="Tat-zN-wwx">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="ueh-L5-gfr" firstAttribute="centerY" secondItem="CT2-M2-cPw" secondAttribute="centerY" id="SY9-pN-hVR"/>
+                                                                <constraint firstItem="ueh-L5-gfr" firstAttribute="leading" secondItem="CT2-M2-cPw" secondAttribute="leading" constant="8" id="WLi-ud-Brk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ueh-L5-gfr" secondAttribute="trailing" id="wbi-sw-oqI"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="ueh-L5-gfr" id="he3-H5-f7k"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
