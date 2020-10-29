@@ -55,8 +55,9 @@ private class DatabaseOperation: Operation {
     override func main() {
         if isCancelled { return }
         let pattern = "\(query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression))%"
-        let baseStatement = Tables.definitions.select(
+        let statement = Tables.definitions.select(
             Tables.definitions[Columns.id],
+            Columns.sanitizedWord,
             Columns.inputLanguage,
             Columns.inputWord,
             Columns.partOfSpeech,
@@ -71,30 +72,33 @@ private class DatabaseOperation: Operation {
             .join(.leftOuter, Tables.synonyms, on: Tables.definitions[Columns.id] == Tables.synonyms[Columns.id])
             .join(.leftOuter, Tables.samples, on: Tables.definitions[Columns.id] == Tables.samples[Columns.id])
             .join(.leftOuter, Tables.alternateSpellings, on: Tables.definitions[Columns.id] == Tables.alternateSpellings[Columns.id])
+            .filter(
+                Tables.definitions[Columns.sanitizedWord].like(pattern, escape: "\\") ||
+                Tables.inflections[Columns.inflectionValue] == query ||
+                Tables.alternateSpellings[Columns.alternateSpelling] == query ||
+                guesses(for: query).contains(Tables.definitions[Columns.sanitizedWord])
+            )
+            .order(Tables.definitions[Columns.id])
 
-        let exactMatchesStatement = baseStatement.filter(
-            Tables.definitions[Columns.sanitizedWord].like(pattern, escape: "\\") ||
-            Tables.inflections[Columns.inflectionValue].like(pattern, escape: "\\") ||
-            Tables.alternateSpellings[Columns.alternateSpelling] == query
-        )
-
-        var exactMatches = [Definition]()
-        var partialMatches = [Definition]()
+        var exactMatches = [DefinitionRaw]()
+        var partialMatches = [DefinitionRaw]()
         do {
-            exactMatches = try execute(query: pattern, statement: exactMatchesStatement)
-            if exactMatches.count < 5 {
-                let partialMatchesStatement = baseStatement.filter(
-                    guesses(for: pattern).contains(Tables.definitions[Columns.sanitizedWord]) &&
-                    !exactMatches.map({ Int64($0.id) }).contains(Tables.definitions[Columns.id]) // deduplication
-                )
-                partialMatches = try execute(query: pattern, statement: partialMatchesStatement)
-            }
+            try database
+                .prepare(statement)
+                .forEach({
+                    let raw = makeRawDefinition(row: $0)
+                    if raw.translatedWordSanitized.contains(query) {
+                        exactMatches.append(raw)
+                    } else {
+                        partialMatches.append(raw)
+                    }
+                })
         } catch {
             result = .failure(.SQLError(error))
             return
         }
 
-        let fetchResult = DBFetchResult(exactMatches: exactMatches, partialMatches: partialMatches, query: query)
+        let fetchResult = DBFetchResult(exactMatches: exactMatches.merged(), partialMatches: partialMatches.merged(), query: query)
         if isCancelled { return }
         if fetchResult.count == 0 {
             result = .failure(.noDefinitions(for: query))
@@ -103,36 +107,25 @@ private class DatabaseOperation: Operation {
         }
     }
 
-    private func execute(query: String, statement: Table) throws -> [Definition] {
-        return try database
-            .prepare(statement
-                        .limit(query.count * 10)
-                        .order(Tables.definitions[Columns.id]))
-            .map({ makeRawDefinition(row: $0) })
-            .merged()
-    }
 
     private func guesses(for query: String) -> [String] {
         let range = NSRange(query.startIndex..<query.endIndex, in: query)
-        return ["en", "he_IL"]
-            .compactMap({
-                NSSpellChecker
-                    .shared
-                    .guesses(forWordRange: range, in: query, language: $0, inSpellDocumentWithTag: 0) ?? []
-            })
-            .reduce([], +)
+        return ["en", "he_IL"].compactMap({NSSpellChecker.shared
+                .guesses(forWordRange: range, in: query, language: $0, inSpellDocumentWithTag: 0) ?? []
+            }).reduce([], +)
     }
 
     private func makeRawDefinition(row: Row) -> DefinitionRaw {
         return DefinitionRaw(id: Int(row[Columns.id]),
-                             word: row[Columns.inputWord],
+                             translatedWord: row[Columns.inputWord],
                              translation: row[Columns.translation],
                              partOfSpeech: row[Columns.partOfSpeech],
                              synonym: row[Columns.synonym],
                              inflectionKind: row[Columns.inflectionKind],
                              inflectionValue: row[Columns.inflectionValue],
                              sample: row[Columns.sample],
-                             inputLanguage: InputLanguage(rawValue: row[Columns.inputLanguage])!)
+                             translatedLanguage: InputLanguage(rawValue: row[Columns.inputLanguage])!,
+                             translatedWordSanitized: row[Columns.sanitizedWord] )
     }
 }
 

@@ -26,7 +26,7 @@ struct Definition: Comparable, Hashable {
 extension Definition {
     init(_ raw: DefinitionRaw) {
         self.id = raw.id
-        self.inputWord = raw.word
+        self.inputWord = raw.translatedWord
         self.translations = [raw.translation]
         self.partOfSpeech = raw.partOfSpeech
         if let synonym = raw.synonym {
@@ -44,7 +44,7 @@ extension Definition {
         } else {
             self.inflections = []
         }
-        self.inputLanguage = raw.inputLanguage
+        self.inputLanguage = raw.translatedLanguage
     }
 }
 

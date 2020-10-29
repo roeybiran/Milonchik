@@ -10,14 +10,15 @@ import Foundation
 
 struct DefinitionRaw: Comparable {
     let id: Int
-    let word: String
+    let translatedWord: String
     let translation: String
     let partOfSpeech: String?
     let synonym: String?
     let inflectionKind: String?
     let inflectionValue: String?
     let sample: String?
-    let inputLanguage: InputLanguage
+    let translatedLanguage: InputLanguage
+    let translatedWordSanitized: String
 
     static func < (lhs: DefinitionRaw, rhs: DefinitionRaw) -> Bool {
         return lhs.id < rhs.id
