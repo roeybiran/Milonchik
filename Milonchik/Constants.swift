@@ -13,22 +13,5 @@ enum Constants {
 }
 
 extension NSNotification.Name {
-    static let searchFieldKeyDown = NSNotification.Name("searchFieldKeyDown")
-}
-
-extension NSUserInterfaceItemIdentifier {
-    static let primaryCellView = NSUserInterfaceItemIdentifier("DefinitionCell")
-    static let suggestionCellView = NSUserInterfaceItemIdentifier("SuggestionCell")
-}
-
-extension NSStoryboard.SceneIdentifier {
-    static let windowController = NSStoryboard.SceneIdentifier("WindowController")
-}
-
-extension NSWindow.FrameAutosaveName {
-    static let mainWindow = NSWindow.FrameAutosaveName("MainWindow")
-}
-
-extension NSToolbarItem.Identifier {
-    static let searchField = NSToolbarItem.Identifier("SearchField")
+    static let viewControllerStateDidChange = NSNotification.Name("ViewControllerStateDidChange")
 }

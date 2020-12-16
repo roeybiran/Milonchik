@@ -15,30 +15,30 @@
 		CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C02CD24B85CF2005E55B2 /* Definition.swift */; };
 		CC0C02D024B85CF7005E55B2 /* Inflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0C02CF24B85CF7005E55B2 /* Inflection.swift */; };
 		CC0C02D224B88288005E55B2 /* milon.db in Resources */ = {isa = PBXBuildFile; fileRef = CC0C02D124B85E60005E55B2 /* milon.db */; };
-		CC1E487D2530EB7C006EEB09 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E487C2530EB7C006EEB09 /* ServicesManager.swift */; };
 		CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */; };
 		CC22F5002524A4B30043D6B1 /* MilonchikUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */; };
 		CC489EE324C38C6C0035BCD8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC489EE224C38C6C0035BCD8 /* WebKit.framework */; };
 		CC4AC6762540C2E9009DD9F6 /* he_IL.dic in Resources */ = {isa = PBXBuildFile; fileRef = CC4AC6742540C2E9009DD9F6 /* he_IL.dic */; };
 		CC4AC6772540C2E9009DD9F6 /* he_IL.aff in Resources */ = {isa = PBXBuildFile; fileRef = CC4AC6752540C2E9009DD9F6 /* he_IL.aff */; };
-		CC4AC67C2540D032009DD9F6 /* HebrewSpellingInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AC67B2540D032009DD9F6 /* HebrewSpellingInstaller.swift */; };
+		CC4DCBA3257EC54B0067CAAA /* NSWindow+makeCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4DCBA2257EC54B0067CAAA /* NSWindow+makeCustom.swift */; };
+		CC4DCBAB257ED0FD0067CAAA /* NSTableView+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4DCBAA257ED0FD0067CAAA /* NSTableView+custom.swift */; };
 		CC50519224B9C16C0075AF85 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CC50519124B9C16C0075AF85 /* SQLite */; };
 		CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */; };
 		CC5E6DEE24C4F71900A7BB7B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6DED24C4F71900A7BB7B /* Credits.rtf */; };
-		CC75A813251017C80013E479 /* Array+Merged.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75A812251017C80013E479 /* Array+Merged.swift */; };
+		CC5F25FD258964F5000D6C65 /* NSTableCellView+makeCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F25FC258964F5000D6C65 /* NSTableCellView+makeCustom.swift */; };
+		CC6B99C82583C46D007C278D /* NSScrollView+makeCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B99C72583C46D007C278D /* NSScrollView+makeCustom.swift */; };
 		CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159C824B7C7E80091D89E /* AppDelegate.swift */; };
 		CC8159CD24B7C7EB0091D89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CC24B7C7EB0091D89E /* Assets.xcassets */; };
 		CC8159D024B7C7EB0091D89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC8159CE24B7C7EB0091D89E /* Main.storyboard */; };
 		CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159E624B7CBCD0091D89E /* ViewController.swift */; };
 		CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8159EA24B7CDBF0091D89E /* WindowController.swift */; };
-		CCA710E825498EBA003BA5BB /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA710E525498EBA003BA5BB /* SidebarView.swift */; };
 		CCA710E925498EBA003BA5BB /* DefinitionDetail.html in Resources */ = {isa = PBXBuildFile; fileRef = CCA710E625498EBA003BA5BB /* DefinitionDetail.html */; };
 		CCA710EA25498EBA003BA5BB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA710E725498EBA003BA5BB /* DetailView.swift */; };
-		CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */; };
-		CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* InputLanguage.swift */; };
-		CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D324C17A17007489FD /* Array+Uniqified.swift */; };
+		CCAA5D972568169B005FE770 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA5D962568169B005FE770 /* State.swift */; };
+		CCBA86D224C17985007489FD /* TranslatedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* TranslatedLanguage.swift */; };
 		CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA615F2525CE040025D825 /* NetworkModelController.swift */; };
-		CCDE5F912546D41E002AA6FE /* DBFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE5F902546D41E002AA6FE /* DBFetchResult.swift */; };
+		CCDE5F912546D41E002AA6FE /* DatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */; };
+		CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		CC0C02D124B85E60005E55B2 /* milon.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = milon.db; sourceTree = "<group>"; };
 		CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY.md; sourceTree = "<group>"; };
 		CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
-		CC1E487C2530EB7C006EEB09 /* ServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
 		CC22F4D62524A3F60043D6B1 /* MilonchikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllerTests.swift; sourceTree = "<group>"; };
 		CC22F4DA2524A3F60043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,10 +78,12 @@
 		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC4AC6742540C2E9009DD9F6 /* he_IL.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = he_IL.dic; sourceTree = "<group>"; };
 		CC4AC6752540C2E9009DD9F6 /* he_IL.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = he_IL.aff; sourceTree = "<group>"; };
-		CC4AC67B2540D032009DD9F6 /* HebrewSpellingInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HebrewSpellingInstaller.swift; sourceTree = "<group>"; };
+		CC4DCBA2257EC54B0067CAAA /* NSWindow+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+makeCustom.swift"; sourceTree = "<group>"; };
+		CC4DCBAA257ED0FD0067CAAA /* NSTableView+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+custom.swift"; sourceTree = "<group>"; };
 		CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingInstallerTests.swift; sourceTree = "<group>"; };
 		CC5E6DED24C4F71900A7BB7B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		CC75A812251017C80013E479 /* Array+Merged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Merged.swift"; sourceTree = "<group>"; };
+		CC5F25FC258964F5000D6C65 /* NSTableCellView+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableCellView+makeCustom.swift"; sourceTree = "<group>"; };
+		CC6B99C72583C46D007C278D /* NSScrollView+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+makeCustom.swift"; sourceTree = "<group>"; };
 		CC8159C524B7C7E80091D89E /* Milonchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milonchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8159C824B7C7E80091D89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC8159CC24B7C7EB0091D89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,14 +92,13 @@
 		CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Milonchik.entitlements; sourceTree = "<group>"; };
 		CC8159E624B7CBCD0091D89E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC8159EA24B7CDBF0091D89E /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		CCA710E525498EBA003BA5BB /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		CCA710E625498EBA003BA5BB /* DefinitionDetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DefinitionDetail.html; sourceTree = "<group>"; };
 		CCA710E725498EBA003BA5BB /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionRaw.swift; sourceTree = "<group>"; };
-		CCBA86D124C17985007489FD /* InputLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLanguage.swift; sourceTree = "<group>"; };
-		CCBA86D324C17A17007489FD /* Array+Uniqified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Uniqified.swift"; sourceTree = "<group>"; };
+		CCAA5D962568169B005FE770 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		CCBA86D124C17985007489FD /* TranslatedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedLanguage.swift; sourceTree = "<group>"; };
 		CCDA615F2525CE040025D825 /* NetworkModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelController.swift; sourceTree = "<group>"; };
-		CCDE5F902546D41E002AA6FE /* DBFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFetchResult.swift; sourceTree = "<group>"; };
+		CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResponse.swift; sourceTree = "<group>"; };
+		CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+custom.swift"; sourceTree = "<group>"; };
 		CCF3656124DA864000701311 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC13C655257A983C00034A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCA710E725498EBA003BA5BB /* DetailView.swift */,
+				CCA710E625498EBA003BA5BB /* DefinitionDetail.html */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		CC22F4D72524A3F60043D6B1 /* MilonchikTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,31 +165,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CC5E6DE624C4F3B400A7BB7B /* Resources */ = {
+		CC4DCB9E257E8ABF0067CAAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
+				CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */,
+				CC0C02CD24B85CF2005E55B2 /* Definition.swift */,
+				CC0C02CF24B85CF7005E55B2 /* Inflection.swift */,
+				CCBA86D124C17985007489FD /* TranslatedLanguage.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CC4DCBAF257ED5A10067CAAA /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E6DED24C4F71900A7BB7B /* Credits.rtf */,
 				CC8159CC24B7C7EB0091D89E /* Assets.xcassets */,
+				CC8159CE24B7C7EB0091D89E /* Main.storyboard */,
 				CC8159D124B7C7EB0091D89E /* Info.plist */,
 				CC8159D224B7C7EB0091D89E /* Milonchik.entitlements */,
-				CC5E6DED24C4F71900A7BB7B /* Credits.rtf */,
 				CC0C02D124B85E60005E55B2 /* milon.db */,
 				CC4AC6752540C2E9009DD9F6 /* he_IL.aff */,
 				CC4AC6742540C2E9009DD9F6 /* he_IL.dic */,
 			);
-			path = Resources;
+			name = "Supporting FIles";
 			sourceTree = "<group>";
 		};
 		CC8159BC24B7C7E80091D89E = {
 			isa = PBXGroup;
 			children = (
 				CC8159C724B7C7E80091D89E /* Milonchik */,
-				CCF3656124DA864000701311 /* README.md */,
-				CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */,
-				CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */,
 				CC22F4D72524A3F60043D6B1 /* MilonchikTests */,
 				CC22F4FE2524A4B30043D6B1 /* MilonchikUITests */,
 				CC8159C624B7C7E80091D89E /* Products */,
 				CC489EE124C38C6C0035BCD8 /* Frameworks */,
+				CCF3656124DA864000701311 /* README.md */,
+				CC1B4D7F252CCF4F00D20E5D /* CHANGELOG.md */,
+				CC1B4D7E252CCF2900D20E5D /* PRIVACY.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,58 +222,28 @@
 				CC8159C824B7C7E80091D89E /* AppDelegate.swift */,
 				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
 				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
-				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
-				CCDE5F902546D41E002AA6FE /* DBFetchResult.swift */,
 				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
 				CC0A284824BD0D6C00F00BFB /* DetailViewController.swift */,
-				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
-				CCA710E225498E0A003BA5BB /* Model */,
-				CCA710E325498E2B003BA5BB /* View */,
-				CCA710F225498F7F003BA5BB /* Temp */,
-				CCA710DE25498D85003BA5BB /* Helpers */,
+				CCAA5D962568169B005FE770 /* State.swift */,
+				CC13C655257A983C00034A01 /* Views */,
+				CC4DCB9E257E8ABF0067CAAA /* Model */,
 				CCA710E425498E47003BA5BB /* Extensions */,
-				CC5E6DE624C4F3B400A7BB7B /* Resources */,
+				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
+				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
+				CC4DCBAF257ED5A10067CAAA /* Supporting FIles */,
+				CCA710F225498F7F003BA5BB /* Temp */,
 			);
 			path = Milonchik;
-			sourceTree = "<group>";
-		};
-		CCA710DE25498D85003BA5BB /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				CC4AC67B2540D032009DD9F6 /* HebrewSpellingInstaller.swift */,
-				CC1E487C2530EB7C006EEB09 /* ServicesManager.swift */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		CCA710E225498E0A003BA5BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
-				CC0C02CD24B85CF2005E55B2 /* Definition.swift */,
-				CCBA86CF24C1797E007489FD /* DefinitionRaw.swift */,
-				CC0C02CF24B85CF7005E55B2 /* Inflection.swift */,
-				CCBA86D124C17985007489FD /* InputLanguage.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		CCA710E325498E2B003BA5BB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CCA710E625498EBA003BA5BB /* DefinitionDetail.html */,
-				CCA710E725498EBA003BA5BB /* DetailView.swift */,
-				CCA710E525498EBA003BA5BB /* SidebarView.swift */,
-				CC8159CE24B7C7EB0091D89E /* Main.storyboard */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		CCA710E425498E47003BA5BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CCBA86D324C17A17007489FD /* Array+Uniqified.swift */,
-				CC75A812251017C80013E479 /* Array+Merged.swift */,
+				CC4DCBA2257EC54B0067CAAA /* NSWindow+makeCustom.swift */,
+				CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */,
+				CC4DCBAA257ED0FD0067CAAA /* NSTableView+custom.swift */,
+				CC6B99C72583C46D007C278D /* NSScrollView+makeCustom.swift */,
+				CC5F25FC258964F5000D6C65 /* NSTableCellView+makeCustom.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -444,25 +436,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC4AC67C2540D032009DD9F6 /* HebrewSpellingInstaller.swift in Sources */,
+				CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */,
 				CC0A284A24BD0D6C00F00BFB /* DetailViewController.swift in Sources */,
-				CCA710E825498EBA003BA5BB /* SidebarView.swift in Sources */,
+				CC4DCBAB257ED0FD0067CAAA /* NSTableView+custom.swift in Sources */,
 				CC8159C924B7C7E80091D89E /* AppDelegate.swift in Sources */,
-				CC1E487D2530EB7C006EEB09 /* ServicesManager.swift in Sources */,
+				CCAA5D972568169B005FE770 /* State.swift in Sources */,
 				CC0C02C624B85A3A005E55B2 /* ModelController.swift in Sources */,
-				CCBA86D424C17A17007489FD /* Array+Uniqified.swift in Sources */,
 				CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */,
+				CC5F25FD258964F5000D6C65 /* NSTableCellView+makeCustom.swift in Sources */,
 				CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */,
 				CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */,
-				CCBA86D024C1797E007489FD /* DefinitionRaw.swift in Sources */,
+				CC6B99C82583C46D007C278D /* NSScrollView+makeCustom.swift in Sources */,
 				CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */,
-				CCBA86D224C17985007489FD /* InputLanguage.swift in Sources */,
+				CCBA86D224C17985007489FD /* TranslatedLanguage.swift in Sources */,
 				CCA710EA25498EBA003BA5BB /* DetailView.swift in Sources */,
 				CC0C02CE24B85CF2005E55B2 /* Definition.swift in Sources */,
-				CC75A813251017C80013E479 /* Array+Merged.swift in Sources */,
 				CC09788B24EFC46D00DF1ED3 /* Constants.swift in Sources */,
 				CC088BD224BBAA3000C900F3 /* ListViewController.swift in Sources */,
-				CCDE5F912546D41E002AA6FE /* DBFetchResult.swift in Sources */,
+				CCDE5F912546D41E002AA6FE /* DatabaseResponse.swift in Sources */,
+				CC4DCBA3257EC54B0067CAAA /* NSWindow+makeCustom.swift in Sources */,
 				CC0C02D024B85CF7005E55B2 /* Inflection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,14 +689,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Milonchik/Resources/Milonchik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YVAVUS4X5W;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Milonchik/Resources/Info.plist;
+				INFOPLIST_FILE = Milonchik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -723,14 +715,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Milonchik/Resources/Milonchik.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Milonchik/Milonchik.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = YVAVUS4X5W;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Milonchik/Resources/Info.plist;
+				INFOPLIST_FILE = Milonchik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

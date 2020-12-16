@@ -9,44 +9,13 @@ import Cocoa
 
 final class ViewController: NSSplitViewController {
 
-    enum State {
-        case noQuery
-        case queryChanged(to: String)
-        case fetchShouldStart(withQuery: String)
-        case fetchDidEnd(with: Result<DBFetchResult, MilonchikError>)
-        case definitionSelectionChanged(to: Definition)
-        case results(DBFetchResult)
-        case noResults(forQuery: String)
-    }
-
-    @IBOutlet private var sidebar: SidebarView!
-
-    fileprivate(set) var state: State! {
+    private(set) var state: State! {
         didSet {
             handleStateChange(newState: state)
         }
     }
-
-    weak var delegate: ViewControllerDelegate?
-
-    private var wordModelController = ModelController()
-    private var listViewController: ListViewController!
-    private var detailViewController: DetailViewController!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        listViewController = sidebar.viewController as? ListViewController
-        listViewController.userSelectionChangedHandler = { definition in
-            self.state = .definitionSelectionChanged(to: definition)
-        }
-        listViewController.sidebar = sidebar
-        detailViewController = splitViewItems.last?.viewController as? DetailViewController
-        state = .noQuery
-
-    }
-
     private func handleStateChange(newState: State) {
+        NotificationCenter.default.post(name: .viewControllerStateDidChange, object: nil)
         switch newState {
         case .noQuery:
             updateViews(with: newState)
@@ -59,7 +28,7 @@ final class ViewController: NSSplitViewController {
                     self.state = .fetchDidEnd(with: result)
                 }
             }
-        case let .fetchDidEnd(result):
+        case .fetchDidEnd(let result):
             switch result {
             case .success(let result):
                 state = .results(result)
@@ -74,7 +43,40 @@ final class ViewController: NSSplitViewController {
         case .results, .noResults, .definitionSelectionChanged:
             updateViews(with: newState)
         }
-        delegate?.didChangeState(to: newState)
+    }
+
+    let listViewController = ListViewController()
+    private let wordModelController = ModelController()
+    private let detailViewController = DetailViewController()
+
+    override func loadView() {
+        view = splitView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        splitView.isVertical = true
+        splitView.setFrameSize(CGSize(width: 640, height: 400))
+        splitView.autosaveName = "SplitView"
+        let listSplitViewItem = NSSplitViewItem(sidebarWithViewController: listViewController)
+        let detailSplitViewItem = NSSplitViewItem(viewController: detailViewController)
+        detailSplitViewItem.minimumThickness = (view.window?.frame.width ?? 600) / 2
+        detailSplitViewItem.canCollapse = false
+
+        splitViewItems = [
+            listSplitViewItem,
+            detailSplitViewItem
+        ]
+
+        listViewController.onSelection = { selectedDefinition in
+            self.state = .definitionSelectionChanged(to: selectedDefinition)
+        }
+
+        state = .noQuery
+    }
+
+    func performSearch(with text: String) {
+        state = .queryChanged(to: text.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 
     private func updateViews(with newState: State) {
@@ -84,16 +86,8 @@ final class ViewController: NSSplitViewController {
             }
         })
     }
-
-    @IBAction func performSearch(_ sender: NSTextField) {
-        state = .queryChanged(to: sender.stringValue.trimmingCharacters(in: .whitespacesAndNewlines))
-    }
 }
 
 protocol StateResponding {
-    func update(with state: ViewController.State)
-}
-
-protocol ViewControllerDelegate: AnyObject {
-    func didChangeState(to state: ViewController.State)
+    func update(with state: State)
 }

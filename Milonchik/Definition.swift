@@ -7,67 +7,59 @@
 //
 
 import Foundation
+import SQLite
 
-struct Definition: Comparable, Hashable {
+protocol TableViewDisplayable {
+    var label: String { get }
+}
+
+struct Definition {
     let id: Int
-    let inputWord: String
+    let translatedWord: String
     let translations: [String]
     let partOfSpeech: String?
     let synonyms: [String]
     let samples: [String]
     let inflections: [Inflection]
-    let inputLanguage: InputLanguage
+    let translatedLanguage: TranslatedLanguage
+
+    init(_ row: Row) {
+        self.id = Int(row[Columns.id])
+        self.translatedWord = row[Columns.translatedWord]
+        self.translations = row[Columns.translations].trimmedAndSplittedByTab()
+        self.partOfSpeech = row[Columns.partOfSpeech]
+        self.synonyms = row[Columns.synonyms].trimmedAndSplittedByTab()
+        let inflectionKinds = row[Columns.inflectionKind].trimmedAndSplittedByTab()
+        let inflectionValues = row[Columns.inflectionValue].trimmedAndSplittedByTab()
+        self.inflections = zip(inflectionKinds, inflectionValues).map { Inflection(kind: $0, value: $1) }
+        self.samples = row[Columns.samples].trimmedAndSplittedByTab()
+        self.translatedLanguage = TranslatedLanguage(rawValue: row[Columns.translatedLanguage])!
+    }
 
     static func < (lhs: Definition, rhs: Definition) -> Bool {
         return lhs.id < rhs.id
     }
+
 }
 
-extension Definition {
-    init(_ raw: DefinitionRaw) {
-        self.id = raw.id
-        self.inputWord = raw.translatedWord
-        self.translations = [raw.translation]
-        self.partOfSpeech = raw.partOfSpeech
-        if let synonym = raw.synonym {
-            self.synonyms = [synonym]
-        } else {
-            self.synonyms = []
-        }
-        if let sample = raw.sample {
-            self.samples = [sample]
-        } else {
-            self.samples = []
-        }
-        if let inflectionKind = raw.inflectionKind, let inflectionValue = raw.inflectionValue {
-            self.inflections = [Inflection(contents: inflectionValue, kind: inflectionKind)]
-        } else {
-            self.inflections = []
-        }
-        self.inputLanguage = raw.translatedLanguage
+extension Definition: TableViewDisplayable {
+    var label: String { translatedWord }
+}
+
+extension Definition: Hashable {
+    static func == (lhs: Definition, rhs: Definition) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
-extension Definition {
-    func absorb(_ rawDefinition: DefinitionRaw) -> Definition {
-        let translations = self.translations + [rawDefinition.translation]
+extension Optional where Wrapped == String {
+    func trimmedAndSplittedByTab() -> [String] {
+        self?.trimmedAndSplittedByTab() ?? []
+    }
+}
 
-        var inflections = self.inflections
-        if let inflectionKind = rawDefinition.inflectionKind, let inflectionValue = rawDefinition.inflectionValue {
-            inflections.append(Inflection(contents: inflectionValue, kind: inflectionKind))
-        }
-
-        var samples = self.samples
-        if let sample = rawDefinition.sample {
-            samples.append(sample)
-        }
-        var synonyms = self.synonyms
-        if let synonym = rawDefinition.synonym {
-            synonyms.append(synonym)
-        }
-
-        return Definition(id: self.id, inputWord: self.inputWord, translations: translations.uniqified(),
-                          partOfSpeech: self.partOfSpeech, synonyms: synonyms.uniqified(), samples: samples.uniqified(),
-                          inflections: inflections.uniqified(), inputLanguage: self.inputLanguage)
+extension String {
+    func trimmedAndSplittedByTab() -> [String] {
+        self.components(separatedBy: "\t").filter { !$0.isEmpty }
     }
 }
