@@ -3,7 +3,7 @@
 ## 1.3
 
 - Adopted the Big Sur look.
-- Fixed a bug where activating the app from a service would do nothing if no windows were open.
+- Fixed a bug where running the "Define in Milonchik" service would do nothing if no windows were open.
 - Search is now much faster.
 
 Note: The sidebar no longer auto collapses when the search field is empty or there are no results.
