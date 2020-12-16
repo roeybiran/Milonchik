@@ -34,6 +34,7 @@ final class DetailViewController: NSViewController {
 
     lazy var detailView: DetailView = {
         let detailView = DetailView()
+        // FIXME: white flash
         detailView.isHidden = true
         return detailView
     }()
@@ -72,6 +73,9 @@ final class DetailViewController: NSViewController {
             <ul dir="auto" \(samples.count == 1 ? "class=\"singular\"" : "")>\(samples.joined())</ul>
             """
         }
+        detailView.wantsLayer = true
+        detailView.layer?.backgroundColor = NSColor.clear.cgColor
+        detailView.layer?.isOpaque = true
         detailView.loadHTMLString(htmlTemplate.replacingOccurrences(of: "$BODY", with: htmlBody), baseURL: nil)
 
         //FIXME: white flash

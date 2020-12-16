@@ -6,20 +6,9 @@
 //  Copyright © 2020 Roey Biran. All rights reserved.
 //
 
-struct Inflection: Equatable, Codable, Hashable {
-    let contents: String
+struct Inflection {
     let kind: String
-
-    enum CodingKeys: String, CodingKey {
-        case kind = "Title"
-        case contents = "Text"
-    }
+    let value: String
 }
 
-extension Inflection {
-    init?(contents: String?, kind: String?) {
-        guard let contents = contents, let kind = kind else { return nil }
-        self.contents = contents
-        self.kind = kind
-    }
-}
+extension Inflection: Hashable {}
