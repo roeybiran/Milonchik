@@ -24,6 +24,7 @@
 		CC4DCBAB257ED0FD0067CAAA /* NSTableView+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4DCBAA257ED0FD0067CAAA /* NSTableView+custom.swift */; };
 		CC50519224B9C16C0075AF85 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CC50519124B9C16C0075AF85 /* SQLite */; };
 		CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */; };
+		CC5550F6258B6ED200DD3E75 /* SpellingInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5550F5258B6ED200DD3E75 /* SpellingInstaller.swift */; };
 		CC5E6DEE24C4F71900A7BB7B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6DED24C4F71900A7BB7B /* Credits.rtf */; };
 		CC5F25FD258964F5000D6C65 /* NSTableCellView+makeCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5F25FC258964F5000D6C65 /* NSTableCellView+makeCustom.swift */; };
 		CC6B99C82583C46D007C278D /* NSScrollView+makeCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6B99C72583C46D007C278D /* NSScrollView+makeCustom.swift */; };
@@ -81,6 +82,7 @@
 		CC4DCBA2257EC54B0067CAAA /* NSWindow+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+makeCustom.swift"; sourceTree = "<group>"; };
 		CC4DCBAA257ED0FD0067CAAA /* NSTableView+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+custom.swift"; sourceTree = "<group>"; };
 		CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingInstallerTests.swift; sourceTree = "<group>"; };
+		CC5550F5258B6ED200DD3E75 /* SpellingInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingInstaller.swift; sourceTree = "<group>"; };
 		CC5E6DED24C4F71900A7BB7B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		CC5F25FC258964F5000D6C65 /* NSTableCellView+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableCellView+makeCustom.swift"; sourceTree = "<group>"; };
 		CC6B99C72583C46D007C278D /* NSScrollView+makeCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+makeCustom.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8159C824B7C7E80091D89E /* AppDelegate.swift */,
+				CC5550F5258B6ED200DD3E75 /* SpellingInstaller.swift */,
 				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
 				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
 				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5550F6258B6ED200DD3E75 /* SpellingInstaller.swift in Sources */,
 				CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */,
 				CC0A284A24BD0D6C00F00BFB /* DetailViewController.swift in Sources */,
 				CC4DCBAB257ED0FD0067CAAA /* NSTableView+custom.swift in Sources */,

@@ -11,7 +11,7 @@ import XCTest
 @testable import Milonchik
 class SpellingInstallerTests: XCTestCase {
     func testSpellingInstaller() throws {
-        XCTAssertNoThrow(try HebrewSpellingInstaller().install())
+        XCTAssertNoThrow(try SpellingInstaller().install())
 
         let fm = FileManager.default
         let spellFolder = fm

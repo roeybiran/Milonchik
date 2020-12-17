@@ -14,9 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var managedWindowControllers = [WindowController]()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.servicesProvider = self
-        // try? HebrewSpellingInstaller().install()
+        try? SpellingInstaller().install()
         makeNewWindow(tabbed: false)
+        NSApp.servicesProvider = self
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -30,34 +30,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         managedWindowControllers.append(windowController)
     }
 
-    private func installHebrewSpellchecker() throws {
-        let fm = FileManager.default
-        guard let library = fm.urls(for: .libraryDirectory, in: .userDomainMask).first else {
-            throw MilonchikError.HebrewSpellingInstallerError.spellingDirectoryAccessFailure
-        }
-        let spellingDirectory = library.appendingPathComponent("Spelling", isDirectory: true)
-        let files: [(name: String, ext: String)] = [("he_IL", "aff"), ("he_IL", "dic")]
-        try files.forEach({ file in
-            let dst = spellingDirectory.appendingPathComponent(file.name).appendingPathExtension(file.ext)
-            if fm.fileExists(atPath: dst.path) { return }
-            let src = Bundle.main.url(forResource: file.name, withExtension: file.ext)!
-            do {
-                try fm.createDirectory(at: spellingDirectory, withIntermediateDirectories: true)
-                try fm.copyItem(at: src, to: dst)
-            } catch let error as CocoaError where error.code == CocoaError.fileWriteFileExists {
-                return
-            } catch {
-                throw error
-            }
-        })
-    }
-
-    @objc func defineServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+    @objc func defineInMilonchikServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
         if NSApp.windows.isEmpty {
             makeNewWindow(tabbed: false)
         }
         if
-            let index = managedWindowControllers.firstIndex(where: { $0.window?.isKeyWindow ?? false }),
+            let index = managedWindowControllers.firstIndex(where: { $0.window?.canBecomeMain ?? false }),
             let text = pboard.string(forType: .string) {
             managedWindowControllers[index].performSearch(text)
         }

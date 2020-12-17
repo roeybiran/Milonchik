@@ -43,7 +43,7 @@ class ModelControllerTests: XCTestCase {
             switch result {
             case .success(let result):
                 let expectedID = 961
-                let resultID = result.exactMatches.first!.id
+                let resultID = result.partialMatches.first!.id
                 XCTAssertTrue(resultID == expectedID, "fail: got ID \(resultID), expected \(expectedID)")
                 expectation.fulfill()
             default:

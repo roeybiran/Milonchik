@@ -41,7 +41,7 @@
 				<string>Define in ${PRODUCT_NAME}</string>
 			</dict>
 			<key>NSMessage</key>
-			<string>defineServiceHandler</string>
+			<string>defineInMilonchikServiceHandler</string>
 			<key>NSPortName</key>
 			<string>${PRODUCT_NAME}</string>
 			<key>NSRequiredContext</key>
