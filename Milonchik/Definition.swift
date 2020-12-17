@@ -16,10 +16,10 @@ protocol TableViewDisplayable {
 struct Definition {
     let id: Int
     let translatedWord: String
-    let translations: [String]
+    let translations: [Substring]
     let partOfSpeech: String?
-    let synonyms: [String]
-    let samples: [String]
+    let synonyms: [Substring]
+    let samples: [Substring]
     let inflections: [Inflection]
     let translatedLanguage: TranslatedLanguage
 
@@ -53,13 +53,13 @@ extension Definition: Hashable {
 }
 
 extension Optional where Wrapped == String {
-    func trimmedAndSplittedByTab() -> [String] {
+    func trimmedAndSplittedByTab() -> [Substring] {
         self?.trimmedAndSplittedByTab() ?? []
     }
 }
 
 extension String {
-    func trimmedAndSplittedByTab() -> [String] {
-        self.components(separatedBy: "\t").filter { !$0.isEmpty }
+    func trimmedAndSplittedByTab() -> [Substring] {
+        self.split(separator: "\t")
     }
 }

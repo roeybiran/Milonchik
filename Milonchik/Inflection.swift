@@ -7,8 +7,8 @@
 //
 
 struct Inflection {
-    let kind: String
-    let value: String
+    let kind: Substring
+    let value: Substring
 }
 
 extension Inflection: Hashable {}

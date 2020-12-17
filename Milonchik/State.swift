@@ -44,7 +44,9 @@ enum State {
             return "“\(query)”"
         case .noResults(let query):
             return "”\(query)”"
-        case .noQuery, .queryChanged, .fetchShouldStart, .definitionSelectionChanged, .fetchDidEnd:
+        case .noQuery:
+            return Constants.appName
+        case .queryChanged, .fetchShouldStart, .definitionSelectionChanged, .fetchDidEnd:
             return nil
         }
     }
@@ -55,7 +57,9 @@ enum State {
             return "\(fetchResult.count) found"
         case .noResults:
             return "0 found"
-        case .noQuery, .queryChanged, .fetchShouldStart, .definitionSelectionChanged, .fetchDidEnd:
+        case .noQuery:
+            return ""
+        case .queryChanged, .fetchShouldStart, .definitionSelectionChanged, .fetchDidEnd:
             return nil
         }
     }
