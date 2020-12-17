@@ -164,8 +164,8 @@
             filePath = "Milonchik/WindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "init(tabbed:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -212,8 +212,8 @@
             filePath = "Milonchik/WindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "init(tabbed:)"
             landmarkType = "7">
          </BreakpointContent>

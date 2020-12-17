@@ -38,6 +38,10 @@ class WindowController: NSWindowController {
         toolbar.displayMode = .iconOnly
         toolbar.delegate = self
         window.toolbar = toolbar
+
+        //FIXME: FB8943488
+        window.setFrameAutosaveName("MainWindow")
+
         if let existingWindow = NSApp.mainWindow {
             if tabbed {
                 existingWindow.addTabbedWindow(window, ordered: .above)
