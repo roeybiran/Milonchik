@@ -18,7 +18,7 @@ struct DatabaseResponse {
         self.allMatches = matches
         self.query = query
         self.count = matches.count
-        self.exactMatches = matches.filter { $0.translatedWord == query }
-        self.partialMatches = matches.filter { $0.translatedWord != query }
+        self.exactMatches = matches.filter { $0.translatedWordSanitized == query }
+        self.partialMatches = matches.filter { $0.translatedWordSanitized != query }
     }
 }

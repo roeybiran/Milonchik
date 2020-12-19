@@ -58,7 +58,7 @@ final class DetailViewController: NSViewController {
             let synonymsTitle = synonyms.isEmpty ? "" : headers.synonyms
             let inflectionsTitle = inflections.isEmpty ? "" : headers.inflections
             let samplesTitle = samples.isEmpty ? "" : headers.samples
-            // 1) word + part of speech, 2) translations, 3) inflections, 4) synonyms, 5) samples
+
             htmlBody = """
             <h1 dir="auto">\(value.translatedWord)<span> \(partOfSpeech)</span></h1>
             <ul dir="auto" \(translations.count == 1 ? "class=\"singular\"" : "")>\(translations.joined())</ul>
@@ -73,9 +73,6 @@ final class DetailViewController: NSViewController {
             <ul dir="auto" \(samples.count == 1 ? "class=\"singular\"" : "")>\(samples.joined())</ul>
             """
         }
-        detailView.wantsLayer = true
-        detailView.layer?.backgroundColor = NSColor.clear.cgColor
-        detailView.layer?.isOpaque = true
         detailView.loadHTMLString(htmlTemplate.replacingOccurrences(of: "$BODY", with: htmlBody), baseURL: nil)
 
         //FIXME: white flash

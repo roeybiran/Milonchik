@@ -20,6 +20,7 @@ final class ListViewController: NSViewController, StateResponding {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+
     }
 
     func update(with state: State) {
@@ -55,11 +56,12 @@ extension ListViewController: NSTableViewDataSource {
 extension ListViewController: NSTableViewDelegate {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let cellView = tableView.makeView(withIdentifier: .tableCell, owner: nil) as? NSTableCellView {
+        let identifier: NSUserInterfaceItemIdentifier = items[row] is GroupRow ? .groupRowCell : .regularCell
+        if let cellView = tableView.makeView(withIdentifier: identifier, owner: nil) as? NSTableCellView {
             cellView.textField?.stringValue = items[row].label
             return cellView
         }
-        return NSTableCellView.makeCustom(label: items[row].label)
+        return NSTableCellView.makeCustom(label: items[row].label, identifier: identifier)
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
@@ -67,10 +69,11 @@ extension ListViewController: NSTableViewDelegate {
         onSelection?(selectedDefinition)
     }
 
-    func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
-        if items[row] is GroupRow { return true }
-        return false
-    }
+    //FIXME: FB8946005
+    // func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
+    //     if items[row] is GroupRow { return true }
+    //     return false
+    // }
 
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         if items[row] is GroupRow { return false }
@@ -80,5 +83,6 @@ extension ListViewController: NSTableViewDelegate {
 }
 
 extension NSUserInterfaceItemIdentifier {
-    static let tableCell = NSUserInterfaceItemIdentifier("Cell")
+    static let regularCell = NSUserInterfaceItemIdentifier("RegularCell")
+    static let groupRowCell = NSUserInterfaceItemIdentifier("GroupRowCell")
 }

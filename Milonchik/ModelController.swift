@@ -77,14 +77,17 @@ private class DatabaseOperation: Operation {
             )
             .order(Columns.translatedWordSanitized)
         do {
-            let results = try Set(database.prepare(statement).map{ Definition($0) }).sorted {
+            let results = try Set(database.prepare(statement).map { Definition($0) }).sorted {
                 switch ($0.translatedWordSanitized.starts(with: query), $1.translatedWordSanitized.starts(with: query)) {
                 case (true, false):
                     return true
                 case (false, true):
                     return false
                 default:
-                    return $0.translatedWordSanitized < $1.translatedWordSanitized
+                    if $0.translatedWordSanitized == $1.translatedWordSanitized {
+                        return $0.translatedWordSanitized < $1.translatedWordSanitized
+                    }
+                    return $0.id < $1.id
                 }
             }
 
