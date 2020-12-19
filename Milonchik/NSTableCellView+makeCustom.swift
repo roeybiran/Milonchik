@@ -32,7 +32,7 @@ extension NSTableCellView {
         if identifier == .groupRowCell {
             textField.textColor = .secondaryLabelColor
             textField.font = NSFont.systemFont(ofSize: 11)
-            constraints[2] = textField.bottomAnchor.constraint(equalTo: newCell.bottomAnchor)
+            constraints[2] = textField.bottomAnchor.constraint(equalTo: newCell.bottomAnchor, constant: -2)
         }
         NSLayoutConstraint.activate(constraints)
 

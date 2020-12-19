@@ -222,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				CC8159C824B7C7E80091D89E /* AppDelegate.swift */,
-				CC5550F5258B6ED200DD3E75 /* SpellingInstaller.swift */,
 				CC8159EA24B7CDBF0091D89E /* WindowController.swift */,
 				CC8159E624B7CBCD0091D89E /* ViewController.swift */,
 				CC088BD124BBAA3000C900F3 /* ListViewController.swift */,
@@ -231,6 +230,7 @@
 				CC13C655257A983C00034A01 /* Views */,
 				CC4DCB9E257E8ABF0067CAAA /* Model */,
 				CCA710E425498E47003BA5BB /* Extensions */,
+				CC5550F5258B6ED200DD3E75 /* SpellingInstaller.swift */,
 				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
 				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
 				CC4DCBAF257ED5A10067CAAA /* Supporting FIles */,
@@ -303,8 +303,9 @@
 			buildConfigurationList = CC8159E024B7C7EB0091D89E /* Build configuration list for PBXNativeTarget "Milonchik" */;
 			buildPhases = (
 				CC8159C124B7C7E80091D89E /* Sources */,
-				CC8159C224B7C7E80091D89E /* Frameworks */,
 				CC8159C324B7C7E80091D89E /* Resources */,
+				CC8159C224B7C7E80091D89E /* Frameworks */,
+				CCFA875B258E9FFA00F9C5D8 /* ShellScript */,
 				CC50519324BA637C0075AF85 /* ShellScript */,
 			);
 			buildRules = (
@@ -414,6 +415,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		CCFA875B258E9FFA00F9C5D8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -706,7 +724,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -732,7 +750,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
