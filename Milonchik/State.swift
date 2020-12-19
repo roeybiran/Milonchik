@@ -17,7 +17,7 @@ enum State {
     case results(DatabaseResponse)
     case noResults(forQuery: String)
 
-    var definitions: Set<Definition> {
+    var definitions: [Definition] {
         switch self {
         case .results(let dbFetchResult):
             return dbFetchResult.allMatches

@@ -70,19 +70,29 @@ private class DatabaseOperation: Operation {
             Columns.samples,
             Columns.alternateSpellings
         ).filter(
-                Tables.definitions[Columns.translatedWordSanitized].like("\(sanitizedQuery)%", escape: "\\") ||
-                Tables.definitions[Columns.inflectionValue].like("%\(sanitizedQuery)%", escape: "\\") ||
-                Tables.definitions[Columns.alternateSpellings].like(sanitizedQuery, escape: "\\") ||
-                guesses(for: query).contains(Tables.definitions[Columns.translatedWordSanitized])
+                Columns.translatedWordSanitized.like("\(sanitizedQuery)%", escape: "\\") ||
+                Columns.inflectionValue.like("%\(sanitizedQuery)%", escape: "\\") ||
+                Columns.alternateSpellings.like(sanitizedQuery, escape: "\\") ||
+                guesses(for: query).contains(Columns.translatedWordSanitized)
             )
-            .order(Tables.definitions[Columns.id])
+            .order(Columns.translatedWordSanitized)
         do {
-            let results = try database.prepare(statement).map { Definition($0) }
+            let results = try Set(database.prepare(statement).map{ Definition($0) }).sorted {
+                switch ($0.translatedWordSanitized.starts(with: query), $1.translatedWordSanitized.starts(with: query)) {
+                case (true, false):
+                    return true
+                case (false, true):
+                    return false
+                default:
+                    return $0.translatedWordSanitized < $1.translatedWordSanitized
+                }
+            }
+
             if isCancelled { return }
             if results.count == 0 {
                 result = .failure(.noDefinitions(for: query))
             } else {
-                result = .success(DatabaseResponse(matches: Set(results), query: query))
+                result = .success(DatabaseResponse(matches: results, query: query))
             }
         } catch {
             result = .failure(.SQLError(error))

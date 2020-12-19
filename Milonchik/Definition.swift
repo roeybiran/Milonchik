@@ -16,6 +16,7 @@ protocol TableViewDisplayable {
 struct Definition {
     let id: Int
     let translatedWord: String
+    let translatedWordSanitized: String
     let translations: [Substring]
     let partOfSpeech: String?
     let synonyms: [Substring]
@@ -26,6 +27,7 @@ struct Definition {
     init(_ row: Row) {
         self.id = Int(row[Columns.id])
         self.translatedWord = row[Columns.translatedWord]
+        self.translatedWordSanitized = row[Columns.translatedWordSanitized]
         self.translations = row[Columns.translations].trimmedAndSplittedByTab()
         self.partOfSpeech = row[Columns.partOfSpeech]
         self.synonyms = row[Columns.synonyms].trimmedAndSplittedByTab()
@@ -35,11 +37,6 @@ struct Definition {
         self.samples = row[Columns.samples].trimmedAndSplittedByTab()
         self.translatedLanguage = TranslatedLanguage(rawValue: row[Columns.translatedLanguage])!
     }
-
-    static func < (lhs: Definition, rhs: Definition) -> Bool {
-        return lhs.id < rhs.id
-    }
-
 }
 
 extension Definition: TableViewDisplayable {

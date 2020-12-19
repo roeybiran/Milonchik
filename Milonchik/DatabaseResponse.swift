@@ -12,9 +12,9 @@ struct DatabaseResponse {
     let partialMatches: [Definition]
     let query: String
     let count: Int
-    let allMatches: Set<Definition>
+    let allMatches: [Definition]
 
-    init(matches: Set<Definition>, query: String) {
+    init(matches: [Definition], query: String) {
         self.allMatches = matches
         self.query = query
         self.count = matches.count
