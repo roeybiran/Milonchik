@@ -33,7 +33,7 @@ final class ModelController {
 
     func fetch(query: String, completionHandler: @escaping (DatabaseResult) -> Void) {
         let operation = DatabaseOperation(database: database, query: query)
-        operation.completionBlock = { [unowned operation] in
+        operation.completionBlock = {
             completionHandler(operation.isCancelled ? .failure(.userCancelled) : operation.result)
         }
         queue.addOperation(operation)
@@ -53,10 +53,10 @@ private class DatabaseOperation: Operation {
         super.init()
     }
 
-    //FIXME: upon cancellations, consider returning setting `result` to MilonchikError.cancelled
+    //FIXME: on cancel, consider returning setting `result` to MilonchikError.cancelled
     override func main() {
         if isCancelled { return }
-        let sanitizedQuery = "\(query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression))"
+        let sanitizedQuery = query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression).lowercased()
         let statement = Tables.definitions.select(
             Columns.id,
             Columns.translatedWordSanitized,
@@ -77,25 +77,12 @@ private class DatabaseOperation: Operation {
             )
             .order(Columns.translatedWordSanitized)
         do {
-            let results = try Set(database.prepare(statement).map { Definition($0) }).sorted {
-                switch ($0.translatedWordSanitized.starts(with: query), $1.translatedWordSanitized.starts(with: query)) {
-                case (true, false):
-                    return true
-                case (false, true):
-                    return false
-                default:
-                    if $0.translatedWordSanitized == $1.translatedWordSanitized {
-                        return $0.translatedWordSanitized < $1.translatedWordSanitized
-                    }
-                    return $0.id < $1.id
-                }
-            }
-
+            let results = try Set(database.prepare(statement).map { Definition($0) }).sortedByRelevance(to: sanitizedQuery)
             if isCancelled { return }
             if results.count == 0 {
                 result = .failure(.noDefinitions(for: query))
             } else {
-                result = .success(DatabaseResponse(matches: results, query: query))
+                result = .success(DatabaseResponse(matches: results, query: query, sanitizedQuery: sanitizedQuery))
             }
         } catch {
             result = .failure(.SQLError(error))
@@ -108,22 +95,4 @@ private class DatabaseOperation: Operation {
         let guesses = NSSpellChecker.shared.guesses
         return ["en", "he_IL"].compactMap({ guesses(range, q, $0, 0) ?? [] }).reduce([], +)
     }
-}
-
-enum Tables {
-    static let definitions = Table("definitions")
-}
-
-enum Columns {
-    static let id = Expression<Int64>("id")
-    static let translatedLanguage = Expression<String>("translated_lang")
-    static let translatedWord = Expression<String>("translated_word")
-    static let translatedWordSanitized = Expression<String>("translated_word_sanitized")
-    static let partOfSpeech = Expression<String?>("part_of_speech")
-    static let synonyms = Expression<String?>("synonyms")
-    static let translations = Expression<String>("translations")
-    static let samples = Expression<String?>("samples")
-    static let inflectionKind = Expression<String?>("inflection_kind")
-    static let inflectionValue = Expression<String?>("inflection_value")
-    static let alternateSpellings = Expression<String?>("alternate_spellings")
 }

@@ -19,7 +19,9 @@ struct SpellingInstaller {
         try files.forEach({ file in
             let dst = spellingDirectory.appendingPathComponent(file.name).appendingPathExtension(file.ext)
             if fm.fileExists(atPath: dst.path) { return }
-            let src = Bundle.main.url(forResource: file.name, withExtension: file.ext)!
+            guard let src = Bundle.main.url(forResource: file.name, withExtension: file.ext) else {
+                preconditionFailure("Spelling dictionaries within bundle are missing or corrupt")
+            }
             do {
                 try fm.createDirectory(at: spellingDirectory, withIntermediateDirectories: true)
                 try fm.copyItem(at: src, to: dst)

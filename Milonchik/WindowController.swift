@@ -25,6 +25,7 @@ class WindowController: NSWindowController {
     init(tabbed: Bool) {
         let _viewController = ViewController()
         let window = NSWindow.makeCustom(contentViewController: _viewController)
+        window.setFrameAutosaveName("MainWindow")
 
         super.init(window: window)
         self.viewController = _viewController
@@ -38,9 +39,7 @@ class WindowController: NSWindowController {
         toolbar.displayMode = .iconOnly
         toolbar.delegate = self
         window.toolbar = toolbar
-
-        //FIXME: FB8943488
-        window.setFrameAutosaveName("MainWindow")
+        windowFrameAutosaveName = "MainWindow"
 
         if let existingWindow = NSApp.mainWindow {
             if tabbed {
@@ -50,8 +49,6 @@ class WindowController: NSWindowController {
                 let cascadingPoint = existingWindow.cascadeTopLeft(from: .zero)
                 window.cascadeTopLeft(from: cascadingPoint)
             }
-        } else {
-            window.center()
         }
         window.makeKeyAndOrderFront(nil)
         window.makeFirstResponder(searchField)

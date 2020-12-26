@@ -9,10 +9,6 @@
 import Foundation
 import SQLite
 
-protocol TableViewDisplayable {
-    var label: String { get }
-}
-
 struct Definition {
     let id: Int
     let translatedWord: String
@@ -46,17 +42,5 @@ extension Definition: TableViewDisplayable {
 extension Definition: Hashable {
     static func == (lhs: Definition, rhs: Definition) -> Bool {
         lhs.id == rhs.id
-    }
-}
-
-extension Optional where Wrapped == String {
-    func trimmedAndSplittedByTab() -> [Substring] {
-        self?.trimmedAndSplittedByTab() ?? []
-    }
-}
-
-extension String {
-    func trimmedAndSplittedByTab() -> [Substring] {
-        self.split(separator: "\t")
     }
 }
