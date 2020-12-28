@@ -39,6 +39,7 @@
 		CCBA86D224C17985007489FD /* TranslatedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA86D124C17985007489FD /* TranslatedLanguage.swift */; };
 		CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA615F2525CE040025D825 /* NetworkModelController.swift */; };
 		CCDE5F912546D41E002AA6FE /* DatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */; };
+		CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */; };
 		CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */; };
 		CCE4C9812595D11600B3D173 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4C9802595D11600B3D173 /* FactoriesTests.swift */; };
 		CCE4C9862595D8CC00B3D173 /* TableViewDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4C9852595D8CC00B3D173 /* TableViewDisplayable.swift */; };
@@ -106,6 +107,7 @@
 		CCBA86D124C17985007489FD /* TranslatedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedLanguage.swift; sourceTree = "<group>"; };
 		CCDA615F2525CE040025D825 /* NetworkModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelController.swift; sourceTree = "<group>"; };
 		CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResponse.swift; sourceTree = "<group>"; };
+		CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+custom.swift"; sourceTree = "<group>"; };
 		CCE4C9802595D11600B3D173 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
 		CCE4C9852595D8CC00B3D173 /* TableViewDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDisplayable.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */,
+				CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */,
 				CCE4C9802595D11600B3D173 /* FactoriesTests.swift */,
 				CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */,
 				CC22F4DA2524A3F60043D6B1 /* Info.plist */,
@@ -468,6 +471,7 @@
 			files = (
 				CCE4C9812595D11600B3D173 /* FactoriesTests.swift in Sources */,
 				CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */,
+				CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */,
 				CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,7 +760,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -782,7 +786,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
