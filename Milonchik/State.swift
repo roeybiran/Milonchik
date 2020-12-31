@@ -54,6 +54,9 @@ enum State {
     var proposedWindowSubtitle: String? {
         switch self {
         case .results(let fetchResult):
+            if fetchResult.count > 200 {
+                return "More than 200 found"
+            }
             return "\(fetchResult.count) found"
         case .noResults:
             return "0 found"

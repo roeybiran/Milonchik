@@ -10,8 +10,8 @@ import Cocoa
 
 class WindowController: NSWindowController {
 
-    private let searchField = NSSearchField()
-    private let progressIndicator = NSProgressIndicator.custom
+    private let searchField = CustomSearchField()
+
     private var viewController: ViewController!
     private let selectors: Set<Selector> = [
         #selector(moveForward),
@@ -65,21 +65,14 @@ class WindowController: NSWindowController {
     }
 
     @objc func handleViewControllerStateChange() {
-        if viewController.state.operationInProgress {
-            progressIndicator.startAnimation(nil)
-        } else {
-            progressIndicator.stopAnimation(nil)
-        }
+        searchField.isAnimatingProgress = viewController.state.operationInProgress
+
         if let title = viewController.state.proposedWindowTitle {
             window?.title = title
         }
 
-        if let subtitle = viewController.state.proposedWindowSubtitle {
-            if #available(OSX 11.0, *) {
-                window?.subtitle = subtitle
-            } else {
-            // Fallback on earlier versions
-            }
+        if #available(OSX 11.0, *), let subtitle = viewController.state.proposedWindowSubtitle {
+            window?.subtitle = subtitle
         }
     }
 
@@ -114,11 +107,6 @@ extension WindowController: NSToolbarDelegate {
                  itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
                  willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
         switch itemIdentifier {
-        case .progressIndicator:
-            let item = NSToolbarItem(itemIdentifier: itemIdentifier)
-            item.menuFormRepresentation = nil
-            item.view = progressIndicator
-            return item
         case .searchField:
             if #available(macOS 11, *) {
                 let item = NSSearchToolbarItem(itemIdentifier: itemIdentifier)
@@ -135,15 +123,14 @@ extension WindowController: NSToolbarDelegate {
     }
 
     func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.progressIndicator, .searchField]
+        return [.searchField]
     }
 
     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.progressIndicator, .searchField]
+        return [.searchField]
     }
 }
 
 extension NSToolbarItem.Identifier {
     static let searchField = NSToolbarItem.Identifier("SearchFieldToolbarItem")
-    static let progressIndicator = NSToolbarItem.Identifier("ProgressIndicator")
 }

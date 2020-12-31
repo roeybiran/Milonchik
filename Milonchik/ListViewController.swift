@@ -8,9 +8,19 @@ final class ListViewController: NSViewController, StateResponding {
     }
 
     let tableView = NSTableView.custom
+    private var onSelection: ((Definition) -> Void)?
     private var items = [TableViewDisplayable]()
-    /// a handler called when a new definition has been selected.
-    var onSelection: ((_ newDefinition: Definition) -> Void)?
+
+    /// Initializes a new `ListViewController`.
+    /// - Parameter onSelect: a handler to be called when a new definition has been selected.
+    init(onSelect: @escaping ((Definition) -> Void)) {
+        onSelection = onSelect
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = NSScrollView.makeCustom(enclosedTableView: tableView)

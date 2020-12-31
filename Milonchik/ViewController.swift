@@ -9,23 +9,50 @@ import Cocoa
 
 final class ViewController: NSSplitViewController {
 
+    lazy var listViewController = ListViewController(onSelect: { [weak self] in
+        self?.state = .definitionSelectionChanged(to: $0)
+    })
+
+    private let modelController = ModelController()
+    private let detailViewController = DetailViewController()
+
     private(set) var state: State! {
         didSet {
             handleStateChange(newState: state)
         }
     }
+
+    override func loadView() {
+        view = splitView
+        splitView.autosaveName = "SplitView"
+        splitView.isVertical = true
+        let listSplitViewItem = NSSplitViewItem(sidebarWithViewController: listViewController)
+        let detailSplitViewItem = NSSplitViewItem(viewController: detailViewController)
+        detailSplitViewItem.minimumThickness = (view.window?.frame.width ?? 600) / 2
+        detailSplitViewItem.canCollapse = false
+        splitViewItems = [
+            listSplitViewItem,
+            detailSplitViewItem
+        ]
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        state = .noQuery
+    }
+
     private func handleStateChange(newState: State) {
         NotificationCenter.default.post(name: .viewControllerStateDidChange, object: nil)
         switch newState {
         case .noQuery:
             updateViews(with: newState)
         case .queryChanged(let query):
-            wordModelController.cancelFetch()
+            modelController.cancelFetch()
             state = query.isEmpty ? .noQuery : .fetchShouldStart(withQuery: query)
         case .fetchShouldStart(let query):
-            wordModelController.fetch(query: query) { result in
+            modelController.fetch(query: query) { [weak self] result in
                 DispatchQueue.main.async {
-                    self.state = .fetchDidEnd(with: result)
+                    self?.state = .fetchDidEnd(with: result)
                 }
             }
         case .fetchDidEnd(let result):
@@ -45,43 +72,13 @@ final class ViewController: NSSplitViewController {
         }
     }
 
-    let listViewController = ListViewController()
-    private let wordModelController = ModelController()
-    private let detailViewController = DetailViewController()
-
-    override func loadView() {
-        view = splitView
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        splitView.isVertical = true
-        splitView.setFrameSize(CGSize(width: 640, height: 400))
-        splitView.autosaveName = "SplitView"
-        let listSplitViewItem = NSSplitViewItem(sidebarWithViewController: listViewController)
-        let detailSplitViewItem = NSSplitViewItem(viewController: detailViewController)
-        detailSplitViewItem.minimumThickness = (view.window?.frame.width ?? 600) / 2
-        detailSplitViewItem.canCollapse = false
-
-        splitViewItems = [
-            listSplitViewItem,
-            detailSplitViewItem
-        ]
-
-        listViewController.onSelection = { selectedDefinition in
-            self.state = .definitionSelectionChanged(to: selectedDefinition)
-        }
-
-        state = .noQuery
-    }
-
     func performSearch(with text: String) {
         state = .queryChanged(to: text.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 
     private func updateViews(with newState: State) {
-        splitViewItems.forEach({ splitView in
-            if let child = splitView.viewController as? StateResponding {
+        splitViewItems.forEach({
+            if let child = $0.viewController as? StateResponding {
                 child.update(with: newState)
             }
         })

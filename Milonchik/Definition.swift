@@ -44,3 +44,14 @@ extension Definition: Hashable {
         lhs.id == rhs.id
     }
 }
+
+struct Inflection {
+    let kind: Substring
+    let value: Substring
+}
+
+extension Inflection: Hashable {}
+
+enum TranslatedLanguage: String {
+    case heb, eng
+}

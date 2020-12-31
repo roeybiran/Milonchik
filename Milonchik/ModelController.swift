@@ -21,7 +21,8 @@ final class ModelController {
 
         guard
             let databasePath = Bundle.main.path(forResource: "milon", ofType: "db"),
-            let database = try? Connection(databasePath, readonly: true) else {
+            let database = try? Connection(databasePath, readonly: true)
+        else {
             preconditionFailure("Database missing or corrupt")
         }
         self.database = database
@@ -50,10 +51,9 @@ private class DatabaseOperation: Operation {
     init(database: Connection, query: String) {
         self.database = database
         self.query = query
-        super.init()
     }
 
-    //FIXME: on cancel, consider returning setting `result` to MilonchikError.cancelled
+    // FIXME: on cancel, consider returning setting `result` to MilonchikError.cancelled
     override func main() {
         if isCancelled { return }
         let sanitizedQuery = query.replacingOccurrences(of: "(?=%|_)", with: #"\\"#, options: .regularExpression).lowercased()
@@ -76,6 +76,7 @@ private class DatabaseOperation: Operation {
                 guesses(for: query).contains(Columns.translatedWordSanitized)
             )
             .order(Columns.translatedWordSanitized)
+            .limit(1000)
         do {
             let results = try Set(database.prepare(statement).map { Definition($0) }).sortedByRelevance(to: sanitizedQuery)
             if isCancelled { return }
