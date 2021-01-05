@@ -24,4 +24,11 @@ class ViewControllerTests: XCTestCase {
     func test_viewController_shouldLoadView() {
         XCTAssertTrue(sut.view is NSSplitView)
     }
+
+    // func test_toggleSidebarMenuItem_shouldCollapseSidebar() {
+    //     sut.loadView()
+    //     print(sut.splitViewItems.first?.isCollapsed ?? "")
+    //     sut.toggleSidebar(nil)
+    //     print(sut.splitViewItems.first?.isCollapsed ?? "")
+    // }
 }

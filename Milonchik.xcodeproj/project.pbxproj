@@ -16,6 +16,7 @@
 		CC0C02D224B88288005E55B2 /* milon.db in Resources */ = {isa = PBXBuildFile; fileRef = CC0C02D124B85E60005E55B2 /* milon.db */; };
 		CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */; };
 		CC22F5002524A4B30043D6B1 /* MilonchikUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */; };
+		CC353E00259F159A00473920 /* WindowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC353DFF259F159A00473920 /* WindowControllerTests.swift */; };
 		CC489EE324C38C6C0035BCD8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC489EE224C38C6C0035BCD8 /* WebKit.framework */; };
 		CC4AC6762540C2E9009DD9F6 /* he_IL.dic in Resources */ = {isa = PBXBuildFile; fileRef = CC4AC6742540C2E9009DD9F6 /* he_IL.dic */; };
 		CC4AC6772540C2E9009DD9F6 /* he_IL.aff in Resources */ = {isa = PBXBuildFile; fileRef = CC4AC6752540C2E9009DD9F6 /* he_IL.aff */; };
@@ -81,6 +82,7 @@
 		CC22F4FD2524A4B30043D6B1 /* MilonchikUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilonchikUITests.swift; sourceTree = "<group>"; };
 		CC22F5012524A4B30043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC353DFF259F159A00473920 /* WindowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowControllerTests.swift; sourceTree = "<group>"; };
 		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC4AC6742540C2E9009DD9F6 /* he_IL.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = he_IL.dic; sourceTree = "<group>"; };
 		CC4AC6752540C2E9009DD9F6 /* he_IL.aff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = he_IL.aff; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */,
+				CC353DFF259F159A00473920 /* WindowControllerTests.swift */,
 				CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */,
 				CCE4C9802595D11600B3D173 /* FactoriesTests.swift */,
 				CC524B9F2541A3D400C8AE94 /* SpellingInstallerTests.swift */,
@@ -467,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE4C9812595D11600B3D173 /* FactoriesTests.swift in Sources */,
+				CC353E00259F159A00473920 /* WindowControllerTests.swift in Sources */,
 				CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */,
 				CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */,
 				CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */,
@@ -756,7 +760,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.5;
+				MARKETING_VERSION = 1.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -782,7 +786,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4.5;
+				MARKETING_VERSION = 1.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roeybiran.Milonchik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

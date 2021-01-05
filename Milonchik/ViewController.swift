@@ -16,12 +16,14 @@ final class ViewController: NSSplitViewController {
     private let modelController = ModelController()
     private let detailViewController = DetailViewController()
 
-    private(set) var state: State! {
+    private(set) var state = State.noQuery {
         didSet {
             handleStateChange(newState: state)
         }
     }
 
+    // https://github.com/aleffert/dials/blob/b9a5db48e980bb2ed8f3c539e911ec07ea6fb995/Desktop/Source/SidebarSplitViewController.swift
+    // https://github.com/Automattic/simplenote-macos/blob/e3ad136028b20ce1038b454555cf673ae78acc83/Simplenote/SplitViewController.swift
     override func loadView() {
         view = splitView
         splitView.autosaveName = "SplitView"

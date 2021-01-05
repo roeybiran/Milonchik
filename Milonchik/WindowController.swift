@@ -10,9 +10,17 @@ import Cocoa
 
 class WindowController: NSWindowController {
 
-    private let searchField = CustomSearchField()
+    lazy var searchField: CustomSearchField = {
+        let _searchField = CustomSearchField()
+        _searchField.delegate = self
+        _searchField.target = self
+        _searchField.action = #selector(performSearch)
+        _searchField.recentsAutosaveName = "SearchFieldRecents"
+        return _searchField
+    }()
 
-    private var viewController: ViewController!
+    let viewController = ViewController()
+
     private let selectors: Set<Selector> = [
         #selector(moveForward),
         #selector(moveBackward),
@@ -22,18 +30,10 @@ class WindowController: NSWindowController {
         #selector(moveToEndOfParagraph)
     ]
 
-    init(tabbed: Bool) {
-        let _viewController = ViewController()
-        let window = NSWindow.makeCustom(contentViewController: _viewController)
-        window.setFrameAutosaveName("MainWindow")
+    init(tabbed: Bool = false) {
 
+        let window = NSWindow.makeCustom(contentViewController: viewController)
         super.init(window: window)
-        self.viewController = _viewController
-
-        searchField.delegate = self
-        searchField.target = self
-        searchField.action = #selector(performSearch)
-        searchField.recentsAutosaveName = "SearchFieldRecents"
 
         let toolbar = NSToolbar(identifier: "Toolbar")
         toolbar.displayMode = .iconOnly
