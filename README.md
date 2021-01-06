@@ -1,9 +1,7 @@
 # Milonchik
 
 Lightweight English-Hebrew Dictionary
-
-![Milonchik App Icon](images/readme-appicon.png)
-
+![App Icon](media/icon.png)
 ## Features
 
 - Fast, light and made for macOS.

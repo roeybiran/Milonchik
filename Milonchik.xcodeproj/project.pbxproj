@@ -16,6 +16,7 @@
 		CC0C02D224B88288005E55B2 /* milon.db in Resources */ = {isa = PBXBuildFile; fileRef = CC0C02D124B85E60005E55B2 /* milon.db */; };
 		CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */; };
 		CC22F5002524A4B30043D6B1 /* MilonchikUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */; };
+		CC3184F425A4DEAE007B72E1 /* MorfixControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3184F325A4DEAE007B72E1 /* MorfixControllerTests.swift */; };
 		CC353E00259F159A00473920 /* WindowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC353DFF259F159A00473920 /* WindowControllerTests.swift */; };
 		CC489EE324C38C6C0035BCD8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC489EE224C38C6C0035BCD8 /* WebKit.framework */; };
 		CC4AC6762540C2E9009DD9F6 /* he_IL.dic in Resources */ = {isa = PBXBuildFile; fileRef = CC4AC6742540C2E9009DD9F6 /* he_IL.dic */; };
@@ -36,7 +37,7 @@
 		CCA710E925498EBA003BA5BB /* DefinitionDetail.html in Resources */ = {isa = PBXBuildFile; fileRef = CCA710E625498EBA003BA5BB /* DefinitionDetail.html */; };
 		CCA710EA25498EBA003BA5BB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA710E725498EBA003BA5BB /* DetailView.swift */; };
 		CCAA5D972568169B005FE770 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAA5D962568169B005FE770 /* State.swift */; };
-		CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA615F2525CE040025D825 /* NetworkModelController.swift */; };
+		CCDA61602525CE040025D825 /* MorfixController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA615F2525CE040025D825 /* MorfixController.swift */; };
 		CCDE5F912546D41E002AA6FE /* DatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */; };
 		CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */; };
 		CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */; };
@@ -82,6 +83,7 @@
 		CC22F4FD2524A4B30043D6B1 /* MilonchikUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MilonchikUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F4FF2524A4B30043D6B1 /* MilonchikUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilonchikUITests.swift; sourceTree = "<group>"; };
 		CC22F5012524A4B30043D6B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC3184F325A4DEAE007B72E1 /* MorfixControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorfixControllerTests.swift; sourceTree = "<group>"; };
 		CC353DFF259F159A00473920 /* WindowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowControllerTests.swift; sourceTree = "<group>"; };
 		CC489EE224C38C6C0035BCD8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CC4AC6742540C2E9009DD9F6 /* he_IL.dic */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = he_IL.dic; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		CCA710E625498EBA003BA5BB /* DefinitionDetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DefinitionDetail.html; sourceTree = "<group>"; };
 		CCA710E725498EBA003BA5BB /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CCAA5D962568169B005FE770 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		CCDA615F2525CE040025D825 /* NetworkModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelController.swift; sourceTree = "<group>"; };
+		CCDA615F2525CE040025D825 /* MorfixController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorfixController.swift; sourceTree = "<group>"; };
 		CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResponse.swift; sourceTree = "<group>"; };
 		CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+custom.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */,
+				CC3184F325A4DEAE007B72E1 /* MorfixControllerTests.swift */,
 				CC353DFF259F159A00473920 /* WindowControllerTests.swift */,
 				CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */,
 				CCE4C9802595D11600B3D173 /* FactoriesTests.swift */,
@@ -275,7 +278,7 @@
 		CCA710F225498F7F003BA5BB /* Temp */ = {
 			isa = PBXGroup;
 			children = (
-				CCDA615F2525CE040025D825 /* NetworkModelController.swift */,
+				CCDA615F2525CE040025D825 /* MorfixController.swift */,
 			);
 			name = Temp;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				CCE4C9812595D11600B3D173 /* FactoriesTests.swift in Sources */,
 				CC353E00259F159A00473920 /* WindowControllerTests.swift in Sources */,
+				CC3184F425A4DEAE007B72E1 /* MorfixControllerTests.swift in Sources */,
 				CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */,
 				CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */,
 				CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */,
@@ -500,7 +504,7 @@
 				CC8159E724B7CBCD0091D89E /* ViewController.swift in Sources */,
 				CCE4C9942595D93300B3D173 /* String+trimmedAndSplittedByTab.swift in Sources */,
 				CC5F25FD258964F5000D6C65 /* NSTableCellView+makeCustom.swift in Sources */,
-				CCDA61602525CE040025D825 /* NetworkModelController.swift in Sources */,
+				CCDA61602525CE040025D825 /* MorfixController.swift in Sources */,
 				CC8159EB24B7CDBF0091D89E /* WindowController.swift in Sources */,
 				CC6B99C82583C46D007C278D /* NSScrollView+makeCustom.swift in Sources */,
 				CC088BB424BB757200C900F3 /* MilonchikError.swift in Sources */,

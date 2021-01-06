@@ -12,7 +12,12 @@ enum MilonchikError: Error {
     case userCancelled
     case noDefinitions(for: String)
     case SQLError(_: Error)
+    // case genericError(message: String)
     enum HebrewSpellingInstallerError: Error {
         case spellingDirectoryAccessFailure
     }
+}
+
+enum GenericError: Error {
+    case error(message: String)
 }
