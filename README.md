@@ -1,7 +1,9 @@
 # Milonchik
 
 Lightweight English-Hebrew Dictionary
+
 ![App Icon](media/icon.png)
+
 ## Features
 
 - Fast, light and made for macOS.
