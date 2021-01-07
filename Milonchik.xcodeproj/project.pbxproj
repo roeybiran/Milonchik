@@ -41,6 +41,7 @@
 		CCDE5F912546D41E002AA6FE /* DatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */; };
 		CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */; };
 		CCE099E22584339B003F3EE9 /* NSProgressIndicator+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */; };
+		CCE33E1725A6685900C9BDD4 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE33E1625A6685900C9BDD4 /* MockURLSession.swift */; };
 		CCE4C9812595D11600B3D173 /* FactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4C9802595D11600B3D173 /* FactoriesTests.swift */; };
 		CCE4C9862595D8CC00B3D173 /* TableViewDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4C9852595D8CC00B3D173 /* TableViewDisplayable.swift */; };
 		CCE4C98C2595D91500B3D173 /* String?+trimmedAndSplittedByTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE4C98B2595D91500B3D173 /* String?+trimmedAndSplittedByTab.swift */; };
@@ -110,6 +111,7 @@
 		CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResponse.swift; sourceTree = "<group>"; };
 		CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		CCE099E12584339B003F3EE9 /* NSProgressIndicator+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+custom.swift"; sourceTree = "<group>"; };
+		CCE33E1625A6685900C9BDD4 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		CCE4C9802595D11600B3D173 /* FactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesTests.swift; sourceTree = "<group>"; };
 		CCE4C9852595D8CC00B3D173 /* TableViewDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDisplayable.swift; sourceTree = "<group>"; };
 		CCE4C98B2595D91500B3D173 /* String?+trimmedAndSplittedByTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String?+trimmedAndSplittedByTab.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				CC22F4D82524A3F60043D6B1 /* ModelControllerTests.swift */,
 				CC3184F325A4DEAE007B72E1 /* MorfixControllerTests.swift */,
+				CCE33E1625A6685900C9BDD4 /* MockURLSession.swift */,
 				CC353DFF259F159A00473920 /* WindowControllerTests.swift */,
 				CCDF9A782599D5A000FE12C9 /* ViewControllerTests.swift */,
 				CCE4C9802595D11600B3D173 /* FactoriesTests.swift */,
@@ -194,6 +197,7 @@
 				CC0C02C524B85A3A005E55B2 /* ModelController.swift */,
 				CCDE5F902546D41E002AA6FE /* DatabaseResponse.swift */,
 				CC0C02CD24B85CF2005E55B2 /* Definition.swift */,
+				CCDA615F2525CE040025D825 /* MorfixController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -255,7 +259,6 @@
 				CC09788A24EFC46D00DF1ED3 /* Constants.swift */,
 				CC088BB324BB757200C900F3 /* MilonchikError.swift */,
 				CC4DCBAF257ED5A10067CAAA /* Supporting FIles */,
-				CCA710F225498F7F003BA5BB /* Temp */,
 			);
 			path = Milonchik;
 			sourceTree = "<group>";
@@ -273,14 +276,6 @@
 				CCE4C98B2595D91500B3D173 /* String?+trimmedAndSplittedByTab.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		CCA710F225498F7F003BA5BB /* Temp */ = {
-			isa = PBXGroup;
-			children = (
-				CCDA615F2525CE040025D825 /* MorfixController.swift */,
-			);
-			name = Temp;
 			sourceTree = "<group>";
 		};
 		CCE4C98A2595D8D700B3D173 /* Protocols */ = {
@@ -476,6 +471,7 @@
 				CC353E00259F159A00473920 /* WindowControllerTests.swift in Sources */,
 				CC3184F425A4DEAE007B72E1 /* MorfixControllerTests.swift in Sources */,
 				CC22F4D92524A3F60043D6B1 /* ModelControllerTests.swift in Sources */,
+				CCE33E1725A6685900C9BDD4 /* MockURLSession.swift in Sources */,
 				CCDF9A792599D5A000FE12C9 /* ViewControllerTests.swift in Sources */,
 				CC524BA02541A3D400C8AE94 /* SpellingInstallerTests.swift in Sources */,
 			);

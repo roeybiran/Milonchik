@@ -7,6 +7,7 @@
 // //
 
 import Foundation
+import Cocoa
 
 protocol URLSessionProtocol {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
@@ -18,7 +19,7 @@ class MorfixController {
 
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
-    let session: URLSessionProtocol = URLSession.shared
+    var session: URLSessionProtocol = URLSession.shared
 
     func fetch(query: String, onCompletion handler: @escaping (Result<[MorfixDefinition], Error>) -> Void) {
         // https://github.com/outofink/morfix-lite/
@@ -59,6 +60,18 @@ class MorfixController {
             }
         }
         task.resume()
+    }
+
+    var field: NSSearchField!
+
+    init() {
+        field = NSSearchField()
+        field.target = self
+        field.action = #selector(performSearch)
+    }
+
+    @objc func performSearch() {
+        fetch(query: field.stringValue) { _ in }
     }
 }
 

@@ -157,5 +157,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/MorfixController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "performSearch()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69 - 9d28de183c0b71f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Milonchik.MorfixController.performSearch() -&gt; ()"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/MorfixController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69 - 53276b39ed1c99b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Milonchik.MorfixDefinition&gt;, Swift.Error&gt;) -&gt; () in Milonchik.MorfixController.performSearch() -&gt; ()"
+                  moduleName = "Milonchik"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/MorfixController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
