@@ -1,16 +1,8 @@
-//
-//  CustomSearchField.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 29/12/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import Cocoa
 
 class CustomSearchField: NSSearchField {
 
-    var isAnimatingProgress = false {
+    var shouldAnimate = false {
         willSet(value) {
             if value {
                 progressIndicator.startAnimation(nil)

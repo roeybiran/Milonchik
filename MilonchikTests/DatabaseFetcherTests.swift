@@ -1,44 +1,39 @@
 //
-//  ModelControllerTests.swift
-//  MilonchikTests
-//
-//  Created by Roey Biran on 11/07/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
 
 import XCTest
 
 @testable import Milonchik
-class ModelControllerTests: XCTestCase {
 
-    var sut: ModelController!
+class DatabaseFetcherTests: XCTestCase {
+
+    var sut: DatabaseFetcher!
 
     override func setUpWithError() throws {
-        sut = ModelController()
+        sut = DatabaseFetcher()
     }
 
     override func tearDownWithError() throws {
         sut = nil
     }
 
-    // func test_fetchingDefinitions() throws {
-    //     let expectation = XCTestExpectation(description: "database fetching")
-    //     var result: DatabaseResult!
-    //
-    //     sut.fetch(query: "apple") {
-    //         result = $0
-    //         expectation.fulfill()
-    //     }
-    //     wait(for: [expectation], timeout: 2)
-    //
-    //     switch result {
-    //     case .success(let result):
-    //         let obtainedID = result.exactMatches.first!.id
-    //         XCTAssertEqual(obtainedID, 2913)
-    //     default:
-    //         XCTFail("fetch test failed")
-    //     }
-    // }
+    func test_fetch_withApple_shouldReturnID2913() throws {
+        let expectation = XCTestExpectation(description: "database fetching")
+        var result: DatabaseResult!
+
+        sut.fetch(query: "apple") {
+            result = $0
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.5)
+
+        switch result {
+        case .success(let result):
+            let obtainedID = result.exactMatches.first!.id
+            XCTAssertEqual(obtainedID, 2913)
+        default:
+            XCTFail("fetch test failed")
+        }
+    }
     //
     // func test_fetchingByInflectionsOrAlternateSpelling() throws {
     //

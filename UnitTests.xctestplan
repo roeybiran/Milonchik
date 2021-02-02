@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "242110EF-3531-46A3-911C-A28E4BB7D8F0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "ListViewControllerTests",
+        "ModelControllerTests",
+        "ViewControllerTests",
+        "WindowControllerTests",
+        "WindowManagerTests"
+      ],
+      "target" : {
+        "containerPath" : "container:Milonchik.xcodeproj",
+        "identifier" : "CC22F4D52524A3F60043D6B1",
+        "name" : "MilonchikTests"
+      }
+    }
+  ],
+  "version" : 1
+}

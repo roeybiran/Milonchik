@@ -1,10 +1,3 @@
-// //
-// //  NetworkController.swift
-// //  Milonchik
-// //
-// //  Created by Roey Biran on 18/09/2020.
-// //  Copyright © 2020 Roey Biran. All rights reserved.
-// //
 
 import Foundation
 import Cocoa
@@ -61,18 +54,6 @@ class MorfixController {
         }
         task.resume()
     }
-
-    var field: NSSearchField!
-
-    init() {
-        field = NSSearchField()
-        field.target = self
-        field.action = #selector(performSearch)
-    }
-
-    @objc func performSearch() {
-        fetch(query: field.stringValue) { _ in }
-    }
 }
 
 struct MorfixResult: Decodable {
@@ -94,14 +75,14 @@ struct MorfixInflection: Decodable {
 
 struct MorfixDefinition: Decodable {
     let id: Int
-    let translations: [[MorfixTranslation]]
+    let translation: String
     let partOfSpeech: String
     let inflections: [MorfixInflection]
     let samples: [String]
     let synonyms: [String]
     enum CodingKeys: String, CodingKey {
         case id = "ID"
-        case translations = "OutputLanguageMeanings"
+        case translation = "OutputLanguageMeaningsString"
         case partOfSpeech = "PartOfSpeech"
         case inflections = "Inflections"
         case samples = "SampleSentences"
@@ -111,7 +92,7 @@ struct MorfixDefinition: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = Int(try values.decode(String.self, forKey: .id)) ?? 0
-        translations = try values.decode([[MorfixTranslation]].self, forKey: .translations)
+        translation = try values.decode(String.self, forKey: .translation)
         partOfSpeech = try values.decode(String.self, forKey: .partOfSpeech)
         inflections = try values.decode([MorfixInflection].self, forKey: .inflections)
         samples = try values.decode([String].self, forKey: .samples)

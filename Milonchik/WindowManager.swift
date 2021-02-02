@@ -1,14 +1,6 @@
-//
-//  WindowManager.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 26/12/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import AppKit
 
-class WindowManager: NSObject {
+class WindowManager: NSResponder {
 
     var managedWindowControllers = [WindowController]()
 
@@ -19,7 +11,8 @@ class WindowManager: NSObject {
     }
 
     @objc func defineInMilonchikServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
-        if NSApp.windows.isEmpty { makeNewWindow(tabbed: false) }
+        // checking for NSApp.windows.isEmpty returns false if the About window is open
+        if managedWindowControllers.isEmpty { makeNewWindow(tabbed: false) }
 
         guard
             let firstWindow = NSApp.orderedWindows.first,
@@ -40,9 +33,12 @@ extension WindowManager: NSWindowDelegate {
     }
 
     func windowDidBecomeKey(_ notification: Notification) {
-        if let index = managedWindowControllers.firstIndex(where: { $0.window?.isKeyWindow ?? false }) {
-            managedWindowControllers[index].focusSearchField(nil)
-        }
+        (
+            NSApp?.orderedWindows
+            .first(where: { $0.windowController is WindowController })?
+            .windowController as? WindowController
+        )?
+            .focusSearchField(nil)
     }
 
 }

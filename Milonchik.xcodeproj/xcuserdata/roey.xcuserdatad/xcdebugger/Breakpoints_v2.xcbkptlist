@@ -7,135 +7,158 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E852F244-EEB3-4F9E-9333-452D4EF45167"
+            uuid = "0EA938D5-F4E0-4A1F-B8BD-F705A7BE6673"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Milonchik/ModelController.swift"
+            filePath = "Milonchik/MorfixController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "fetch(query:completionHandler:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetch(query:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "88757035-E5B0-479E-91B5-FBA91564BE55"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
-            filePath = "Milonchik/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "state"
-            landmarkType = "24">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.Log">
-                  <ActionContent
-                     message = "didSet hit"
-                     conveyanceType = "0">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A982B2F9-6898-4C88-8AB6-0860D26D05B4"
+            uuid = "5D2E538E-48F6-4B60-8999-721AFB0687E2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Milonchik/DetailViewController.swift"
+            filePath = "Milonchik/MorfixController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "update(with:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetch(query:onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AA0C252-AF2B-4717-9DB3-53A17D363B14"
+            uuid = "4042EC68-F334-4F41-ADA6-046E67242275"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/MorfixController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "fetch(query:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "056A6C42-AB72-4B9A-97FD-FDF5E046C412"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilonchikTests/MorfixControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "test_fetchResponse_withURLSessionError_shouldReturnFailure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAB0F019-7360-4EBE-ADFD-8A2EB1A3D979"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilonchikTests/MorfixControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "test_fetchResponse_withQueryAndBadJSON_shouldReturnFailure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78E14CE0-6D69-4587-BE11-89D6C2B9FCAD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MilonchikTests/MorfixControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "test_fetchResponse_withURLSessionError_shouldReturnFailure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2AD0D057-D3F7-4EF8-AFF6-49CD2D6E5D8F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Milonchik/WindowController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "init(tabbed:)"
-            landmarkType = "7">
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A0F69E1-41CE-4354-9A9C-BEAB7250ABB5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Milonchik/DetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "loadHTML(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "659DBDBF-039A-4CF5-89FC-787131ED602F"
+            uuid = "36FB8893-EC35-4206-9660-3B880FE375D0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Milonchik/WindowManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "defineInMilonchikServiceHandler(_:userData:error:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "windowDidBecomeKey(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "659DBDBF-039A-4CF5-89FC-787131ED602F - 4c84ea675b8d5d9f"
+                  uuid = "36FB8893-EC35-4206-9660-3B880FE375D0 - e9df6dfd84104b22"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Milonchik.WindowManager.defineInMilonchikServiceHandler(_: __C.NSPasteboard, userData: Swift.String, error: Swift.Optional&lt;Swift.AutoreleasingUnsafeMutablePointer&lt;Swift.Optional&lt;__C.NSError&gt;&gt;&gt;) -&gt; ()"
+                  symbolName = "Milonchik.WindowManager.windowDidBecomeKey(Foundation.Notification) -&gt; ()"
                   moduleName = "Milonchik"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/WindowManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "764">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "69">
                </Location>
                <Location
-                  uuid = "659DBDBF-039A-4CF5-89FC-787131ED602F - e9a9a51a315816b7"
+                  uuid = "36FB8893-EC35-4206-9660-3B880FE375D0 - fcaebb7411a67907"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Milonchik.WindowController) -&gt; Swift.Bool in Milonchik.WindowManager.defineInMilonchikServiceHandler(_: __C.NSPasteboard, userData: Swift.String, error: Swift.Optional&lt;Swift.AutoreleasingUnsafeMutablePointer&lt;Swift.Optional&lt;__C.NSError&gt;&gt;&gt;) -&gt; ()"
+                  symbolName = "closure #1 (Milonchik.WindowController) -&gt; Swift.Bool in Milonchik.WindowManager.windowDidBecomeKey(Foundation.Notification) -&gt; ()"
                   moduleName = "Milonchik"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/WindowManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "44">
                </Location>
             </Locations>
@@ -144,65 +167,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D0EE0F2-3881-4727-80D4-653C02DEF411"
+            uuid = "6879ED14-007B-4512-88C2-B913CF8E4819"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Milonchik/WindowManager.swift"
+            filePath = "Milonchik/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "defineInMilonchikServiceHandler(_:userData:error:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "handleStateChange(to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69"
+            uuid = "801A36C7-3FD4-4171-A82B-9E4FEC782A4C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Milonchik/MorfixController.swift"
+            filePath = "Milonchik/ModelController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "performSearch()"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "init(onStateChange:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69 - 9d28de183c0b71f7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Milonchik.MorfixController.performSearch() -&gt; ()"
-                  moduleName = "Milonchik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/MorfixController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "65">
-               </Location>
-               <Location
-                  uuid = "D6CF012B-6585-48B6-AB9E-27A86AAFAC69 - 53276b39ed1c99b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Milonchik.MorfixDefinition&gt;, Swift.Error&gt;) -&gt; () in Milonchik.MorfixController.performSearch() -&gt; ()"
-                  moduleName = "Milonchik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/MorfixController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2616161F-7C21-4DCD-9703-4632A3635796"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/ModelController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "externalState"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66912DC8-9F6E-4E91-A76A-CEA8AB5EC153"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/ModelController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "externalState"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BC7CF8C-B174-4054-926A-6E37A964271C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Milonchik/Model Controllers/ModelController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "init()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

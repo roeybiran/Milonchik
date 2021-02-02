@@ -1,11 +1,3 @@
-//
-//  Window.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 07/12/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import Cocoa
 
 extension NSWindow {
@@ -17,4 +9,3 @@ extension NSWindow {
         return window
     }
 }
-

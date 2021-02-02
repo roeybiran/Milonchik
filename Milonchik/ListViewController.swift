@@ -1,21 +1,19 @@
 import Cocoa
 
 /// a  view controller that manages a list of definitions and its associated `NSSplitViewItem`.
-final class ListViewController: NSViewController, StateResponding {
-
-    private struct GroupRow: TableViewDisplayable {
-        var label: String { "Suggestions" }
-    }
+final class ListViewController: NSViewController {
 
     let tableView = NSTableView.custom
-    private var onSelection: ((Definition) -> Void)?
     private var items = [TableViewDisplayable]()
+    var onSelectionChange: ((TableViewDisplayable) -> Void)?
 
     /// Initializes a new `ListViewController`.
     /// - Parameter onSelect: a handler to be called when a new definition has been selected.
-    init(onSelect: @escaping ((Definition) -> Void)) {
-        onSelection = onSelect
+    init() {
+        // onSelection = onSelect
         super.init(nibName: nil, bundle: nil)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -26,26 +24,9 @@ final class ListViewController: NSViewController, StateResponding {
         view = NSScrollView.makeCustom(enclosedTableView: tableView)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-
-    }
-
-    func update(with state: State) {
-        switch state {
-        case .results(let result):
-            items.removeAll(keepingCapacity: true)
-            items = result.exactMatches
-            if !result.partialMatches.isEmpty {
-                items.append(contentsOf: [GroupRow()] + result.partialMatches)
-            }
-        case .noQuery, .noResults:
-            items.removeAll(keepingCapacity: true)
-        default:
-            return
-        }
+    func updateListItems(with items: [TableViewDisplayable]) {
+        self.items.removeAll(keepingCapacity: true)
+        self.items = items
         tableView.reloadData()
         if items.count > 0 {
             guard let firstValidRow = items.firstIndex(where: { !($0 is GroupRow) }) else { return }
@@ -64,7 +45,6 @@ extension ListViewController: NSTableViewDataSource {
 
 // MARK: - NSTableViewDelegate
 extension ListViewController: NSTableViewDelegate {
-
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let identifier: NSUserInterfaceItemIdentifier = items[row] is GroupRow ? .groupRowCell : .regularCell
         if let cellView = tableView.makeView(withIdentifier: identifier, owner: nil) as? NSTableCellView {
@@ -75,11 +55,10 @@ extension ListViewController: NSTableViewDelegate {
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        guard let selectedDefinition = items[tableView.selectedRow] as? Definition else { return }
-        onSelection?(selectedDefinition)
+        onSelectionChange?(items[tableView.selectedRow])
     }
 
-    //FIXME: FB8946005
+    // FIXME: FB8946005
     // func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
     //     if items[row] is GroupRow { return true }
     //     return false
@@ -89,10 +68,4 @@ extension ListViewController: NSTableViewDelegate {
         if items[row] is GroupRow { return false }
         return true
     }
-
-}
-
-extension NSUserInterfaceItemIdentifier {
-    static let regularCell = NSUserInterfaceItemIdentifier("RegularCell")
-    static let groupRowCell = NSUserInterfaceItemIdentifier("GroupRowCell")
 }

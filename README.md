@@ -26,9 +26,9 @@ While the search field is focused:
 
 ## Roadmap
 
-- More lenient search.
 - Morfix as a definitions source.
 - Session history.
 - Agent mode (hide in Dock).
 - Basic drag (e.g. text clippings -> app) and drop (e.g. definition -> text file) support.
 - State restoration.
+- Dock icon operations.

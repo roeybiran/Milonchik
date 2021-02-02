@@ -1,11 +1,3 @@
-//
-//  MLNWindowController.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 10/07/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import Cocoa
 
 class WindowController: NSWindowController {
@@ -19,21 +11,31 @@ class WindowController: NSWindowController {
         return _searchField
     }()
 
-    let viewController = ViewController()
-
-    private let selectors: Set<Selector> = [
+    @objc let viewController: ViewController
+    let notificationCenter = NotificationCenter.default
+    let selectors = Set([
         #selector(moveForward),
         #selector(moveBackward),
         #selector(moveDown),
         #selector(moveUp),
         #selector(moveToBeginningOfParagraph),
         #selector(moveToEndOfParagraph)
-    ]
+    ])
+
+    var viewControllerObservation: NSKeyValueObservation?
 
     init(tabbed: Bool = false) {
-
+        viewController = ViewController()
         let window = NSWindow.makeCustom(contentViewController: viewController)
         super.init(window: window)
+        viewController.notifyObservers = { [weak self] in
+            guard let self = self else { return }
+            self.searchField.shouldAnimate = self.viewController.progressShouldAnimate
+            self.window?.title = self.viewController.windowData.title
+            if #available(OSX 11.0, *) {
+                self.window?.subtitle = self.viewController.windowData.subtitle
+            }
+        }
 
         let toolbar = NSToolbar(identifier: "Toolbar")
         toolbar.displayMode = .iconOnly
@@ -52,28 +54,10 @@ class WindowController: NSWindowController {
         }
         window.makeKeyAndOrderFront(nil)
         window.makeFirstResponder(searchField)
-
-        NotificationCenter
-            .default
-            .addObserver(self,
-                         selector: #selector(handleViewControllerStateChange),
-                         name: .viewControllerStateDidChange, object: nil)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    @objc func handleViewControllerStateChange() {
-        searchField.isAnimatingProgress = viewController.state.operationInProgress
-
-        if let title = viewController.state.proposedWindowTitle {
-            window?.title = title
-        }
-
-        if #available(OSX 11.0, *), let subtitle = viewController.state.proposedWindowSubtitle {
-            window?.subtitle = subtitle
-        }
     }
 
     @IBAction func focusSearchField(_ sender: Any?) {
@@ -94,8 +78,10 @@ class WindowController: NSWindowController {
 
 extension WindowController: NSSearchFieldDelegate {
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-        if selectors.contains(commandSelector), let event = NSApp.currentEvent {
-            viewController.listViewController.tableView.keyDown(with: event)
+        if selectors.contains(commandSelector) {
+            if let event = window?.currentEvent, event.type == .keyDown {
+                viewController.listViewController.tableView.keyDown(with: event)
+            }
             return true
         }
         return false
@@ -131,6 +117,3 @@ extension WindowController: NSToolbarDelegate {
     }
 }
 
-extension NSToolbarItem.Identifier {
-    static let searchField = NSToolbarItem.Identifier("SearchFieldToolbarItem")
-}

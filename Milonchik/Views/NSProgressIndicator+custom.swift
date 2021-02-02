@@ -1,11 +1,3 @@
-//
-//  NSProgressIndicator+custom.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 12/12/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import Cocoa
 
 extension NSProgressIndicator {

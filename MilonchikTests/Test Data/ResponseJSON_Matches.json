@@ -1,0 +1,476 @@
+{
+  "ResultType": "Match",
+  "Status": "Valid",
+  "AlternateList": [],
+  "Query": "home",
+  "ReviseList": [],
+  "CorrectionList": [],
+  "CorrectionListL2": [],
+  "TranslationType": "FromEnglish",
+  "TranslationTypeValue": 1,
+  "OneSuggestionOperatedFor": "",
+  "OneAlternateOperatedFor": "",
+  "Words": [
+    {
+      "ID": "45496",
+      "InputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "home",
+            "Translation": "",
+            "SoundURL": "https://services.morfix.co.il/BritannicaAppSettings/Settings/GetSoundByMelingoID/45496",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "OutputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "בַּיִת",
+            "Translation": " house, home  ; (poetry) stanza, verse  ; school, system  ; dynasty, family  ; (sport) group  ; (computing) byte  ; הבית - Temple  ; הביתה - home, homeward  ; מבית - from within, internal     ",
+            "SoundURL": "",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "PartOfSpeech": "noun",
+      "OutputLanguageMeaningsString": "בַּיִת",
+      "isExactMatch": "",
+      "WOTDimageURL": "",
+      "WOTDtooltip": "",
+      "TranslationIdenticalToSource": "",
+      "Inflections": [
+        {
+          "Code": "33",
+          "Text": "homes",
+          "Title": "רבים"
+        }
+      ],
+      "SampleSentences": [
+        "His <b>home</b> is a small apartment.",
+        "People are concerned about protecting their <b>homes</b>.",
+        "They have a <b>second home</b> on the lake.",
+        "There's no place like <b>home</b>.",
+        "I must have left my notes at <b>home</b>.",
+        "She made a good <b>home</b> for her husband and children.",
+        "The islands are <b>home</b> to many species of birds.",
+        "Can you find a <b>home</b> for these files in your office?"
+      ],
+      "SynonymsList": ["institution"],
+      "UsageNotes": "",
+      "AdditionalContentList": [
+        {
+          "Question": "מה משמעות הביטוי to be <b>at home</b>?",
+          "Answer": "באנגלית, כמו בעברית, אם אדם אומר שהוא 'מרגיש בבית' - at home - במקום מסוים, פירוש הדבר שהוא מרגיש נוח, אבל באנגלית משתמשים בביטוי הזה לעיתים קרובות במשמעות רחבה יותר. לדוגמה, באנגלית אפשר לומר:<br>\r\n<example>I'm very much at home discussing philosophical issues.</example><br>\r\nכלומר, \"אני מרגיש נוח מאוד כשאני מדבר על עניינים פילוסופיים\", או \"אני בקיא בעניינים פילוסופיים\".",
+          "LinkType": 0,
+          "Ord": 1
+        },
+        {
+          "Question": "מה משמעות הביטוי <b>home to</b>?",
+          "Answer": "כשמדברים על מוסד, ארגון, קבוצת אנשים, תופעת טבע וכיוצא באלה, הביטוי home to מצביע על המקום שבו אפשר למצוא אותם או שבו הם שוכנים דרך קבע. דוגמה:<br>\r\n<example>New York City is <b>home to</b> many international companies and organizations.</example> (בעיר ניו יורק שוכנים חברות וארגונים בינלאומיים רבים.)<br>\r\nדוגמה נוספת:<br>\r\n<example>This nature reserve is home to several rare species of birds and mammals.</example> (בשמורת הטבע הזאת אפשר למצוא כמה מינים נדירים של ציפורים ושל יונקים.)",
+          "LinkType": 0,
+          "Ord": 2
+        },
+        {
+          "Question": "שימו לב",
+          "Answer": "באנגלית, 'בית אבות' (מוסד המותאם לצורכיהם של אנשים זקנים) נקרא לעיתים קרובות <b>a home</b>. דוגמה:<br>\r\nShe lived most of her life in Manhattan, but she spent her last years at <b>a home</b> in Queens.<br>\r\n(היא חיה רוב חייה במנהטן, אבל העבירה את שנותיה האחרונות בבית אבות בקווינס.)",
+          "LinkType": 0,
+          "Ord": 3
+        }
+      ],
+      "SynonymsBlocks": [],
+      "SynonymsLinks": []
+    },
+    {
+      "ID": "45495",
+      "InputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "home",
+            "Translation": "",
+            "SoundURL": "https://services.morfix.co.il/BritannicaAppSettings/Settings/GetSoundByMelingoID/45495",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "OutputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "הַבַּיְתָה",
+            "Translation": " homeward  ; Go away! Get out! Go home!    ",
+            "SoundURL": "",
+            "Meaning": ""
+          },
+          {
+            "DisplayText": "בַּבַּיִת",
+            "Translation": null,
+            "SoundURL": "",
+            "Meaning": ""
+          }
+        ],
+        [
+          {
+            "DisplayText": "למקומו",
+            "Translation": null,
+            "SoundURL": "",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "PartOfSpeech": "adverb",
+      "OutputLanguageMeaningsString": "הַבַּיְתָה, בַּבַּיִת; למקומו",
+      "isExactMatch": "",
+      "WOTDimageURL": "",
+      "WOTDtooltip": "",
+      "TranslationIdenticalToSource": "",
+      "Inflections": [],
+      "SampleSentences": [
+        "She called <b>home</b> to say she would be late for dinner.",
+        "He's sending money <b>home</b> from a job overseas.",
+        "She is on her way <b>home</b>.",
+        "It's great to be back <b>home</b>.",
+        "I can't wait to <b>come home</b>.",
+        "He used a hammer to drive the nail <b>home</b>."
+      ],
+      "SynonymsList": [],
+      "UsageNotes": "",
+      "AdditionalContentList": [],
+      "SynonymsBlocks": [],
+      "SynonymsLinks": []
+    },
+    {
+      "ID": "45497",
+      "InputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "home",
+            "Translation": "",
+            "SoundURL": "https://services.morfix.co.il/BritannicaAppSettings/Settings/GetSoundByMelingoID/45497",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "OutputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "הִתְבַּיֵּת",
+            "Translation": " to become domesticated  ; (military) to home in on (a target)    ",
+            "SoundURL": "",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "PartOfSpeech": "verb",
+      "OutputLanguageMeaningsString": "הִתְבַּיֵּת",
+      "isExactMatch": "",
+      "WOTDimageURL": "",
+      "WOTDtooltip": "",
+      "TranslationIdenticalToSource": "",
+      "Inflections": [
+        {
+          "Code": "4",
+          "Text": "homed",
+          "Title": "עבר"
+        },
+        {
+          "Code": "5",
+          "Text": "has homed",
+          "Title": "הווה מושלם"
+        },
+        {
+          "Code": "3",
+          "Text": "is homing",
+          "Title": "הווה ממושך"
+        },
+        {
+          "Code": "2",
+          "Text": "homes",
+          "Title": "הווה"
+        }
+      ],
+      "SampleSentences": [],
+      "SynonymsList": [],
+      "UsageNotes": "",
+      "AdditionalContentList": [],
+      "SynonymsBlocks": [],
+      "SynonymsLinks": []
+    },
+    {
+      "ID": "45494",
+      "InputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "home",
+            "Translation": "",
+            "SoundURL": "https://services.morfix.co.il/BritannicaAppSettings/Settings/GetSoundByMelingoID/45494",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "OutputLanguageMeanings": [
+        [
+          {
+            "DisplayText": "בֵּיתִי",
+            "Translation": " domestic, residential, home  ; comfortable, homely, home-like  ; home-loving  ; home-made    ",
+            "SoundURL": "",
+            "Meaning": ""
+          }
+        ]
+      ],
+      "PartOfSpeech": "adjective",
+      "OutputLanguageMeaningsString": "בֵּיתִי",
+      "isExactMatch": "",
+      "WOTDimageURL": "",
+      "WOTDtooltip": "",
+      "TranslationIdenticalToSource": "",
+      "Inflections": [],
+      "SampleSentences": [
+        "She has a happy <b>home</b> life.",
+        "Please give us your <b>home</b> phone number.",
+        "What is your <b>home</b> address?",
+        "The team opens its <b>home</b> season in just two weeks."
+      ],
+      "SynonymsList": [],
+      "UsageNotes": "",
+      "AdditionalContentList": [],
+      "SynonymsBlocks": [],
+      "SynonymsLinks": []
+    }
+  ],
+  "WordsL2": [],
+  "Tokens": [],
+  "QueryRelatedCollocations": [
+    "mobile home ",
+    "motor home ",
+    "till the cows come home ",
+    "rest home ",
+    "home stretch ",
+    "residential home ",
+    "home language ",
+    "home page ",
+    "drive (something) home ",
+    "bring (something) home ",
+    "home video ",
+    "group home ",
+    "starter home ",
+    "retirement home ",
+    "senior citizens home ",
+    "at home ",
+    "bring home the bacon ",
+    "close to home ",
+    "detention home ",
+    "funeral home ",
+    "home banking ",
+    "home cooking ",
+    "Home Counties ",
+    "home economics ",
+    "home front ",
+    "Home Office ",
+    "home port ",
+    "home rule ",
+    "home run ",
+    "home teacher ",
+    "keep the home fires burning ",
+    "make oneself at home ",
+    "hit home ",
+    "strike home ",
+    "home free ",
+    "home sweet home ",
+    "home base ",
+    "call (something) home ",
+    "at-home ",
+    "take-home exam ",
+    "take-home message ",
+    "hit a home run ",
+    "home away from home ",
+    "nursing home "
+  ],
+  "QueryRelatedPhrasalVerbs": [
+    {
+      "phrase": "home in ",
+      "trans": "הִתְבַּיֵּת"
+    }
+  ],
+  "QueryRelatedCollocationsObject": [
+    {
+      "phrase": "mobile home ",
+      "trans": "קָרָוָן"
+    },
+    {
+      "phrase": "motor home ",
+      "trans": "קָרָוָן, מְעוֹנוֹעַ"
+    },
+    {
+      "phrase": "till the cows come home ",
+      "trans": "לתקופת זמן ארוכה ובלתי מוגדרת"
+    },
+    {
+      "phrase": "rest home ",
+      "trans": "בֵּית הַבְרָאָה [מַרְגּוֹעַ]"
+    },
+    {
+      "phrase": "home stretch ",
+      "trans": "יְשֹׁרֶת אַחֲרוֹנָה"
+    },
+    {
+      "phrase": "residential home ",
+      "trans": "בֵּית מְגוּרִים"
+    },
+    {
+      "phrase": "home language ",
+      "trans": "שפת הבית, השפה שבה מדברים בבית כשהיא שונה משפת החברה הסובבת"
+    },
+    {
+      "phrase": "home page ",
+      "trans": "(אינטרנט) דַּף הַבַּיִת, דַּף פּוֹתֵחַ, עמוד הבית"
+    },
+    {
+      "phrase": "drive (something) home ",
+      "trans": "הבהיר היטב טיעון, הוכיח טענה בצורה משכנעת"
+    },
+    {
+      "phrase": "bring (something) home ",
+      "trans": "הוֹכִיחַ, שִׁכְנֵעַ, הִבְהִיר"
+    },
+    {
+      "phrase": "home video ",
+      "trans": "קלטת ביתית"
+    },
+    {
+      "phrase": "group home ",
+      "trans": "מסגרת דיור לבני נוער ולבוגרים שזקוקים לטיפול והשגחה"
+    },
+    {
+      "phrase": "starter home ",
+      "trans": "הבית הראשון שאדם או משפחה קונים"
+    },
+    {
+      "phrase": "retirement home ",
+      "trans": "בֵּית אָבוֹת [הוֹרִים]"
+    },
+    {
+      "phrase": "senior citizens home ",
+      "trans": "בֵּית אָבוֹת [הוֹרִים]"
+    },
+    {
+      "phrase": "at home ",
+      "trans": "בבית"
+    },
+    {
+      "phrase": "bring home the bacon ",
+      "trans": "הביא את הלחם, הביא את הפרנסה"
+    },
+    {
+      "phrase": "close to home ",
+      "trans": "(בלשון הדיבור) שמוכר לדובר, קרוב לליבו של הדובר"
+    },
+    {
+      "phrase": "detention home ",
+      "trans": "בֵּית מַעֲצָר"
+    },
+    {
+      "phrase": "funeral home ",
+      "trans": "בית הלוויות, מקום בו מכינים את המתים לקבורה"
+    },
+    {
+      "phrase": "home banking ",
+      "trans": "בנקאות ביתית, שיטה שבה הלקוח יכול להתקשר לבנק באמצעות מודם מביתו או ממקום עבודתו"
+    },
+    {
+      "phrase": "home cooking ",
+      "trans": "בישול ביתי"
+    },
+    {
+      "phrase": "Home Counties ",
+      "trans": "\"מחוזות הבית\", כינוי למחוזות שמסביב ללונדון"
+    },
+    {
+      "phrase": "home economics ",
+      "trans": "כַּלְכָּלַת הַבַּיִת"
+    },
+    {
+      "phrase": "home front ",
+      "trans": "חזית ביתית, עֹרֶף (האזור או האוכלוסייה שנמצאים מחוץ לאזור החזית)"
+    },
+    {
+      "phrase": "Home Office ",
+      "trans": "מִשְׂרַד הַפְּנִים"
+    },
+    {
+      "phrase": "home port ",
+      "trans": "נְמַל הָאֵם [הַבַּיִת]"
+    },
+    {
+      "phrase": "home rule ",
+      "trans": "שִׁלְטוֹן עַצְמִי"
+    },
+    {
+      "phrase": "home run ",
+      "trans": "(בֵּיְסְבּוֹל) הקפה מלאה, הקפה של כל ארבעת הבסיסים"
+    },
+    {
+      "phrase": "home teacher ",
+      "trans": "מְחַנֵּךְ כִּתָּה"
+    },
+    {
+      "phrase": "keep the home fires burning ",
+      "trans": "שמר על העניינים (בזמן שמישהו לא נמצא)"
+    },
+    {
+      "phrase": "make oneself at home ",
+      "trans": "הִרְגִּישׁ [חָשׁ] בְּנוֹחַ, הרגיש כמו בבית"
+    },
+    {
+      "phrase": "hit home ",
+      "trans": "(נאמר על עובדה) נֶחְשַׂף, הִתְגַּלָּה בדרך לא נעימה"
+    },
+    {
+      "phrase": "strike home ",
+      "trans": "(נאמר על עובדה) נֶחְשַׂף, הִתְגַּלָּה בדרך לא נעימה"
+    },
+    {
+      "phrase": "home free ",
+      "trans": "נמצא במצב נוח, קרוב להשגת המטרה, בָּא [הִגִּיע] אֶל הַמְּנוּחָה וְאֶל הַנַּחֲלָה"
+    },
+    {
+      "phrase": "home sweet home ",
+      "trans": "בֵּיתִיּוּת, חֲמִימוּת, מִשְׁפַּחְתִּיּוּת"
+    },
+    {
+      "phrase": "home base ",
+      "trans": "מֶרְכָּז, בָּסִיס"
+    },
+    {
+      "phrase": "call (something) home ",
+      "trans": "להתגורר דרך קבע (במקום מסוים)"
+    },
+    {
+      "phrase": "at-home ",
+      "trans": "(מיושן) ערב אירוח בבית"
+    },
+    {
+      "phrase": "take-home exam ",
+      "trans": "מבחן בית (מבחן שהתלמידים או הסטודנטים פותרים בבית)"
+    },
+    {
+      "phrase": "take-home message ",
+      "trans": "המסר העיקרי, הרעיון המרכזי"
+    },
+    {
+      "phrase": "hit a home run ",
+      "trans": "הִצְלִיחַ, הִצְטַיֵּן, הִגִּיעַ רָחוֹק"
+    },
+    {
+      "phrase": "home away from home ",
+      "trans": "כְּמוֹ בַּבַּיִת, חָמִים וְנָעִים (נאמר על מקום)"
+    },
+    {
+      "phrase": "nursing home ",
+      "trans": "דִּיּוּר מוּגָן"
+    }
+  ],
+  "WikipediaList": [],
+  "ShouldUseMachineTranslate": "false",
+  "InputTokenize": ["home"],
+  "MachineTranslateResult": null
+}

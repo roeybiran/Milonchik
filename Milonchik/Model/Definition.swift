@@ -1,10 +1,4 @@
 //
-//  Definition.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 10/07/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
 
 import Foundation
 import SQLite
@@ -19,7 +13,9 @@ struct Definition {
     let samples: [Substring]
     let inflections: [Inflection]
     let translatedLanguage: TranslatedLanguage
+}
 
+extension Definition {
     init(_ row: Row) {
         self.id = Int(row[Columns.id])
         self.translatedWord = row[Columns.translatedWord]

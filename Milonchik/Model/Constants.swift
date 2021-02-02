@@ -1,20 +1,18 @@
-//
-//  Constants.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 21/08/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
-
 import Cocoa
 import SQLite
 
 enum Constants {
     static let appName = "Milonchik"
+    static let noQueryPlaceholder = "Look up a word by typing in the search field above."
 }
 
-extension NSNotification.Name {
-    static let viewControllerStateDidChange = NSNotification.Name("ViewControllerStateDidChange")
+extension NSUserInterfaceItemIdentifier {
+    static let regularCell = NSUserInterfaceItemIdentifier("RegularCell")
+    static let groupRowCell = NSUserInterfaceItemIdentifier("GroupRowCell")
+}
+
+extension NSToolbarItem.Identifier {
+    static let searchField = NSToolbarItem.Identifier("SearchFieldToolbarItem")
 }
 
 enum Tables {

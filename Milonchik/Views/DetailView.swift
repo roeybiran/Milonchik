@@ -1,10 +1,4 @@
 //
-//  MLNWebView.swift
-//  Milonchik
-//
-//  Created by Roey Biran on 01/10/2020.
-//  Copyright © 2020 Roey Biran. All rights reserved.
-//
 
 import Cocoa
 import WebKit

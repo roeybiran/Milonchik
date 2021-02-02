@@ -10,27 +10,44 @@ import XCTest
 
 @testable import Milonchik
 
+class MockNSApplication: NSApplication {
+    override var currentEvent: NSEvent? {
+        return NSEvent()
+    }
+}
+
 class WindowControllerTests: XCTestCase {
 
-    func test_windowController_shouldLoad() {
-        let sut = WindowController()
-
-        XCTAssertNotNil(sut, "Failed to load WindowController")
-    }
-
-    func test_searchField_withQuery_shouldChangeState() {
-        // arrange
-        let windowController = WindowController()
-        let sut = windowController.searchField
-
-        // act
-        sut.stringValue = "foo"
-        windowController.performSearch(nil)
-
-        // assert
-        let state = windowController.viewController.state
-        if case State.fetchShouldStart = state { return }
-        XCTFail("expected: \(String(describing: State.fetchShouldStart)), got \(state)")
-    }
+    // var sut: WindowController!
+    //
+    // override func setUp() {
+    //     super.setUp()
+    //     sut = WindowController()
+    // }
+    //
+    // override func tearDown() {
+    //     sut = nil
+    //     super.tearDown()
+    // }
+    //
+    // func test_searchFieldDelegate_shouldExist() {
+    //     XCTAssertNotNil(sut.searchField.delegate, "search field delegate")
+    // }
+    //
+    // func test_searchFieldDelegate_withSpecificSelectors_shouldReturnTrue() {
+    //     sut.selectors.forEach {
+    //         XCTAssertEqual(doCommand(searchField: sut.searchField, selector: $0), true, "search field returned false for \($0)")
+    //     }
+    // }
+    //
+    // func test_searchField_withQuery_shouldChangeState() {
+    //     sut.searchField.stringValue = "foo"
+    //     sut.performSearch(nil)
+    //
+    //     // assert
+    //     let state = sut.viewController.state
+    //     if case .fetchShouldStart = state { return }
+    //     XCTFail("expected: \(String(describing: State.fetchShouldStart)), got \(state)")
+    // }
 
 }
