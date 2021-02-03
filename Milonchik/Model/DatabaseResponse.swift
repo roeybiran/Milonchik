@@ -8,11 +8,11 @@ struct DatabaseResponse {
     let allMatches: [Definition]
 
     init(matches: [Definition], query: String, sanitizedQuery: String) {
-        self.allMatches = matches
+        allMatches = matches
         self.query = query
         self.sanitizedQuery = sanitizedQuery
-        self.count = matches.count
-        self.exactMatches = matches.filter { $0.translatedWordSanitized == sanitizedQuery }
-        self.partialMatches = matches.filter { $0.translatedWordSanitized != sanitizedQuery }
+        count = matches.count
+        exactMatches = matches.filter { $0.translatedWordSanitized == sanitizedQuery }
+        partialMatches = matches.filter { $0.translatedWordSanitized != sanitizedQuery }
     }
 }

@@ -10,7 +10,6 @@ import XCTest
 
 @testable import Milonchik
 class SpellingInstallerTests: XCTestCase {
-
     var sut: SpellingInstaller!
 
     override func setUp() {
@@ -24,7 +23,6 @@ class SpellingInstallerTests: XCTestCase {
     }
 
     func testSpellingInstaller() throws {
-
         try sut.install()
 
         let fm = FileManager.default
@@ -32,9 +30,9 @@ class SpellingInstallerTests: XCTestCase {
             .urls(for: .libraryDirectory, in: .userDomainMask).first!
             .appendingPathComponent("Spelling", isDirectory: true)
 
-        [("he_IL", "aff"), ("he_IL", "dic")].forEach({
+        [("he_IL", "aff"), ("he_IL", "dic")].forEach {
             let path = spellFolder.appendingPathComponent($0.0).appendingPathExtension($0.1)
             XCTAssertTrue(fm.fileExists(atPath: path.path))
-        })
+        }
     }
 }

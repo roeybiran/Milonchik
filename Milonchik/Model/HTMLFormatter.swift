@@ -1,7 +1,6 @@
 //
 
 struct HTMLFormatter {
-
     enum Kind {
         case noQuery
         case noResults(for: String)
@@ -25,13 +24,13 @@ struct HTMLFormatter {
         switch kind {
         case .noQuery:
             body = Constants.noQueryPlaceholder.placeholderWrapped()
-        case .noResults(let query):
+        case let .noResults(query):
             body = "No definitions found for ”\(query)”.".placeholderWrapped()
-        case .definition(let value):
+        case let .definition(value):
             let partOfSpeech = value.partOfSpeech ?? ""
-            let translations = value.translations.map({"<li>\($0)</li>"})
-            let inflections = value.inflections.map({"<li>\($0.value)<span> | \($0.kind)</span></li>"})
-            let samples = value.samples.map({ "<li>\($0)</li>" })
+            let translations = value.translations.map { "<li>\($0)</li>" }
+            let inflections = value.inflections.map { "<li>\($0.value)<span> | \($0.kind)</span></li>" }
+            let samples = value.samples.map { "<li>\($0)</li>" }
             let synonyms = value.synonyms.joined(separator: ", ")
             let headers = makeSubtitles(for: value.translatedLanguage)
             let synonymsTitle = synonyms.isEmpty ? "" : headers.synonyms

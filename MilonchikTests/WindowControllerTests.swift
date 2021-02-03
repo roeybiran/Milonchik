@@ -17,7 +17,6 @@ class MockNSApplication: NSApplication {
 }
 
 class WindowControllerTests: XCTestCase {
-
     var sut: WindowController!
 
     override func setUp() {
@@ -55,5 +54,4 @@ class WindowControllerTests: XCTestCase {
 
         XCTAssertEqual(isAnimating, true)
     }
-
 }

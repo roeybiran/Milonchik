@@ -17,17 +17,17 @@ struct Definition {
 
 extension Definition {
     init(_ row: Row) {
-        self.id = Int(row[Columns.id])
-        self.translatedWord = row[Columns.translatedWord]
-        self.translatedWordSanitized = row[Columns.translatedWordSanitized]
-        self.translations = row[Columns.translations].trimmedAndSplittedByTab()
-        self.partOfSpeech = row[Columns.partOfSpeech]
-        self.synonyms = row[Columns.synonyms].trimmedAndSplittedByTab()
+        id = Int(row[Columns.id])
+        translatedWord = row[Columns.translatedWord]
+        translatedWordSanitized = row[Columns.translatedWordSanitized]
+        translations = row[Columns.translations].trimmedAndSplittedByTab()
+        partOfSpeech = row[Columns.partOfSpeech]
+        synonyms = row[Columns.synonyms].trimmedAndSplittedByTab()
         let inflectionKinds = row[Columns.inflectionKind].trimmedAndSplittedByTab()
         let inflectionValues = row[Columns.inflectionValue].trimmedAndSplittedByTab()
-        self.inflections = zip(inflectionKinds, inflectionValues).map { Inflection(kind: $0, value: $1) }
-        self.samples = row[Columns.samples].trimmedAndSplittedByTab()
-        self.translatedLanguage = TranslatedLanguage(rawValue: row[Columns.translatedLanguage])!
+        inflections = zip(inflectionKinds, inflectionValues).map { Inflection(kind: $0, value: $1) }
+        samples = row[Columns.samples].trimmedAndSplittedByTab()
+        translatedLanguage = TranslatedLanguage(rawValue: row[Columns.translatedLanguage])!
     }
 }
 

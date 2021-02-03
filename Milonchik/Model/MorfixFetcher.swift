@@ -1,5 +1,5 @@
-import Foundation
 import Cocoa
+import Foundation
 
 protocol URLSessionProtocol {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
@@ -8,7 +8,6 @@ protocol URLSessionProtocol {
 extension URLSession: URLSessionProtocol {}
 
 class MorfixFetcher {
-
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     var session: URLSessionProtocol = URLSession.shared
@@ -36,16 +35,16 @@ class MorfixFetcher {
         request.httpBody = body
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let task = session.dataTask(with: request) { (data, _, error) in
+        let task = session.dataTask(with: request) { data, _, error in
             switch (data, error) {
-            case (let data?, _):
+            case let (data?, _):
                 do {
                     let definitions = try self.decoder.decode(MorfixResult.self, from: data)
                     handler(.success(definitions.words))
-                } catch let error {
+                } catch {
                     handler(.failure(error))
                 }
-            case (_, let error?):
+            case let (_, error?):
                 handler(.failure(error))
             default:
                 handler(.failure(GenericError.error(message: "Unknown error")))

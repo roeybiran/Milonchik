@@ -1,8 +1,7 @@
 import Foundation
 
 class MockURLProtocol: URLProtocol {
-
-    override class func canInit(with request: URLRequest) -> Bool {
+    override class func canInit(with _: URLRequest) -> Bool {
         // To check if this protocol can handle the given request.
         return true
     }

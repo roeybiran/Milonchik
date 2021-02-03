@@ -2,7 +2,7 @@ import Foundation
 
 extension Set where Element == Definition {
     func sortedByRelevance(to query: String) -> [Definition] {
-        return self.sorted {
+        return sorted {
             switch ($0.translatedWordSanitized.starts(with: query), $1.translatedWordSanitized.starts(with: query)) {
             case (true, false):
                 return true

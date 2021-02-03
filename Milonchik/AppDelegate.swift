@@ -2,26 +2,24 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     let windowManager = WindowManager()
 
-    func applicationDidFinishLaunching(_ notification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         try? SpellingInstaller().install()
         windowManager.makeNewWindow(tabbed: false)
         NSApp.servicesProvider = windowManager
     }
 
-    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+    func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag { windowManager.makeNewWindow(tabbed: false) }
         return true
     }
 
-    @IBAction func newWindowForTab(_ sender: Any?) {
+    @IBAction func newWindowForTab(_: Any?) {
         windowManager.makeNewWindow(tabbed: true)
     }
 
-    @IBAction func newWindow(_ sender: Any?) {
+    @IBAction func newWindow(_: Any?) {
         windowManager.makeNewWindow(tabbed: false)
     }
-
 }

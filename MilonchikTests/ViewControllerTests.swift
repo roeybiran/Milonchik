@@ -10,7 +10,6 @@ import XCTest
 
 @testable import Milonchik
 class ViewControllerTests: XCTestCase {
-
     var sut: ViewController!
 
     override func setUpWithError() throws {

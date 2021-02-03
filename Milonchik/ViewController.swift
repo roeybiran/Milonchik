@@ -1,7 +1,6 @@
 import Cocoa
 
 final class ViewController: NSSplitViewController {
-
     let modelController: ModelController
     let listViewController: ListViewController
     let detailViewController: DetailViewController
@@ -22,11 +21,12 @@ final class ViewController: NSSplitViewController {
         detailSplitViewItem.canCollapse = false
         splitViewItems = [
             listSplitViewItem,
-            detailSplitViewItem
+            detailSplitViewItem,
         ]
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -41,12 +41,12 @@ final class ViewController: NSSplitViewController {
             DispatchQueue.main.async {
                 self?.progressShouldAnimate = false
                 switch newState {
-                case .results(let results, let windowData):
+                case let .results(results, windowData):
                     self?.windowData = windowData
                     self?.listViewController.updateListItems(with: results)
-                case .showDetail(let markup):
+                case let .showDetail(markup):
                     self?.detailViewController.display(markup)
-                case .noQuery(let markup, let windowData), .noResults(let markup, let windowData):
+                case let .noQuery(markup, windowData), let .noResults(markup, windowData):
                     self?.windowData = windowData
                     self?.listViewController.updateListItems(with: [])
                     self?.detailViewController.display(markup)
@@ -55,7 +55,6 @@ final class ViewController: NSSplitViewController {
                 }
                 self?.notifyObservers?()
             }
-
         }
 
         modelController.mutate(into: .launched)

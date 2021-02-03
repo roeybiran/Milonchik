@@ -3,7 +3,6 @@ import XCTest
 @testable import Milonchik
 
 class MorfixFetcherTests: XCTestCase {
-
     var sut: MorfixFetcher!
     let endpointURL = URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!
 
@@ -38,7 +37,7 @@ class MorfixFetcherTests: XCTestCase {
         waitForExpectations(timeout: 0.01)
 
         if case .success = result { return }
-        XCTFail(self.name)
+        XCTFail(name)
     }
 
     func test_fetchResponse_withQueryAndBadJSON_shouldReturnFailure() {
@@ -55,7 +54,7 @@ class MorfixFetcherTests: XCTestCase {
         })
         waitForExpectations(timeout: 0.01)
 
-        if case .failure(let error) = result, error is DecodingError { return }
+        if case let .failure(error) = result, error is DecodingError { return }
         XCTFail("Result is not an error, or not an error of the expected type")
     }
 
@@ -73,7 +72,7 @@ class MorfixFetcherTests: XCTestCase {
         })
         waitForExpectations(timeout: 0.01)
 
-        if case .failure(let error) = result, error.localizedDescription == "The operation couldn’t be completed. (MilonchikTests.TestError error 1.)" {
+        if case let .failure(error) = result, error.localizedDescription == "The operation couldn’t be completed. (MilonchikTests.TestError error 1.)" {
             return
         }
         XCTFail("Result is not an error, or not an error of the expected type")
@@ -97,11 +96,11 @@ extension MorfixFetcherTests {
 }
 
 // func test_fetchRequest_withHouseInSearchField_shouldCreateProperRequestAndCalledOnce() {
-    // mockSession = MockURLSession()
-    // sut.session = mockSession
-    // sut.fetch(query: "House", onCompletion: { _ in })
-    // let request = URLRequest(url: URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!)
-    // mockSession.verifyDataTask(with: request)
+// mockSession = MockURLSession()
+// sut.session = mockSession
+// sut.fetch(query: "House", onCompletion: { _ in })
+// let request = URLRequest(url: URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!)
+// mockSession.verifyDataTask(with: request)
 // }
 
 // func test_fetch_withHouse_shouldReturnID46142() {

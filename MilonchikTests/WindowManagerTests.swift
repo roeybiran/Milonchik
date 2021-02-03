@@ -3,7 +3,6 @@ import XCTest
 @testable import Milonchik
 
 class WindowManagerTests: XCTestCase {
-
     var sut: WindowManager!
 
     override func setUpWithError() throws {
@@ -26,13 +25,12 @@ class WindowManagerTests: XCTestCase {
     //     sut.makeNewWindow(tabbed: false)
     //     let controller = sut.managedWindowControllers.first
     //     XCTAssertEqual(true, controller?.window?.firstResponder !== controller?.searchField, "precondition")
-    // 
+    //
     //     _ = controller?.contentViewController?.view
     //     controller?.window?.delegate?.windowDidBecomeKey?(Notification(name: NSWindow.didBecomeKeyNotification))
     //     RunLoop.current.run(until: Date())
-    // 
+    //
     //     try XCTSkipIf(controller?.window?.firstResponder !== controller?.searchField)
-    // 
+    //
     // }
-
 }

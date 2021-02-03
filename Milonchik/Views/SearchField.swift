@@ -1,7 +1,6 @@
 import Cocoa
 
 class SearchField: NSSearchField {
-
     var shouldAnimate = false {
         willSet(value) {
             if value {
@@ -21,16 +20,17 @@ class SearchField: NSSearchField {
         let offset = rectForCancelButton(whenCentered: false).width + 16
         let constraints = [
             progressIndicator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset),
-            progressIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+            progressIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
         ]
         NSLayoutConstraint.activate(constraints)
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func rectForSearchText(whenCentered isCentered: Bool) -> NSRect {
+    override func rectForSearchText(whenCentered _: Bool) -> NSRect {
         let o = super.rectForSearchText(whenCentered: false)
         let offset = progressIndicator.bounds.width + 8
         return NSRect(x: o.origin.x, y: o.origin.y, width: o.size.width - offset, height: o.size.height)

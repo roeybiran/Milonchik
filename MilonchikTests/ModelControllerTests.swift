@@ -11,7 +11,6 @@ import XCTest
 @testable import Milonchik
 
 class ModelControllerTests: XCTestCase {
-
     var sut: ModelController!
     // var mockedFetcher: MockDatabaseFetcher!
 
@@ -43,14 +42,12 @@ class ModelControllerTests: XCTestCase {
         }
         XCTFail("expected .results, got: \(String(describing: outcome.self))")
     }
-
 }
 
 struct MockDatabaseFetcher: DatabaseFetching {
-
     func cancelFetch() {}
 
-    func fetch(query: String, completionHandler: @escaping (DatabaseResult) -> Void) {
+    func fetch(query _: String, completionHandler: @escaping (DatabaseResult) -> Void) {
         completionHandler(.success(mockDBResponse))
     }
 

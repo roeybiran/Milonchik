@@ -18,7 +18,7 @@ extension NSTableCellView {
         var constraints = [
             textField.widthAnchor.constraint(equalTo: newCell.widthAnchor),
             textField.leadingAnchor.constraint(equalTo: newCell.leadingAnchor),
-            textField.centerYAnchor.constraint(equalTo: newCell.centerYAnchor)
+            textField.centerYAnchor.constraint(equalTo: newCell.centerYAnchor),
         ]
 
         if identifier == .groupRowCell {

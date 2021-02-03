@@ -1,7 +1,6 @@
 import AppKit
 
 class WindowManager: NSResponder {
-
     var managedWindowControllers = [WindowController]()
 
     func makeNewWindow(tabbed: Bool) {
@@ -10,7 +9,7 @@ class WindowManager: NSResponder {
         managedWindowControllers.append(windowController)
     }
 
-    @objc func defineInMilonchikServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+    @objc func defineInMilonchikServiceHandler(_ pboard: NSPasteboard, userData _: String, error _: NSErrorPointer) {
         // checking for NSApp.windows.isEmpty returns false if the About window is open
         if managedWindowControllers.isEmpty { makeNewWindow(tabbed: false) }
 
@@ -26,19 +25,19 @@ class WindowManager: NSResponder {
 }
 
 // MARK: - NSWindowDelegate
+
 extension WindowManager: NSWindowDelegate {
     func windowShouldClose(_ sender: NSWindow) -> Bool {
         managedWindowControllers.removeAll(where: { $0.window === sender })
         return true
     }
 
-    func windowDidBecomeKey(_ notification: Notification) {
+    func windowDidBecomeKey(_: Notification) {
         (
             NSApp?.orderedWindows
-            .first(where: { $0.windowController is WindowController })?
-            .windowController as? WindowController
+                .first(where: { $0.windowController is WindowController })?
+                .windowController as? WindowController
         )?
             .focusSearchField(nil)
     }
-
 }

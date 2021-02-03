@@ -9,7 +9,6 @@ protocol DatabaseFetching {
 }
 
 class ModelController {
-
     enum ExternalState {
         case noQuery(markup: Markup, windowData: WindowTitle)
         case noResults(markup: Markup, windowData: WindowTitle)
@@ -36,8 +35,8 @@ class ModelController {
     let databaseFetcher: DatabaseFetching
     let htmlFormatter: HTMLFormatter
 
-    init(dbFetcher: DatabaseFetching = DatabaseFetcher.init()) {
-        self.databaseFetcher = dbFetcher
+    init(dbFetcher: DatabaseFetching = DatabaseFetcher()) {
+        databaseFetcher = dbFetcher
         guard
             let htmlFile = Bundle.main.path(forResource: "DefinitionDetail", ofType: "html"),
             let template = try? String(contentsOfFile: htmlFile, encoding: .utf8)
@@ -51,7 +50,7 @@ class ModelController {
         switch newState {
         case .launched:
             externalState = .noQuery(markup: htmlFormatter.markup(for: .noQuery), windowData: WindowTitle.default)
-        case .queryChanged(let newQuery):
+        case let .queryChanged(newQuery):
             let query = newQuery.trimmingCharacters(in: .whitespacesAndNewlines)
             databaseFetcher.cancelFetch()
             if query.isEmpty {
@@ -59,7 +58,7 @@ class ModelController {
             } else {
                 fetch(query)
             }
-        case .definitionSelectionChanged(let item):
+        case let .definitionSelectionChanged(item):
             guard let definition = item as? Definition else { return }
             externalState = .showDetail(markup: htmlFormatter.markup(for: .definition(definition)))
         }
@@ -69,18 +68,18 @@ class ModelController {
         databaseFetcher.fetch(query: query) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
+            case let .success(response):
                 let partialMatches = response.partialMatches
                 let exactMatches = response.exactMatches
                 let allMatches: [TableViewDisplayable] = exactMatches + [GroupRow()] + partialMatches
                 let items = partialMatches.isEmpty ? exactMatches : allMatches
                 self.externalState = .results(items: items, windowData: WindowTitle(query: response.query, resultCount: exactMatches.count))
-            case .failure(DatabaseError.noDefinitions(let query)):
+            case let .failure(DatabaseError.noDefinitions(query)):
                 let markup = self.htmlFormatter.markup(for: .noResults(for: query))
                 self.externalState = .noResults(markup: markup, windowData: WindowTitle(query: query, resultCount: 0))
             case .failure(DatabaseError.userCancelled):
                 return
-            case .failure(let error):
+            case let .failure(error):
                 self.externalState = .error(error)
             }
         }

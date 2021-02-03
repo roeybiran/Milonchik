@@ -1,7 +1,6 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-
     lazy var searchField: SearchField = {
         let _searchField = SearchField()
         _searchField.delegate = self
@@ -20,7 +19,7 @@ class WindowController: NSWindowController {
         #selector(moveDown),
         #selector(moveUp),
         #selector(moveToBeginningOfParagraph),
-        #selector(moveToEndOfParagraph)
+        #selector(moveToEndOfParagraph),
     ])
 
     var viewControllerObservation: NSKeyValueObservation?
@@ -58,11 +57,12 @@ class WindowController: NSWindowController {
         window.makeFirstResponder(searchField)
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @IBAction func focusSearchField(_ sender: Any?) {
+    @IBAction func focusSearchField(_: Any?) {
         window?.makeFirstResponder(searchField)
         searchField.selectText(nil)
     }
@@ -75,11 +75,10 @@ class WindowController: NSWindowController {
         }
         viewController.performSearch(with: searchField.stringValue)
     }
-
 }
 
 extension WindowController: NSSearchFieldDelegate {
-    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+    func control(_: NSControl, textView _: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if selectors.contains(commandSelector) {
             if let event = window?.currentEvent, event.type == .keyDown {
                 viewController.listViewController.tableView.keyDown(with: event)

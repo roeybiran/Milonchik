@@ -10,7 +10,6 @@ import XCTest
 
 @testable import Milonchik
 class FactoriesTests: XCTestCase {
-
     func test_makeCustom_shouldMakeRegularCell() {
         XCTAssertNotNil(NSTableCellView.makeCustom(label: "", identifier: .regularCell))
     }

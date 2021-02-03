@@ -12,7 +12,6 @@ import XCTest
 @testable import Milonchik
 
 class MockURLSession: URLSessionProtocol {
-
     var taskCallCount = 0
     var acculumatedRequests = [URLRequest]()
     var completionHandlers = [(Data?, URLResponse?, Error?) -> Void]()
@@ -41,8 +40,7 @@ class MockURLSession: URLSessionProtocol {
 }
 
 private class DummyURLSessionDataTask: URLSessionDataTask {
-    override func resume() {
-    }
+    override func resume() {}
 }
 
 func verifyMethodCalledOnce(
@@ -50,7 +48,8 @@ func verifyMethodCalledOnce(
     callCount: Int,
     describeArguments: @autoclosure () -> String,
     file: StaticString = #file,
-    line: UInt = #line) -> Bool {
+    line: UInt = #line
+) -> Bool {
     if callCount == 0 {
         XCTFail("Wanted but not invoked: \(methodName)", file: file, line: line)
         return false

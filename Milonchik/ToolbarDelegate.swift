@@ -9,9 +9,10 @@ class ToolbarDelegate: NSObject, NSToolbarDelegate {
         self.searchField = searchField
     }
 
-    func toolbar(_ toolbar: NSToolbar,
+    func toolbar(_: NSToolbar,
                  itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
-                 willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+                 willBeInsertedIntoToolbar _: Bool) -> NSToolbarItem?
+    {
         switch itemIdentifier {
         case .searchField:
             if #available(macOS 11, *) {
@@ -28,11 +29,11 @@ class ToolbarDelegate: NSObject, NSToolbarDelegate {
         }
     }
 
-    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+    func toolbarAllowedItemIdentifiers(_: NSToolbar) -> [NSToolbarItem.Identifier] {
         return [.searchField]
     }
 
-    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+    func toolbarDefaultItemIdentifiers(_: NSToolbar) -> [NSToolbarItem.Identifier] {
         return [.searchField]
     }
 }

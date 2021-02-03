@@ -2,7 +2,6 @@ import Cocoa
 
 /// a  view controller that manages a list of definitions and its associated `NSSplitViewItem`.
 final class ListViewController: NSViewController {
-
     let tableView: NSTableView
     private var items = [TableViewDisplayable]()
     var onSelectionChange: ((TableViewDisplayable) -> Void)?
@@ -16,7 +15,8 @@ final class ListViewController: NSViewController {
         tableView.delegate = self
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -33,19 +33,20 @@ final class ListViewController: NSViewController {
             tableView.selectRowIndexes([firstValidRow], byExtendingSelection: false)
         }
     }
-
 }
 
 // MARK: - NSTableViewDataSource
+
 extension ListViewController: NSTableViewDataSource {
-    func numberOfRows(in tableView: NSTableView) -> Int {
+    func numberOfRows(in _: NSTableView) -> Int {
         return items.count
     }
 }
 
 // MARK: - NSTableViewDelegate
+
 extension ListViewController: NSTableViewDelegate {
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    func tableView(_ tableView: NSTableView, viewFor _: NSTableColumn?, row: Int) -> NSView? {
         let identifier: NSUserInterfaceItemIdentifier = items[row] is GroupRow ? .groupRowCell : .regularCell
         if let cellView = tableView.makeView(withIdentifier: identifier, owner: nil) as? NSTableCellView {
             cellView.textField?.stringValue = items[row].label
@@ -54,7 +55,7 @@ extension ListViewController: NSTableViewDelegate {
         return NSTableCellView.makeCustom(label: items[row].label, identifier: identifier)
     }
 
-    func tableViewSelectionDidChange(_ notification: Notification) {
+    func tableViewSelectionDidChange(_: Notification) {
         onSelectionChange?(items[tableView.selectedRow])
     }
 
@@ -64,7 +65,7 @@ extension ListViewController: NSTableViewDelegate {
     //     return false
     // }
 
-    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+    func tableView(_: NSTableView, shouldSelectRow row: Int) -> Bool {
         if items[row] is GroupRow { return false }
         return true
     }

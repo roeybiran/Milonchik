@@ -2,7 +2,6 @@ import Cocoa
 import WebKit
 
 final class DetailViewController: NSViewController {
-
     lazy var detailView: DetailView = {
         let detailView = DetailView()
         // FIXME: white flash

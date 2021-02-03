@@ -1,11 +1,10 @@
-import Foundation
 import AppKit.NSSpellChecker
+import Foundation
 import SQLite
 
 typealias DatabaseResult = Swift.Result<DatabaseResponse, Error>
 
 struct DatabaseFetcher: DatabaseFetching {
-
     private let queue = OperationQueue()
     private let database: Connection
     private let speller: NSSpellChecker
@@ -37,7 +36,6 @@ struct DatabaseFetcher: DatabaseFetching {
 }
 
 private class DatabaseOperation: Operation {
-
     var result: DatabaseResult = .failure(DatabaseError.unknown)
 
     private let database: Connection
@@ -47,7 +45,7 @@ private class DatabaseOperation: Operation {
     init(database: Connection, query: String, speller: NSSpellChecker) {
         self.database = database
         self.query = query
-        self.spellChecker = speller
+        spellChecker = speller
     }
 
     override func main() {
@@ -98,11 +96,11 @@ private class DatabaseOperation: Operation {
 
     private func guesses(for q: String, speller: NSSpellChecker) -> [String] {
         if !NSSpellChecker.sharedSpellCheckerExists { return [] }
-        let range = NSRange(q.startIndex..<q.endIndex, in: q)
+        let range = NSRange(q.startIndex ..< q.endIndex, in: q)
         return ["en", "he_IL"]
-            .compactMap({
+            .compactMap {
                 speller.guesses(forWordRange: range, in: q, language: $0, inSpellDocumentWithTag: 0)
-            })
+            }
             .reduce([], +)
     }
 }

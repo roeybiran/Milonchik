@@ -5,7 +5,6 @@ import XCTest
 @testable import Milonchik
 
 class DatabaseFetcherTests: XCTestCase {
-
     var sut: DatabaseFetcher!
 
     override func setUpWithError() throws {
@@ -29,7 +28,7 @@ class DatabaseFetcherTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
 
         switch result {
-        case .success(let result):
+        case let .success(result):
             let obtainedID = result.exactMatches.first!.id
             XCTAssertEqual(obtainedID, 2913)
         default:
@@ -38,7 +37,6 @@ class DatabaseFetcherTests: XCTestCase {
     }
 
     func test_fetch_byInflectionsWithAdvocates_shouldReturnAdvocate() throws {
-
         let expectation = XCTestExpectation(description: "database fetching")
         var result: DatabaseResult!
 
@@ -48,7 +46,7 @@ class DatabaseFetcherTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1)
 
-        if case .success(let response) = result {
+        if case let .success(response) = result {
             let result = response.partialMatches.sorted(by: { $0.id < $1.id }).first!
             XCTAssertEqual(result.translatedWord, "advocate")
         } else {
@@ -66,7 +64,7 @@ class DatabaseFetcherTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 1)
 
-        if case .success(let response) = result {
+        if case let .success(response) = result {
             let allIDs = response.allMatches.map { $0.id }
             let uniqueIDs = Set(allIDs)
             XCTAssertEqual(allIDs.count, uniqueIDs.count)
@@ -85,7 +83,7 @@ class DatabaseFetcherTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 2)
 
-        if case .success(let response) = result {
+        if case let .success(response) = result {
             XCTAssertGreaterThan(response.partialMatches.count, 0)
         } else {
             XCTFail("fetch test failed")
