@@ -24,7 +24,7 @@ class FactoriesTests: XCTestCase {
     }
 
     func test_makeCustom_shouldMakeTableView() {
-        XCTAssertNotNil(NSTableView.custom)
+        XCTAssertNotNil(NSTableView.makeCustom())
     }
 
     func test_makeCustom_shouldMakeWindow() {

@@ -1,4 +1,3 @@
-
 /// Represents the result of a database fetch operation.
 struct DatabaseResponse {
     let exactMatches: [Definition]

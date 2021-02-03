@@ -1,7 +1,7 @@
 import Cocoa
 
 extension NSTableView {
-    static var custom: NSTableView {
+    static func makeCustom() -> NSTableView {
         let tableView = NSTableView()
         tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
         tableView.headerView = nil

@@ -4,7 +4,7 @@ import SQLite
 
 typealias DatabaseResult = Swift.Result<DatabaseResponse, Error>
 
-struct DatabaseFetcher {
+struct DatabaseFetcher: DatabaseFetching {
 
     private let queue = OperationQueue()
     private let database: Connection

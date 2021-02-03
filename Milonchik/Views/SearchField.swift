@@ -1,6 +1,6 @@
 import Cocoa
 
-class CustomSearchField: NSSearchField {
+class SearchField: NSSearchField {
 
     var shouldAnimate = false {
         willSet(value) {
@@ -12,7 +12,7 @@ class CustomSearchField: NSSearchField {
         }
     }
 
-    private let progressIndicator = NSProgressIndicator.custom
+    private let progressIndicator = NSProgressIndicator.makeCustom()
 
     init() {
         super.init(frame: .zero)

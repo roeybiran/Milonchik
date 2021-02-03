@@ -3,6 +3,11 @@ import Foundation
 typealias Query = String
 typealias Markup = String
 
+protocol DatabaseFetching {
+    func cancelFetch()
+    func fetch(query: String, completionHandler: @escaping (DatabaseResult) -> Void)
+}
+
 class ModelController {
 
     enum ExternalState {
@@ -28,11 +33,11 @@ class ModelController {
         }
     }
 
-    let databaseController: DatabaseFetcher
+    let databaseFetcher: DatabaseFetching
     let htmlFormatter: HTMLFormatter
 
-    init() {
-        databaseController = DatabaseFetcher()
+    init(dbFetcher: DatabaseFetching = DatabaseFetcher.init()) {
+        self.databaseFetcher = dbFetcher
         guard
             let htmlFile = Bundle.main.path(forResource: "DefinitionDetail", ofType: "html"),
             let template = try? String(contentsOfFile: htmlFile, encoding: .utf8)
@@ -48,7 +53,7 @@ class ModelController {
             externalState = .noQuery(markup: htmlFormatter.markup(for: .noQuery), windowData: WindowTitle.default)
         case .queryChanged(let newQuery):
             let query = newQuery.trimmingCharacters(in: .whitespacesAndNewlines)
-            databaseController.cancelFetch()
+            databaseFetcher.cancelFetch()
             if query.isEmpty {
                 externalState = .noQuery(markup: htmlFormatter.markup(for: .noQuery), windowData: WindowTitle.default)
             } else {
@@ -61,7 +66,7 @@ class ModelController {
     }
 
     private func fetch(_ query: String) {
-        databaseController.fetch(query: query) { [weak self] result in
+        databaseFetcher.fetch(query: query) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let response):

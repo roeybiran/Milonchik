@@ -14,11 +14,12 @@
   "testTargets" : [
     {
       "skippedTests" : [
+        "DatabaseFetcherTests",
         "ListViewControllerTests",
-        "ModelControllerTests",
+        "MorfixFetcherTests",
+        "SpellingInstallerTests",
         "ViewControllerTests",
-        "WindowControllerTests",
-        "WindowManagerTests"
+        "WindowControllerTests"
       ],
       "target" : {
         "containerPath" : "container:Milonchik.xcodeproj",

@@ -2,9 +2,9 @@ import XCTest
 
 @testable import Milonchik
 
-class MorfixControllerTests: XCTestCase {
+class MorfixFetcherTests: XCTestCase {
 
-    var sut: MorfixController!
+    var sut: MorfixFetcher!
     let endpointURL = URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!
 
     override func setUpWithError() throws {
@@ -14,7 +14,7 @@ class MorfixControllerTests: XCTestCase {
         config.protocolClasses = [MockURLProtocol.self]
         let mockSession = URLSession(configuration: config)
 
-        sut = MorfixController()
+        sut = MorfixFetcher()
         sut.session = mockSession
     }
 
@@ -80,14 +80,14 @@ class MorfixControllerTests: XCTestCase {
     }
 }
 
-extension MorfixControllerTests {
+extension MorfixFetcherTests {
     func jsonData() -> Data? {
-        guard let url = Bundle(for: MorfixControllerTests.self).url(forResource: "ResponseJSON_Matches", withExtension: "json") else { return nil }
+        guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches", withExtension: "json") else { return nil }
         return try? Data(contentsOf: url)
     }
 
     func badJSONData() -> Data? {
-        guard let url = Bundle(for: MorfixControllerTests.self).url(forResource: "ResponseJSON_Matches_MALFORMED", withExtension: "json") else { return nil }
+        guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches_MALFORMED", withExtension: "json") else { return nil }
         return try? Data(contentsOf: url)
     }
 

@@ -1,5 +1,9 @@
 #  Release Notes
 
+## 1.4.7
+
+- Fixed a bug where typing in the search field immediately following launch would cause the app to freeze. 
+
 ## 1.4
 
 - Big Sur and Apple Silicon ready.

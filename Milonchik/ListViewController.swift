@@ -3,14 +3,14 @@ import Cocoa
 /// a  view controller that manages a list of definitions and its associated `NSSplitViewItem`.
 final class ListViewController: NSViewController {
 
-    let tableView = NSTableView.custom
+    let tableView: NSTableView
     private var items = [TableViewDisplayable]()
     var onSelectionChange: ((TableViewDisplayable) -> Void)?
 
     /// Initializes a new `ListViewController`.
     /// - Parameter onSelect: a handler to be called when a new definition has been selected.
     init() {
-        // onSelection = onSelect
+        tableView = NSTableView.makeCustom()
         super.init(nibName: nil, bundle: nil)
         tableView.dataSource = self
         tableView.delegate = self
@@ -58,7 +58,7 @@ extension ListViewController: NSTableViewDelegate {
         onSelectionChange?(items[tableView.selectedRow])
     }
 
-    // FIXME: FB8946005
+    // FB8946005
     // func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
     //     if items[row] is GroupRow { return true }
     //     return false

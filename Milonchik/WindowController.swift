@@ -2,8 +2,8 @@ import Cocoa
 
 class WindowController: NSWindowController {
 
-    lazy var searchField: CustomSearchField = {
-        let _searchField = CustomSearchField()
+    lazy var searchField: SearchField = {
+        let _searchField = SearchField()
         _searchField.delegate = self
         _searchField.target = self
         _searchField.action = #selector(performSearch)
@@ -12,6 +12,7 @@ class WindowController: NSWindowController {
     }()
 
     @objc let viewController: ViewController
+    var toolbarDelegate: ToolbarDelegate?
     let notificationCenter = NotificationCenter.default
     let selectors = Set([
         #selector(moveForward),
@@ -38,8 +39,9 @@ class WindowController: NSWindowController {
         }
 
         let toolbar = NSToolbar(identifier: "Toolbar")
+        toolbarDelegate = ToolbarDelegate(searchField: searchField)
         toolbar.displayMode = .iconOnly
-        toolbar.delegate = self
+        toolbar.delegate = toolbarDelegate
         window.toolbar = toolbar
         windowFrameAutosaveName = "MainWindow"
 
@@ -88,32 +90,31 @@ extension WindowController: NSSearchFieldDelegate {
     }
 }
 
-extension WindowController: NSToolbarDelegate {
-    func toolbar(_ toolbar: NSToolbar,
-                 itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
-                 willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
-        switch itemIdentifier {
-        case .searchField:
-            if #available(macOS 11, *) {
-                let item = NSSearchToolbarItem(itemIdentifier: itemIdentifier)
-                item.searchField = searchField
-                item.resignsFirstResponderWithCancel = true
-                return item
-            }
-            let item = NSToolbarItem(itemIdentifier: itemIdentifier)
-            item.view = searchField
-            return item
-        default:
-            return nil
-        }
-    }
-
-    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.searchField]
-    }
-
-    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.searchField]
-    }
-}
-
+// extension WindowController: NSToolbarDelegate {
+//     func toolbar(_ toolbar: NSToolbar,
+//                  itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier,
+//                  willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+//         switch itemIdentifier {
+//         case .searchField:
+//             if #available(macOS 11, *) {
+//                 let item = NSSearchToolbarItem(itemIdentifier: itemIdentifier)
+//                 item.searchField = searchField
+//                 item.resignsFirstResponderWithCancel = true
+//                 return item
+//             }
+//             let item = NSToolbarItem(itemIdentifier: itemIdentifier)
+//             item.view = searchField
+//             return item
+//         default:
+//             return nil
+//         }
+//     }
+//
+//     func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+//         return [.searchField]
+//     }
+//
+//     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+//         return [.searchField]
+//     }
+// }

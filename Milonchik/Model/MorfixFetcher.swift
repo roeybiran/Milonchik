@@ -1,4 +1,3 @@
-
 import Foundation
 import Cocoa
 
@@ -8,7 +7,7 @@ protocol URLSessionProtocol {
 
 extension URLSession: URLSessionProtocol {}
 
-class MorfixController {
+class MorfixFetcher {
 
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
