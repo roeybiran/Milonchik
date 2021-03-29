@@ -2,97 +2,99 @@ import XCTest
 
 @testable import Milonchik
 
+// MARK: - MorfixFetcherTests
+
 class MorfixFetcherTests: XCTestCase {
-    var sut: MorfixFetcher!
-    let endpointURL = URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!
+  var sut: MorfixFetcher!
+  let endpointURL = URL(string: "http://services.morfix.com/translationhebrew/TranslationService/GetTranslation/")!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+  override func setUpWithError() throws {
+    try super.setUpWithError()
 
-        let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
-        let mockSession = URLSession(configuration: config)
+    let config = URLSessionConfiguration.ephemeral
+    config.protocolClasses = [MockURLProtocol.self]
+    let mockSession = URLSession(configuration: config)
 
-        sut = MorfixFetcher()
-        sut.session = mockSession
+    sut = MorfixFetcher()
+    sut.session = mockSession
+  }
+
+  override func tearDownWithError() throws {
+    sut = nil
+    try super.tearDownWithError()
+  }
+
+  func test_fetchResponse_withQuery_shouldReturnSuccess() {
+    MockURLProtocol.requestHandler = { _ in
+      let response = HTTPURLResponse(url: self.endpointURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+      return (response, self.jsonData())
     }
+    let _expectation = expectation(description: "URLSessionExpectation")
+    var result: Result<[MorfixDefinition], Error>!
 
-    override func tearDownWithError() throws {
-        sut = nil
-        try super.tearDownWithError()
+    sut.fetch(query: "home", onCompletion: { fetchResult in
+      result = fetchResult
+      _expectation.fulfill()
+    })
+    waitForExpectations(timeout: 0.01)
+
+    if case .success = result { return }
+    XCTFail(name)
+  }
+
+  func test_fetchResponse_withQueryAndBadJSON_shouldReturnFailure() {
+    MockURLProtocol.requestHandler = { _ in
+      let response = HTTPURLResponse(url: self.endpointURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+      return (response, self.badJSONData())
     }
+    let _expectation = expectation(description: "URLSessionExpectation")
+    var result: Result<[MorfixDefinition], Error>!
 
-    func test_fetchResponse_withQuery_shouldReturnSuccess() {
-        MockURLProtocol.requestHandler = { _ in
-            let response = HTTPURLResponse(url: self.endpointURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
-            return (response, self.jsonData())
-        }
-        let _expectation = expectation(description: "URLSessionExpectation")
-        var result: Result<[MorfixDefinition], Error>!
+    sut.fetch(query: "home", onCompletion: { fetchResult in
+      result = fetchResult
+      _expectation.fulfill()
+    })
+    waitForExpectations(timeout: 0.01)
 
-        sut.fetch(query: "home", onCompletion: { fetchResult in
-            result = fetchResult
-            _expectation.fulfill()
-        })
-        waitForExpectations(timeout: 0.01)
+    if case let .failure(error) = result, error is DecodingError { return }
+    XCTFail("Result is not an error, or not an error of the expected type")
+  }
 
-        if case .success = result { return }
-        XCTFail(name)
+  func test_fetchResponse_withURLSessionError_shouldReturnFailure() {
+    let errorMessage = "Mock URLSession Error"
+    MockURLProtocol.requestHandler = { _ in
+      throw TestError(message: errorMessage)
     }
+    let _expectation = expectation(description: "URLSessionExpectation")
+    var result: Result<[MorfixDefinition], Error>!
 
-    func test_fetchResponse_withQueryAndBadJSON_shouldReturnFailure() {
-        MockURLProtocol.requestHandler = { _ in
-            let response = HTTPURLResponse(url: self.endpointURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
-            return (response, self.badJSONData())
-        }
-        let _expectation = expectation(description: "URLSessionExpectation")
-        var result: Result<[MorfixDefinition], Error>!
+    sut.fetch(query: "home", onCompletion: { fetchResult in
+      result = fetchResult
+      _expectation.fulfill()
+    })
+    waitForExpectations(timeout: 0.01)
 
-        sut.fetch(query: "home", onCompletion: { fetchResult in
-            result = fetchResult
-            _expectation.fulfill()
-        })
-        waitForExpectations(timeout: 0.01)
-
-        if case let .failure(error) = result, error is DecodingError { return }
-        XCTFail("Result is not an error, or not an error of the expected type")
+    if case let .failure(error) = result, error.localizedDescription == "The operation couldn’t be completed. (MilonchikTests.TestError error 1.)" {
+      return
     }
-
-    func test_fetchResponse_withURLSessionError_shouldReturnFailure() {
-        let errorMessage = "Mock URLSession Error"
-        MockURLProtocol.requestHandler = { _ in
-            throw TestError(message: errorMessage)
-        }
-        let _expectation = expectation(description: "URLSessionExpectation")
-        var result: Result<[MorfixDefinition], Error>!
-
-        sut.fetch(query: "home", onCompletion: { fetchResult in
-            result = fetchResult
-            _expectation.fulfill()
-        })
-        waitForExpectations(timeout: 0.01)
-
-        if case let .failure(error) = result, error.localizedDescription == "The operation couldn’t be completed. (MilonchikTests.TestError error 1.)" {
-            return
-        }
-        XCTFail("Result is not an error, or not an error of the expected type")
-    }
+    XCTFail("Result is not an error, or not an error of the expected type")
+  }
 }
 
 extension MorfixFetcherTests {
-    func jsonData() -> Data? {
-        guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches", withExtension: "json") else { return nil }
-        return try? Data(contentsOf: url)
-    }
+  func jsonData() -> Data? {
+    guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches", withExtension: "json") else { return nil }
+    return try? Data(contentsOf: url)
+  }
 
-    func badJSONData() -> Data? {
-        guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches_MALFORMED", withExtension: "json") else { return nil }
-        return try? Data(contentsOf: url)
-    }
+  func badJSONData() -> Data? {
+    guard let url = Bundle(for: MorfixFetcherTests.self).url(forResource: "ResponseJSON_Matches_MALFORMED", withExtension: "json") else { return nil }
+    return try? Data(contentsOf: url)
+  }
 
-    func response(statusCode: Int) -> HTTPURLResponse? {
-        HTTPURLResponse(url: URL(string: "http://DUMMY")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)
-    }
+  func response(statusCode: Int) -> HTTPURLResponse? {
+    HTTPURLResponse(url: URL(string: "http://DUMMY")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)
+  }
 }
 
 // func test_fetchRequest_withHouseInSearchField_shouldCreateProperRequestAndCalledOnce() {

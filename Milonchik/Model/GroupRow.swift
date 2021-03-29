@@ -1,3 +1,3 @@
 struct GroupRow: TableViewDisplayable {
-    var label: String { "Suggestions" }
+  var label: String { "Suggestions" }
 }

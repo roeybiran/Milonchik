@@ -9,9 +9,9 @@
 import Cocoa
 
 func doCommand(searchField: NSSearchField, selector: Selector) -> Bool? {
-    searchField.delegate?.control?(NSControl(), textView: NSTextView(), doCommandBy: selector)
+  searchField.delegate?.control?(NSControl(), textView: NSTextView(), doCommandBy: selector)
 }
 
 func numberOfRows(in tableView: NSTableView) -> Int? {
-    tableView.dataSource?.numberOfRows?(in: tableView)
+  tableView.dataSource?.numberOfRows?(in: tableView)
 }

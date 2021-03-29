@@ -10,46 +10,50 @@ import XCTest
 
 @testable import Milonchik
 
+// MARK: - ModelControllerTests
+
 class ModelControllerTests: XCTestCase {
-    var sut: ModelController!
-    // var mockedFetcher: MockDatabaseFetcher!
+  var sut: ModelController!
+  // var mockedFetcher: MockDatabaseFetcher!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
-        // mockedFetcher = MockDatabaseFetcher()
-        sut = ModelController(dbFetcher: MockDatabaseFetcher())
+  override func setUpWithError() throws {
+    try super.setUpWithError()
+    // mockedFetcher = MockDatabaseFetcher()
+    sut = ModelController(dbFetcher: MockDatabaseFetcher())
+  }
+
+  override func tearDownWithError() throws {
+    sut = nil
+    // mockedFetcher = nil
+    try super.tearDownWithError()
+  }
+
+  func test() {
+    let _expectation = expectation(description: "")
+    var outcome: ModelController.ExternalState?
+    sut.onStateChange = {
+      outcome = $0
+      _expectation.fulfill()
     }
 
-    override func tearDownWithError() throws {
-        sut = nil
-        // mockedFetcher = nil
-        try super.tearDownWithError()
+    sut.mutate(into: .queryChanged(to: "foo"))
+
+    wait(for: [_expectation], timeout: 0.1)
+    if case .results = outcome {
+      return
     }
-
-    func test() {
-        let _expectation = expectation(description: "")
-        var outcome: ModelController.ExternalState?
-        sut.onStateChange = {
-            outcome = $0
-            _expectation.fulfill()
-        }
-
-        sut.mutate(into: .queryChanged(to: "foo"))
-
-        wait(for: [_expectation], timeout: 0.1)
-        if case .results = outcome {
-            return
-        }
-        XCTFail("expected .results, got: \(String(describing: outcome.self))")
-    }
+    XCTFail("expected .results, got: \(String(describing: outcome.self))")
+  }
 }
 
+// MARK: - MockDatabaseFetcher
+
 struct MockDatabaseFetcher: DatabaseFetching {
-    func cancelFetch() {}
+  func cancelFetch() {}
 
-    func fetch(query _: String, completionHandler: @escaping (DatabaseResult) -> Void) {
-        completionHandler(.success(mockDBResponse))
-    }
+  func fetch(query _: String, completionHandler: @escaping (DatabaseResult) -> Void) {
+    completionHandler(.success(mockDBResponse))
+  }
 
-    let mockDBResponse = DatabaseResponse(matches: [], query: "", sanitizedQuery: "")
+  let mockDBResponse = DatabaseResponse(matches: [], query: "", sanitizedQuery: "")
 }

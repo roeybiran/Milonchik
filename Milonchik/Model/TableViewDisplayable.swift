@@ -1,5 +1,5 @@
 import Foundation
 
 protocol TableViewDisplayable {
-    var label: String { get }
+  var label: String { get }
 }

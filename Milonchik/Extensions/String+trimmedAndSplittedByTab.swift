@@ -1,7 +1,7 @@
 import Foundation
 
 extension String {
-    func trimmedAndSplittedByTab() -> [Substring] {
-        split(separator: "\t")
-    }
+  func trimmedAndSplittedByTab() -> [Substring] {
+    split(separator: "\t")
+  }
 }
