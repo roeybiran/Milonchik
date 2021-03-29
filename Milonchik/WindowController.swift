@@ -1,3 +1,5 @@
+//
+
 import Cocoa
 
 // MARK: - WindowController
@@ -13,7 +15,7 @@ class WindowController: NSWindowController {
   }()
 
   @objc let viewController: ViewController
-  var toolbarDelegate: ToolbarDelegate?
+  var toolbarDelegate: ToolbarDelegate? // swiftlint:disable:this weak_delegate
   let notificationCenter = NotificationCenter.default
   let selectors = Set([
     #selector(moveForward),
