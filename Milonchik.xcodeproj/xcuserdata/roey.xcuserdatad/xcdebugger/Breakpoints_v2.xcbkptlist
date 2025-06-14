@@ -130,38 +130,6 @@
             endingLineNumber = "36"
             landmarkName = "windowDidBecomeKey(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36FB8893-EC35-4206-9660-3B880FE375D0 - e9df6dfd84104b22"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Milonchik.WindowManager.windowDidBecomeKey(Foundation.Notification) -&gt; ()"
-                  moduleName = "Milonchik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/WindowManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "69">
-               </Location>
-               <Location
-                  uuid = "36FB8893-EC35-4206-9660-3B880FE375D0 - fcaebb7411a67907"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Milonchik.WindowController) -&gt; Swift.Bool in Milonchik.WindowManager.windowDidBecomeKey(Foundation.Notification) -&gt; ()"
-                  moduleName = "Milonchik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roey/Dropbox/code/projects/Milonchik/Milonchik/WindowManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

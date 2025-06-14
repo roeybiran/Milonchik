@@ -2,7 +2,7 @@
 
 Lightweight English-Hebrew Dictionary
 
-![App Icon](media/icon.png)
+![App Icon](Assets/icon.png)
 
 ## Features
 
